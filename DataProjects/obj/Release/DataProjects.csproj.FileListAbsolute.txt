@@ -1,0 +1,9 @@
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\DataProjects.exe.config
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\DataProjects.exe
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\DataProjects.pdb
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\CsQuery.dll
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\EntityFramework.dll
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\CsQuery.xml
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\EntityFramework.xml
+C:\Users\user\Desktop\DataProjects\DataProjects\obj\Release\DataProjects.exe
+C:\Users\user\Desktop\DataProjects\DataProjects\obj\Release\DataProjects.pdb

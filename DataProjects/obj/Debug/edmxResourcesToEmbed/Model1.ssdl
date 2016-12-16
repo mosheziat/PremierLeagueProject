@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sakilaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="actor">
+    <Key>
+      <PropertyRef Name="actor_id" />
+    </Key>
+    <Property Name="actor_id" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'geometry' is currently not supported for the target Entity Framework version; the column 'location' in the table 'def.sakila.address' was excluded.-->
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="address_id" />
+    </Key>
+    <Property Name="address_id" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="address2" Type="varchar" MaxLength="50" />
+    <Property Name="district" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="city_id" Type="usmallint" Nullable="false" />
+    <Property Name="postal_code" Type="varchar" MaxLength="10" />
+    <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="category_id" Type="utinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="country_id" Type="usmallint" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="competition">
+    <Key>
+      <PropertyRef Name="CompetitionID" />
+    </Key>
+    <Property Name="CompetitionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompetitionName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="competitionmatch">
+    <Key>
+      <PropertyRef Name="CompetitionMatchID" />
+    </Key>
+    <Property Name="CompetitionMatchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HomeTeamID" Type="int" Nullable="false" />
+    <Property Name="AwayTeamID" Type="int" Nullable="false" />
+    <Property Name="WinnerTeamID" Type="int" />
+    <Property Name="HomeGoals" Type="int" Nullable="false" />
+    <Property Name="AwayGoals" Type="int" Nullable="false" />
+    <Property Name="CompetitionID" Type="int" Nullable="false" />
+    <Property Name="MatchDate" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="country_id" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="store_id" Type="utinyint" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="address_id" Type="usmallint" Nullable="false" />
+    <Property Name="active" Type="bool" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="eventtype">
+    <Key>
+      <PropertyRef Name="EventTypeID" />
+    </Key>
+    <Property Name="EventTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="film">
+    <Key>
+      <PropertyRef Name="film_id" />
+    </Key>
+    <Property Name="film_id" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="release_year" Type="year" />
+    <Property Name="language_id" Type="utinyint" Nullable="false" />
+    <Property Name="original_language_id" Type="utinyint" />
+    <Property Name="rental_duration" Type="utinyint" Nullable="false" />
+    <Property Name="rental_rate" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+    <Property Name="length" Type="usmallint" />
+    <Property Name="replacement_cost" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="rating" Type="enum" />
+    <Property Name="special_features" Type="set" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="film_actor">
+    <Key>
+      <PropertyRef Name="actor_id" />
+      <PropertyRef Name="film_id" />
+    </Key>
+    <Property Name="actor_id" Type="usmallint" Nullable="false" />
+    <Property Name="film_id" Type="usmallint" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="film_category">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="film_id" Type="usmallint" Nullable="false" />
+    <Property Name="category_id" Type="utinyint" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="film_text">
+    <Key>
+      <PropertyRef Name="film_id" />
+    </Key>
+    <Property Name="film_id" Type="smallint" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="text" />
+  </EntityType>
+  <EntityType Name="inventory">
+    <Key>
+      <PropertyRef Name="inventory_id" />
+    </Key>
+    <Property Name="inventory_id" Type="umediumint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="film_id" Type="usmallint" Nullable="false" />
+    <Property Name="store_id" Type="utinyint" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="language">
+    <Key>
+      <PropertyRef Name="language_id" />
+    </Key>
+    <Property Name="language_id" Type="utinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="matchevent">
+    <Key>
+      <PropertyRef Name="MatchEventID" />
+    </Key>
+    <Property Name="MatchEventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MatchID" Type="int" Nullable="false" />
+    <Property Name="TeamID" Type="int" Nullable="false" />
+    <Property Name="EventTypeID" Type="int" Nullable="false" />
+    <Property Name="eventvalue" Type="int" />
+  </EntityType>
+  <EntityType Name="matchgoal">
+    <Key>
+      <PropertyRef Name="MatchGoalID" />
+    </Key>
+    <Property Name="MatchGoalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MatchID" Type="int" Nullable="false" />
+    <Property Name="TeamID" Type="int" Nullable="false" />
+    <Property Name="ScorerID" Type="int" Nullable="false" />
+    <Property Name="AssistantID" Type="int" />
+    <Property Name="ScoringMinute" Type="int" />
+  </EntityType>
+  <EntityType Name="matchplayer">
+    <Key>
+      <PropertyRef Name="MatchPlayerID" />
+    </Key>
+    <Property Name="MatchPlayerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MatchID" Type="int" Nullable="false" />
+    <Property Name="TeamID" Type="int" Nullable="false" />
+    <Property Name="PlayerID" Type="int" Nullable="false" />
+    <Property Name="SubstituteMinute" Type="int" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="usmallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_id" Type="usmallint" Nullable="false" />
+    <Property Name="staff_id" Type="utinyint" Nullable="false" />
+    <Property Name="rental_id" Type="int" />
+    <Property Name="amount" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="payment_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="player">
+    <Key>
+      <PropertyRef Name="PlayerID" />
+    </Key>
+    <Property Name="PlayerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeamID" Type="int" />
+    <Property Name="PositionID" Type="int" Nullable="false" />
+    <Property Name="PlayerName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NationalTeamID" Type="int" />
+  </EntityType>
+  <EntityType Name="playerposition">
+    <Key>
+      <PropertyRef Name="PlayerPositionID" />
+    </Key>
+    <Property Name="PlayerPositionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerPositionName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="playertransfer">
+    <Key>
+      <PropertyRef Name="PlayerTransferID" />
+    </Key>
+    <Property Name="PlayerTransferID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" Nullable="false" />
+    <Property Name="DestinationTeamID" Type="int" Nullable="false" />
+    <Property Name="SourceTeamID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rental">
+    <Key>
+      <PropertyRef Name="rental_id" />
+    </Key>
+    <Property Name="rental_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rental_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="inventory_id" Type="umediumint" Nullable="false" />
+    <Property Name="customer_id" Type="usmallint" Nullable="false" />
+    <Property Name="return_date" Type="datetime" Precision="0" />
+    <Property Name="staff_id" Type="utinyint" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="staff_id" />
+    </Key>
+    <Property Name="staff_id" Type="utinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="address_id" Type="usmallint" Nullable="false" />
+    <Property Name="picture" Type="blob" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="store_id" Type="utinyint" Nullable="false" />
+    <Property Name="active" Type="bool" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="40" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="store">
+    <Key>
+      <PropertyRef Name="store_id" />
+    </Key>
+    <Property Name="store_id" Type="utinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="manager_staff_id" Type="utinyint" Nullable="false" />
+    <Property Name="address_id" Type="usmallint" Nullable="false" />
+    <Property Name="last_update" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="team">
+    <Key>
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="TeamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeamName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="TeamTypeID" Type="int" />
+    <Property Name="MarketValue" Type="int" />
+  </EntityType>
+  <EntityType Name="teamtype">
+    <Key>
+      <PropertyRef Name="TeamTypeID" />
+    </Key>
+    <Property Name="TeamTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeamTypeName" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="competitionmatch_ibfk_1">
+    <End Role="team" Type="Self.team" Multiplicity="1" />
+    <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="competitionmatch">
+        <PropertyRef Name="HomeTeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="competitionmatch_ibfk_2">
+    <End Role="team" Type="Self.team" Multiplicity="1" />
+    <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="competitionmatch">
+        <PropertyRef Name="AwayTeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="competitionmatch_ibfk_3">
+    <End Role="team" Type="Self.team" Multiplicity="0..1" />
+    <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="competitionmatch">
+        <PropertyRef Name="WinnerTeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="competitionmatch_ibfk_4">
+    <End Role="competition" Type="Self.competition" Multiplicity="1" />
+    <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="competition">
+        <PropertyRef Name="CompetitionID" />
+      </Principal>
+      <Dependent Role="competitionmatch">
+        <PropertyRef Name="CompetitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_address_city">
+    <End Role="city" Type="Self.city" Multiplicity="1" />
+    <End Role="address" Type="Self.address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="city_id" />
+      </Principal>
+      <Dependent Role="address">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_city_country">
+    <End Role="country" Type="Self.country" Multiplicity="1" />
+    <End Role="city" Type="Self.city" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="country_id" />
+      </Principal>
+      <Dependent Role="city">
+        <PropertyRef Name="country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_customer_address">
+    <End Role="address" Type="Self.address" Multiplicity="1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="address_id" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="address_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_customer_store">
+    <End Role="store" Type="Self.store" Multiplicity="1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="store_id" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_film_actor_actor">
+    <End Role="actor" Type="Self.actor" Multiplicity="1" />
+    <End Role="film_actor" Type="Self.film_actor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="actor">
+        <PropertyRef Name="actor_id" />
+      </Principal>
+      <Dependent Role="film_actor">
+        <PropertyRef Name="actor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_film_actor_film">
+    <End Role="film" Type="Self.film" Multiplicity="1" />
+    <End Role="film_actor" Type="Self.film_actor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="film">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="film_actor">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_film_category_category">
+    <End Role="category" Type="Self.category" Multiplicity="1" />
+    <End Role="film_category" Type="Self.film_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="film_category">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_film_category_film">
+    <End Role="film" Type="Self.film" Multiplicity="1" />
+    <End Role="film_category" Type="Self.film_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="film">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="film_category">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_film_language">
+    <End Role="language" Type="Self.language" Multiplicity="1" />
+    <End Role="film" Type="Self.film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="language">
+        <PropertyRef Name="language_id" />
+      </Principal>
+      <Dependent Role="film">
+        <PropertyRef Name="language_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_film_language_original">
+    <End Role="language" Type="Self.language" Multiplicity="0..1" />
+    <End Role="film" Type="Self.film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="language">
+        <PropertyRef Name="language_id" />
+      </Principal>
+      <Dependent Role="film">
+        <PropertyRef Name="original_language_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inventory_film">
+    <End Role="film" Type="Self.film" Multiplicity="1" />
+    <End Role="inventory" Type="Self.inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="film">
+        <PropertyRef Name="film_id" />
+      </Principal>
+      <Dependent Role="inventory">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inventory_store">
+    <End Role="store" Type="Self.store" Multiplicity="1" />
+    <End Role="inventory" Type="Self.inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="store_id" />
+      </Principal>
+      <Dependent Role="inventory">
+        <PropertyRef Name="store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="payment" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="payment">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_rental">
+    <End Role="rental" Type="Self.rental" Multiplicity="0..1" />
+    <End Role="payment" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rental">
+        <PropertyRef Name="rental_id" />
+      </Principal>
+      <Dependent Role="payment">
+        <PropertyRef Name="rental_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_payment_staff">
+    <End Role="staff" Type="Self.staff" Multiplicity="1" />
+    <End Role="payment" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="staff_id" />
+      </Principal>
+      <Dependent Role="payment">
+        <PropertyRef Name="staff_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="rental" Type="Self.rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="rental">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_inventory">
+    <End Role="inventory" Type="Self.inventory" Multiplicity="1" />
+    <End Role="rental" Type="Self.rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inventory">
+        <PropertyRef Name="inventory_id" />
+      </Principal>
+      <Dependent Role="rental">
+        <PropertyRef Name="inventory_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rental_staff">
+    <End Role="staff" Type="Self.staff" Multiplicity="1" />
+    <End Role="rental" Type="Self.rental" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="staff_id" />
+      </Principal>
+      <Dependent Role="rental">
+        <PropertyRef Name="staff_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_staff_address">
+    <End Role="address" Type="Self.address" Multiplicity="1" />
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="address_id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="address_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_staff_store">
+    <End Role="store" Type="Self.store" Multiplicity="1" />
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="store_id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_store_address">
+    <End Role="address" Type="Self.address" Multiplicity="1" />
+    <End Role="store" Type="Self.store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="address">
+        <PropertyRef Name="address_id" />
+      </Principal>
+      <Dependent Role="store">
+        <PropertyRef Name="address_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_store_staff">
+    <End Role="staff" Type="Self.staff" Multiplicity="1" />
+    <End Role="store" Type="Self.store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="staff_id" />
+      </Principal>
+      <Dependent Role="store">
+        <PropertyRef Name="manager_staff_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchevent_ibfk_1">
+    <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="1" />
+    <End Role="matchevent" Type="Self.matchevent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="competitionmatch">
+        <PropertyRef Name="CompetitionMatchID" />
+      </Principal>
+      <Dependent Role="matchevent">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchevent_ibfk_2">
+    <End Role="team" Type="Self.team" Multiplicity="1" />
+    <End Role="matchevent" Type="Self.matchevent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="matchevent">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchevent_ibfk_3">
+    <End Role="eventtype" Type="Self.eventtype" Multiplicity="1" />
+    <End Role="matchevent" Type="Self.matchevent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="eventtype">
+        <PropertyRef Name="EventTypeID" />
+      </Principal>
+      <Dependent Role="matchevent">
+        <PropertyRef Name="EventTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchgoal_ibfk_1">
+    <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="1" />
+    <End Role="matchgoal" Type="Self.matchgoal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="competitionmatch">
+        <PropertyRef Name="CompetitionMatchID" />
+      </Principal>
+      <Dependent Role="matchgoal">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchgoal_ibfk_2">
+    <End Role="player" Type="Self.player" Multiplicity="1" />
+    <End Role="matchgoal" Type="Self.matchgoal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="matchgoal">
+        <PropertyRef Name="ScorerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchgoal_ibfk_3">
+    <End Role="player" Type="Self.player" Multiplicity="0..1" />
+    <End Role="matchgoal" Type="Self.matchgoal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="matchgoal">
+        <PropertyRef Name="AssistantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchgoal_ibfk_4">
+    <End Role="team" Type="Self.team" Multiplicity="1" />
+    <End Role="matchgoal" Type="Self.matchgoal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="matchgoal">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchplayer_ibfk_1">
+    <End Role="player" Type="Self.player" Multiplicity="1" />
+    <End Role="matchplayer" Type="Self.matchplayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="matchplayer">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchplayer_ibfk_2">
+    <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="1" />
+    <End Role="matchplayer" Type="Self.matchplayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="competitionmatch">
+        <PropertyRef Name="CompetitionMatchID" />
+      </Principal>
+      <Dependent Role="matchplayer">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="matchplayer_ibfk_3">
+    <End Role="team" Type="Self.team" Multiplicity="1" />
+    <End Role="matchplayer" Type="Self.matchplayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="matchplayer">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="player_ibfk_1">
+    <End Role="team" Type="Self.team" Multiplicity="0..1" />
+    <End Role="player" Type="Self.player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="player">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="player_ibfk_2">
+    <End Role="playerposition" Type="Self.playerposition" Multiplicity="1" />
+    <End Role="player" Type="Self.player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="playerposition">
+        <PropertyRef Name="PlayerPositionID" />
+      </Principal>
+      <Dependent Role="player">
+        <PropertyRef Name="PositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="player_ibfk_3">
+    <End Role="team" Type="Self.team" Multiplicity="0..1" />
+    <End Role="player" Type="Self.player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="player">
+        <PropertyRef Name="NationalTeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="playertransfer_ibfk_1">
+    <End Role="player" Type="Self.player" Multiplicity="1" />
+    <End Role="playertransfer" Type="Self.playertransfer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="player">
+        <PropertyRef Name="PlayerID" />
+      </Principal>
+      <Dependent Role="playertransfer">
+        <PropertyRef Name="PlayerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="playertransfer_ibfk_2">
+    <End Role="team" Type="Self.team" Multiplicity="1" />
+    <End Role="playertransfer" Type="Self.playertransfer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="playertransfer">
+        <PropertyRef Name="SourceTeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="playertransfer_ibfk_3">
+    <End Role="team" Type="Self.team" Multiplicity="1" />
+    <End Role="playertransfer" Type="Self.playertransfer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="playertransfer">
+        <PropertyRef Name="DestinationTeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="team_ibfk_1">
+    <End Role="teamtype" Type="Self.teamtype" Multiplicity="0..1" />
+    <End Role="team" Type="Self.team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teamtype">
+        <PropertyRef Name="TeamTypeID" />
+      </Principal>
+      <Dependent Role="team">
+        <PropertyRef Name="TeamTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sakilaModelStoreContainer">
+    <EntitySet Name="actor" EntityType="Self.actor" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="address" EntityType="Self.address" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="city" EntityType="Self.city" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="competition" EntityType="Self.competition" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="competitionmatch" EntityType="Self.competitionmatch" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="country" EntityType="Self.country" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="eventtype" EntityType="Self.eventtype" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="film" EntityType="Self.film" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="film_actor" EntityType="Self.film_actor" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="film_category" EntityType="Self.film_category" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="film_text" EntityType="Self.film_text" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="inventory" EntityType="Self.inventory" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="language" EntityType="Self.language" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="matchevent" EntityType="Self.matchevent" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="matchgoal" EntityType="Self.matchgoal" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="matchplayer" EntityType="Self.matchplayer" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="payment" EntityType="Self.payment" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="player" EntityType="Self.player" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="playerposition" EntityType="Self.playerposition" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="playertransfer" EntityType="Self.playertransfer" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="rental" EntityType="Self.rental" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="staff" EntityType="Self.staff" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="store" EntityType="Self.store" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="team" EntityType="Self.team" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="teamtype" EntityType="Self.teamtype" Schema="sakila" store:Type="Tables" />
+    <AssociationSet Name="competitionmatch_ibfk_1" Association="Self.competitionmatch_ibfk_1">
+      <End Role="team" EntitySet="team" />
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+    </AssociationSet>
+    <AssociationSet Name="competitionmatch_ibfk_2" Association="Self.competitionmatch_ibfk_2">
+      <End Role="team" EntitySet="team" />
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+    </AssociationSet>
+    <AssociationSet Name="competitionmatch_ibfk_3" Association="Self.competitionmatch_ibfk_3">
+      <End Role="team" EntitySet="team" />
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+    </AssociationSet>
+    <AssociationSet Name="competitionmatch_ibfk_4" Association="Self.competitionmatch_ibfk_4">
+      <End Role="competition" EntitySet="competition" />
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+    </AssociationSet>
+    <AssociationSet Name="fk_address_city" Association="Self.fk_address_city">
+      <End Role="city" EntitySet="city" />
+      <End Role="address" EntitySet="address" />
+    </AssociationSet>
+    <AssociationSet Name="fk_city_country" Association="Self.fk_city_country">
+      <End Role="country" EntitySet="country" />
+      <End Role="city" EntitySet="city" />
+    </AssociationSet>
+    <AssociationSet Name="fk_customer_address" Association="Self.fk_customer_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_customer_store" Association="Self.fk_customer_store">
+      <End Role="store" EntitySet="store" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_film_actor_actor" Association="Self.fk_film_actor_actor">
+      <End Role="actor" EntitySet="actor" />
+      <End Role="film_actor" EntitySet="film_actor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_film_actor_film" Association="Self.fk_film_actor_film">
+      <End Role="film" EntitySet="film" />
+      <End Role="film_actor" EntitySet="film_actor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_film_category_category" Association="Self.fk_film_category_category">
+      <End Role="category" EntitySet="category" />
+      <End Role="film_category" EntitySet="film_category" />
+    </AssociationSet>
+    <AssociationSet Name="fk_film_category_film" Association="Self.fk_film_category_film">
+      <End Role="film" EntitySet="film" />
+      <End Role="film_category" EntitySet="film_category" />
+    </AssociationSet>
+    <AssociationSet Name="fk_film_language" Association="Self.fk_film_language">
+      <End Role="language" EntitySet="language" />
+      <End Role="film" EntitySet="film" />
+    </AssociationSet>
+    <AssociationSet Name="fk_film_language_original" Association="Self.fk_film_language_original">
+      <End Role="language" EntitySet="language" />
+      <End Role="film" EntitySet="film" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inventory_film" Association="Self.fk_inventory_film">
+      <End Role="film" EntitySet="film" />
+      <End Role="inventory" EntitySet="inventory" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inventory_store" Association="Self.fk_inventory_store">
+      <End Role="store" EntitySet="store" />
+      <End Role="inventory" EntitySet="inventory" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_customer" Association="Self.fk_payment_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="payment" EntitySet="payment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_rental" Association="Self.fk_payment_rental">
+      <End Role="rental" EntitySet="rental" />
+      <End Role="payment" EntitySet="payment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_payment_staff" Association="Self.fk_payment_staff">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="payment" EntitySet="payment" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_customer" Association="Self.fk_rental_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="rental" EntitySet="rental" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_inventory" Association="Self.fk_rental_inventory">
+      <End Role="inventory" EntitySet="inventory" />
+      <End Role="rental" EntitySet="rental" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rental_staff" Association="Self.fk_rental_staff">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="rental" EntitySet="rental" />
+    </AssociationSet>
+    <AssociationSet Name="fk_staff_address" Association="Self.fk_staff_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+    <AssociationSet Name="fk_staff_store" Association="Self.fk_staff_store">
+      <End Role="store" EntitySet="store" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+    <AssociationSet Name="fk_store_address" Association="Self.fk_store_address">
+      <End Role="address" EntitySet="address" />
+      <End Role="store" EntitySet="store" />
+    </AssociationSet>
+    <AssociationSet Name="fk_store_staff" Association="Self.fk_store_staff">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="store" EntitySet="store" />
+    </AssociationSet>
+    <AssociationSet Name="matchevent_ibfk_1" Association="Self.matchevent_ibfk_1">
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+      <End Role="matchevent" EntitySet="matchevent" />
+    </AssociationSet>
+    <AssociationSet Name="matchevent_ibfk_2" Association="Self.matchevent_ibfk_2">
+      <End Role="team" EntitySet="team" />
+      <End Role="matchevent" EntitySet="matchevent" />
+    </AssociationSet>
+    <AssociationSet Name="matchevent_ibfk_3" Association="Self.matchevent_ibfk_3">
+      <End Role="eventtype" EntitySet="eventtype" />
+      <End Role="matchevent" EntitySet="matchevent" />
+    </AssociationSet>
+    <AssociationSet Name="matchgoal_ibfk_1" Association="Self.matchgoal_ibfk_1">
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+      <End Role="matchgoal" EntitySet="matchgoal" />
+    </AssociationSet>
+    <AssociationSet Name="matchgoal_ibfk_2" Association="Self.matchgoal_ibfk_2">
+      <End Role="player" EntitySet="player" />
+      <End Role="matchgoal" EntitySet="matchgoal" />
+    </AssociationSet>
+    <AssociationSet Name="matchgoal_ibfk_3" Association="Self.matchgoal_ibfk_3">
+      <End Role="player" EntitySet="player" />
+      <End Role="matchgoal" EntitySet="matchgoal" />
+    </AssociationSet>
+    <AssociationSet Name="matchgoal_ibfk_4" Association="Self.matchgoal_ibfk_4">
+      <End Role="team" EntitySet="team" />
+      <End Role="matchgoal" EntitySet="matchgoal" />
+    </AssociationSet>
+    <AssociationSet Name="matchplayer_ibfk_1" Association="Self.matchplayer_ibfk_1">
+      <End Role="player" EntitySet="player" />
+      <End Role="matchplayer" EntitySet="matchplayer" />
+    </AssociationSet>
+    <AssociationSet Name="matchplayer_ibfk_2" Association="Self.matchplayer_ibfk_2">
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+      <End Role="matchplayer" EntitySet="matchplayer" />
+    </AssociationSet>
+    <AssociationSet Name="matchplayer_ibfk_3" Association="Self.matchplayer_ibfk_3">
+      <End Role="team" EntitySet="team" />
+      <End Role="matchplayer" EntitySet="matchplayer" />
+    </AssociationSet>
+    <AssociationSet Name="player_ibfk_1" Association="Self.player_ibfk_1">
+      <End Role="team" EntitySet="team" />
+      <End Role="player" EntitySet="player" />
+    </AssociationSet>
+    <AssociationSet Name="player_ibfk_2" Association="Self.player_ibfk_2">
+      <End Role="playerposition" EntitySet="playerposition" />
+      <End Role="player" EntitySet="player" />
+    </AssociationSet>
+    <AssociationSet Name="player_ibfk_3" Association="Self.player_ibfk_3">
+      <End Role="team" EntitySet="team" />
+      <End Role="player" EntitySet="player" />
+    </AssociationSet>
+    <AssociationSet Name="playertransfer_ibfk_1" Association="Self.playertransfer_ibfk_1">
+      <End Role="player" EntitySet="player" />
+      <End Role="playertransfer" EntitySet="playertransfer" />
+    </AssociationSet>
+    <AssociationSet Name="playertransfer_ibfk_2" Association="Self.playertransfer_ibfk_2">
+      <End Role="team" EntitySet="team" />
+      <End Role="playertransfer" EntitySet="playertransfer" />
+    </AssociationSet>
+    <AssociationSet Name="playertransfer_ibfk_3" Association="Self.playertransfer_ibfk_3">
+      <End Role="team" EntitySet="team" />
+      <End Role="playertransfer" EntitySet="playertransfer" />
+    </AssociationSet>
+    <AssociationSet Name="team_ibfk_1" Association="Self.team_ibfk_1">
+      <End Role="teamtype" EntitySet="teamtype" />
+      <End Role="team" EntitySet="team" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

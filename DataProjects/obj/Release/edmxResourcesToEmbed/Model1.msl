@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sakilaModelStoreContainer" CdmEntityContainer="sakilaEntities2">
+    <EntitySetMapping Name="actor">
+      <EntityTypeMapping TypeName="sakilaModel.actor">
+        <MappingFragment StoreEntitySet="actor">
+          <ScalarProperty Name="actor_id" ColumnName="actor_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="address">
+      <EntityTypeMapping TypeName="sakilaModel.address">
+        <MappingFragment StoreEntitySet="address">
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="address1" ColumnName="address" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="sakilaModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="city">
+      <EntityTypeMapping TypeName="sakilaModel.city">
+        <MappingFragment StoreEntitySet="city">
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="city1" ColumnName="city" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="competition">
+      <EntityTypeMapping TypeName="sakilaModel.competition">
+        <MappingFragment StoreEntitySet="competition">
+          <ScalarProperty Name="CompetitionID" ColumnName="CompetitionID" />
+          <ScalarProperty Name="CompetitionName" ColumnName="CompetitionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="competitionmatch">
+      <EntityTypeMapping TypeName="sakilaModel.competitionmatch">
+        <MappingFragment StoreEntitySet="competitionmatch">
+          <ScalarProperty Name="CompetitionMatchID" ColumnName="CompetitionMatchID" />
+          <ScalarProperty Name="HomeTeamID" ColumnName="HomeTeamID" />
+          <ScalarProperty Name="AwayTeamID" ColumnName="AwayTeamID" />
+          <ScalarProperty Name="WinnerTeamID" ColumnName="WinnerTeamID" />
+          <ScalarProperty Name="HomeGoals" ColumnName="HomeGoals" />
+          <ScalarProperty Name="AwayGoals" ColumnName="AwayGoals" />
+          <ScalarProperty Name="CompetitionID" ColumnName="CompetitionID" />
+          <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="country">
+      <EntityTypeMapping TypeName="sakilaModel.country">
+        <MappingFragment StoreEntitySet="country">
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="country1" ColumnName="country" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="sakilaModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="store_id" ColumnName="store_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eventtype">
+      <EntityTypeMapping TypeName="sakilaModel.eventtype">
+        <MappingFragment StoreEntitySet="eventtype">
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="film">
+      <EntityTypeMapping TypeName="sakilaModel.film">
+        <MappingFragment StoreEntitySet="film">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="release_year" ColumnName="release_year" />
+          <ScalarProperty Name="language_id" ColumnName="language_id" />
+          <ScalarProperty Name="original_language_id" ColumnName="original_language_id" />
+          <ScalarProperty Name="rental_duration" ColumnName="rental_duration" />
+          <ScalarProperty Name="rental_rate" ColumnName="rental_rate" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="replacement_cost" ColumnName="replacement_cost" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="special_features" ColumnName="special_features" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="film_actor">
+      <EntityTypeMapping TypeName="sakilaModel.film_actor">
+        <MappingFragment StoreEntitySet="film_actor">
+          <ScalarProperty Name="actor_id" ColumnName="actor_id" />
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="film_category">
+      <EntityTypeMapping TypeName="sakilaModel.film_category">
+        <MappingFragment StoreEntitySet="film_category">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="film_text">
+      <EntityTypeMapping TypeName="sakilaModel.film_text">
+        <MappingFragment StoreEntitySet="film_text">
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventory">
+      <EntityTypeMapping TypeName="sakilaModel.inventory">
+        <MappingFragment StoreEntitySet="inventory">
+          <ScalarProperty Name="inventory_id" ColumnName="inventory_id" />
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="store_id" ColumnName="store_id" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="language">
+      <EntityTypeMapping TypeName="sakilaModel.language">
+        <MappingFragment StoreEntitySet="language">
+          <ScalarProperty Name="language_id" ColumnName="language_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="matchevent">
+      <EntityTypeMapping TypeName="sakilaModel.matchevent">
+        <MappingFragment StoreEntitySet="matchevent">
+          <ScalarProperty Name="MatchEventID" ColumnName="MatchEventID" />
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="eventvalue" ColumnName="eventvalue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="matchgoal">
+      <EntityTypeMapping TypeName="sakilaModel.matchgoal">
+        <MappingFragment StoreEntitySet="matchgoal">
+          <ScalarProperty Name="MatchGoalID" ColumnName="MatchGoalID" />
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="ScorerID" ColumnName="ScorerID" />
+          <ScalarProperty Name="AssistantID" ColumnName="AssistantID" />
+          <ScalarProperty Name="ScoringMinute" ColumnName="ScoringMinute" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="matchplayer">
+      <EntityTypeMapping TypeName="sakilaModel.matchplayer">
+        <MappingFragment StoreEntitySet="matchplayer">
+          <ScalarProperty Name="MatchPlayerID" ColumnName="MatchPlayerID" />
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="SubstituteMinute" ColumnName="SubstituteMinute" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payment">
+      <EntityTypeMapping TypeName="sakilaModel.payment">
+        <MappingFragment StoreEntitySet="payment">
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="rental_id" ColumnName="rental_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="player">
+      <EntityTypeMapping TypeName="sakilaModel.player">
+        <MappingFragment StoreEntitySet="player">
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="NationalTeamID" ColumnName="NationalTeamID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="playerposition">
+      <EntityTypeMapping TypeName="sakilaModel.playerposition">
+        <MappingFragment StoreEntitySet="playerposition">
+          <ScalarProperty Name="PlayerPositionID" ColumnName="PlayerPositionID" />
+          <ScalarProperty Name="PlayerPositionName" ColumnName="PlayerPositionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="playertransfer">
+      <EntityTypeMapping TypeName="sakilaModel.playertransfer">
+        <MappingFragment StoreEntitySet="playertransfer">
+          <ScalarProperty Name="PlayerTransferID" ColumnName="PlayerTransferID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="DestinationTeamID" ColumnName="DestinationTeamID" />
+          <ScalarProperty Name="SourceTeamID" ColumnName="SourceTeamID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rental">
+      <EntityTypeMapping TypeName="sakilaModel.rental">
+        <MappingFragment StoreEntitySet="rental">
+          <ScalarProperty Name="rental_id" ColumnName="rental_id" />
+          <ScalarProperty Name="rental_date" ColumnName="rental_date" />
+          <ScalarProperty Name="inventory_id" ColumnName="inventory_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="return_date" ColumnName="return_date" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staff">
+      <EntityTypeMapping TypeName="sakilaModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="store_id" ColumnName="store_id" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store">
+      <EntityTypeMapping TypeName="sakilaModel.store">
+        <MappingFragment StoreEntitySet="store">
+          <ScalarProperty Name="store_id" ColumnName="store_id" />
+          <ScalarProperty Name="manager_staff_id" ColumnName="manager_staff_id" />
+          <ScalarProperty Name="address_id" ColumnName="address_id" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="team">
+      <EntityTypeMapping TypeName="sakilaModel.team">
+        <MappingFragment StoreEntitySet="team">
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="TeamTypeID" ColumnName="TeamTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teamtype">
+      <EntityTypeMapping TypeName="sakilaModel.teamtype">
+        <MappingFragment StoreEntitySet="teamtype">
+          <ScalarProperty Name="TeamTypeID" ColumnName="TeamTypeID" />
+          <ScalarProperty Name="TeamTypeName" ColumnName="TeamTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

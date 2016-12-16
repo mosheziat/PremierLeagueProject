@@ -1,0 +1,10 @@
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Debug\DataProjects.exe.config
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Debug\DataProjects.exe
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Debug\DataProjects.pdb
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Debug\CsQuery.dll
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Debug\EntityFramework.dll
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Debug\CsQuery.xml
+C:\Users\user\Desktop\DataProjects\DataProjects\bin\Debug\EntityFramework.xml
+C:\Users\user\Desktop\DataProjects\DataProjects\obj\Debug\DataProjects.exe
+C:\Users\user\Desktop\DataProjects\DataProjects\obj\Debug\DataProjects.pdb
+C:\Users\user\Desktop\DataProjects\DataProjects\obj\Debug\DataProjects.csprojResolveAssemblyReference.cache
