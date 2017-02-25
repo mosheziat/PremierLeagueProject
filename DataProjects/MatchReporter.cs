@@ -9,7 +9,10 @@ namespace DataProjects
 {
     public class MatchReporter
     {
-        public static void CreateMatchReport(Dictionary<string, List<Helper.LetterDistribution>> lettersDict, Dictionary<int, List<DataObjects.AttributeType>> attributesDict, List<MainCalculator.AttributesMatch> attributeClashingMap, string homeTeam, string awayTeam, int competitionId)
+        public static void CreateMatchReport(Dictionary<string, List<Helper.LetterDistribution>> lettersDict,
+            Dictionary<int, List<DataObjects.AttributeType>> attributesDict,
+            List<MainCalculator.AttributesMatch> attributeClashingMap,
+            string homeTeam, string awayTeam, int competitionId)
         {
             var linesToWrite = new List<string>
             {
@@ -102,8 +105,16 @@ namespace DataProjects
                 var shotsToGoalsRateAgainstHome = Math.Round((double)(shotsOnTargetAverageAgainstHome / goalConcededHomeSeasonal.Average), 2);
                 var shotsToGoalRateAgainstAway = Math.Round((double)(shotsOnTargetAverageAgainstAway / goalConcededAwaySeasonal.Average), 2);
 
+                var expectShotsHome = Math.Round((double)(shotsOnTargetAverageAgainstAway + shotsOnTargetAverageHome)/2, 2);
+                var expectedShotsAway = Math.Round((double) (shotsOnTargetAverageAgainstHome + shotsOnTargetAverageAway)/2, 2);
+
                 var homeExpectedConversionRate = Math.Round((decimal)(shotsToGoalRateAgainstAway + shotsToGoalsRateHome) / 2, 2);
                 var awayExpectedConversionRate = Math.Round((decimal)(shotsToGoalRateAway + shotsToGoalsRateAgainstHome) / 2, 2);
+
+                var homeExpectedGoalsByConversionRate = expectShotsHome/(double) homeExpectedConversionRate;
+                var awayExpectedGoalsByConversionRate = expectedShotsAway/(double) awayExpectedConversionRate;
+
+                var expectedWinnerByConversion = MainCalculator.GetExpectedWinner(homeExpectedGoalsByConversionRate, awayExpectedGoalsByConversionRate, 1, 0.5d);
 
                 var conversionExpectedWinner = MainCalculator.CalculateConversionWinner(homeExpectedConversionRate,
                     awayExpectedConversionRate);
@@ -268,8 +279,11 @@ namespace DataProjects
                 linesToWrite.Add(awayTeam + " Shots to Goals Conversion Against " + awayTeam + ": " + shotsToGoalRateAgainstAway);
                 linesToWrite.Add("");
                 linesToWrite.Add(homeTeam + " Expected Conversion: " + homeExpectedConversionRate);
-                linesToWrite.Add(awayTeam + " Expected Conversion: " + awayExpectedConversionRate);
+                linesToWrite.Add(awayTeam + " Expected Conversion: " + awayExpectedConversionRate + "\n");
+                linesToWrite.Add("Expected Average Conversion: " + Math.Round((awayExpectedConversionRate + homeExpectedConversionRate) / 2, 2));
+                linesToWrite.Add("");
                 linesToWrite.Add(conversionExpectedWinner);
+                linesToWrite.Add("Shots Conversion Winner: " + expectedWinnerByConversion.Winner + " (" + Math.Min(expectedWinnerByConversion.Confidence * 100, 100) + "%)");
             
             }
 

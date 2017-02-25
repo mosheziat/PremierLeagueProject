@@ -17,17 +17,16 @@ namespace DataProjects
             //Helper.PrintUpdatedFullExpectedPrediction();
             //GoalsCalculator.PrintGoalScroingTable(3);
             //GoalsCalculator.PrintGoalConcededTable(3);
-
-            SecondaryStatsCalculator.PrintTableOfEvent(3, DataObjects.EventType.Corner);
-            SecondaryStatsCalculator.PrintTableOfEvent(3, DataObjects.EventType.Fouls);
-            SecondaryStatsCalculator.PrintTableOfEvent(3, DataObjects.EventType.ShotsOnTarget);
-            SecondaryStatsCalculator.PrintTableOfEvent(3, DataObjects.EventType.Possession);
-            SecondaryStatsCalculator.PrintTableOfAccuracyInFrontOfGoalAgainst(3);
-            SecondaryStatsCalculator.PrintTableOfAccuracyInFrontOfGoal(3);
-
-            //PremierLeagueMainProject.FixShotsIssue();
-            //MatchReporter.PrintReportForNextDays(5);
+            //MainCalculator.RichestTeamsWins();
+            //SecondaryStatsCalculator.PrintTableOfEvent(3, DataObjects.EventType.Fouls);
+            //SecondaryStatsCalculator.PrintTableOfEvent(3, DataObjects.EventType.ShotsOnTarget);
+            //SecondaryStatsCalculator.PrintTableOfEvent(3, DataObjects.EventType.Possession);
+            //SecondaryStatsCalculator.PrintTableOfAccuracyInFrontOfGoalAgainst(3);
+            //SecondaryStatsCalculator.PrintTableOfAccuracyInFrontOfGoal(3);
+            //MainCalculator.PrineSimiliarTeamFile();
             //PremierLeagueMainProject.MainHandler();
+
+            //MatchReporter.PrintReportForNextDays(15);
             Console.WriteLine("Hello world");
             Console.Read();
 

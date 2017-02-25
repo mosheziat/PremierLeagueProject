@@ -1,0 +1,26 @@
+Correct Strength Winner: 6/10
+Correct Strength Winner (60%): 5/7
+Correct Strength Winner (80%): 3/5
+Correct Strength Winner (95%): 2/3
+
+Correct Goals Range (2.5 Line) (2.7+, 2.3-): 6/10
+Correct Goals Range (2.5 Line)(2.3 - 2.7):
+Correct Goals Range (2.5 Line)(std 1.0 or Less): 1/2
+
+Expected Prediction Winner (60%+): 2/7
+Expected Prediction Winner (80%+): 1/2
+Expected Prediction Winner (100%+): 
+
+Attributes clashing correct (60%+): 1/1
+
+Correct Winner by Conversion Rate (50%+): 3/7
+Correct Winner by Conversion Rate (60%+): 2/5
+Correct Winner by Conversion Rate (90%+): 0/1
+
+Voting (50%+)
+Voting (1/1): 1/1
+Voting (2/2): 1/2
+Voting (3/3): 1/2
+Voting (4/4):
+Voting (2/3): 2/2
+Voting (3/4): 

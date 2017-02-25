@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CsQuery;
+using CsQuery.ExtensionMethods;
+using CsQuery.ExtensionMethods.Internal;
 
 namespace DataProjects
 {
@@ -141,7 +143,7 @@ namespace DataProjects
         }
         public static decimal CalculateTeamStrength(int marketValue, decimal sesonalForm, decimal latestForm, decimal homeOrAwayForm)
         {
-            return Math.Round(marketValue * (sesonalForm * 0.2m + latestForm * 0.4m + homeOrAwayForm * 0.4m) / 100, 1);
+            return Math.Round(marketValue * (sesonalForm * 0.15m + latestForm * 0.35m + homeOrAwayForm * 0.5m) / 100, 1);
         }
         
         public static decimal CalculateTeamStrength(sakilaEntities4 db, int teamId, string homeOrAway, int competitionId, DateTime date)
@@ -178,18 +180,18 @@ namespace DataProjects
 
             return (double) (teamStrength/oponentStength/5);
         }
-        public static string GetExpectedWinnerAccordingToResult(double homeGoals, double awayGoals, out decimal percent)
+        public static string GetExpectedWinnerAccordingToResult(double homeGoals, double awayGoals, out decimal percent, int devide = 2, double minimalGap = 2)
         {
             percent = 0;
-            if (homeGoals - 1 > awayGoals)
+            if (homeGoals - minimalGap > awayGoals)
             {
-                percent = (decimal) Math.Round((homeGoals - awayGoals)/2, 2);
+                percent = (decimal) Math.Round((homeGoals - awayGoals)/ devide, 2);
                 return "Home";
             }
 
-            if (awayGoals - 1 > homeGoals)
+            if (awayGoals - minimalGap > homeGoals)
             {
-                percent = (decimal) Math.Round((awayGoals - homeGoals) / 2, 2);
+                percent = (decimal) Math.Round((awayGoals - homeGoals) / devide, 2);
                 return "Away";
             }
 
@@ -335,10 +337,10 @@ namespace DataProjects
                 Winner = "Draw"
             };
         }
-        public static ResultConfidence GetExpectedWinner(double homeGoals, double awayGoals)
+        public static ResultConfidence GetExpectedWinner(double homeGoals, double awayGoals, int devide = 2, double gap = 1)
         {
             decimal conf;
-            var expectedResultByGoals = GetExpectedWinnerAccordingToResult(homeGoals, awayGoals, out conf);
+            var expectedResultByGoals = GetExpectedWinnerAccordingToResult(homeGoals, awayGoals, out conf, devide, gap);
             return new ResultConfidence
             {
                 Winner = expectedResultByGoals,
@@ -602,7 +604,7 @@ namespace DataProjects
             if (clashingReaultList.Any())
             {
                 var g = clashingReaultList.GroupBy(x => x.Winner);
-                if (g.Count() == 1)
+                if (g.Count() == 1 && g.First().Count() > 1)
                 {
                     linesToWrite.Add("Team Attributes Winner: "+ clashingReaultList.First().Winner + " (" + clashingReaultList.OrderByDescending(x => x.Percent).First().Percent * 100 + "%)");
                 }
@@ -676,7 +678,33 @@ namespace DataProjects
 
         public static string GetLettersExpectedWinners(Helper.LetterDistribution homeLetters, Helper.LetterDistribution awayLetters)
         {
+            var decimalList = new List<Helper.LetterDistribution>
+            {
+                awayLetters,
+                homeLetters
+            };
             string winner;
+
+            if (IsTheSameResult(homeLetters.Letter, awayLetters.Letter, out winner))
+            {
+                var conf = Math.Round(decimalList.Select(x => x.Percent).Sum() * 100);
+                return winner + "(" + conf + "%)";
+            }
+
+            else
+            {
+                var higherPercent = decimalList.OrderByDescending(x => x.Percent).First();
+                if (higherPercent.Percent == homeLetters.Percent)
+                {
+                    return "Home (" + Math.Round(higherPercent.Percent * 100) + "%)";
+                }
+
+                else
+                {
+                    return "Away (" + Math.Round(higherPercent.Percent * 100) + "%)";
+                }
+            }
+
             if (IsTheSameResult(homeLetters.Letter, awayLetters.Letter, out winner))
             {
                 if (homeLetters.Percent >= 0.43m && awayLetters.Percent >= 0.43m)
@@ -762,6 +790,121 @@ namespace DataProjects
             }
 
             return "Conversion Winner: None";
+        }
+
+        public static Dictionary<string, List<string>> ExtractSimiliarTeamsDict()
+        {
+            var retVal = new Dictionary<string, List<string>>();
+
+            var possessionPath = @"C:\Users\user\Desktop\DataProjects\EventTablePossession.tsv";
+            var foulsPath = @"C:\Users\user\Desktop\DataProjects\EventTableFouls.tsv";
+            var accurateInFrontOfGoalPath = @"C:\Users\user\Desktop\DataProjects\EventTableAccuracyInFrontOfGoal.tsv";
+            var accurateInFrontOfGoalAgainstPath = @"C:\Users\user\Desktop\DataProjects\EventTableAccuracyInFrontOfGoalAgainst.tsv";
+            var shotsToTargetPath = @"C:\Users\user\Desktop\DataProjects\EventTableShotsOnTarget.tsv";
+
+            var possessionFile = File.ReadAllLines(possessionPath).ToNamesAndPlaces();
+            var possessionOrdered = possessionFile.OrderBy(x => x.Value).Select(x => x.Key).ToList();
+
+            var foulsFile = File.ReadAllLines(foulsPath).ToNamesAndPlaces();
+            var foulsOrdered = foulsFile.OrderBy(x => x.Value).Select(x => x.Key).ToList();
+
+            var accurateInFrontOfGoalFile = File.ReadAllLines(accurateInFrontOfGoalPath).ToNamesAndPlaces();
+            var accurateInFrontOfGoalOrdered = accurateInFrontOfGoalFile.OrderBy(x => x.Value).Select(x => x.Key).ToList();
+
+            var accurateInFrontOfGoalAgainstFile = File.ReadAllLines(accurateInFrontOfGoalAgainstPath).ToNamesAndPlaces();
+            var accurateInFrontOfGoalAgainstOrdered = accurateInFrontOfGoalAgainstFile.OrderBy(x => x.Value).Select(x => x.Key).ToList();
+
+            var shotsToTargetFile = File.ReadAllLines(shotsToTargetPath).ToNamesAndPlaces();
+            var shotsToTargetOrdered = shotsToTargetFile.OrderBy(x => x.Value).Select(x => x.Key).ToList();
+            var placesToTake = 6;
+
+            foreach (var team in possessionFile)
+            {
+                var possessionCloseTeams = Helper.GetNearestItems(possessionOrdered, team.Value, placesToTake);
+
+                var foulsPlace = foulsFile.First(x => x.Key == team.Key).Value;
+                var foulsCloseTeams = Helper.GetNearestItems(foulsOrdered, foulsPlace, placesToTake);
+
+                var accurateInFrontOfGoalPlace = accurateInFrontOfGoalFile.First(x => x.Key == team.Key).Value;
+                var accurateInFrontOfGoalTeams = Helper.GetNearestItems(accurateInFrontOfGoalOrdered, accurateInFrontOfGoalPlace, placesToTake);
+
+                var accurateInFrontOfGoalAgainstPlace = accurateInFrontOfGoalAgainstFile.First(x => x.Key == team.Key).Value;
+                var accurateInFrontOfGoalAgainstTeams = Helper.GetNearestItems(accurateInFrontOfGoalAgainstOrdered, accurateInFrontOfGoalAgainstPlace, placesToTake);
+
+                var shotsToTargetPlace = shotsToTargetFile.First(x => x.Key == team.Key).Value;
+                var shotsToTargetTeams = Helper.GetNearestItems(shotsToTargetOrdered, shotsToTargetPlace, placesToTake);
+
+                var allCloseTeams = possessionCloseTeams;
+                allCloseTeams.AddRange(foulsCloseTeams);
+                allCloseTeams.AddRange(accurateInFrontOfGoalTeams);
+                allCloseTeams.AddRange(shotsToTargetTeams);
+                allCloseTeams.AddRange(accurateInFrontOfGoalAgainstTeams);
+
+                var closeTeams = allCloseTeams.GroupBy(x => x).Where(x => x.Count() > 2).Select(x => x.First()).Where(x => x != team.Key).ToList();
+
+                retVal.Add(team.Key, closeTeams);
+            }
+
+            return retVal;
+        }
+
+        public static void PrineSimiliarTeamFile()
+        {
+            var resultFile = @"C:\Users\user\Desktop\DataProjects\SimiliarTeamsDict.tsv";
+            var teamsDict = ExtractSimiliarTeamsDict();
+            var linesToWrite = new List<string>();
+
+            foreach (var team in teamsDict)
+            {
+                var similiarTeamsString = string.Join(",", team.Value);
+                linesToWrite.Add(team.Key + "\t" + similiarTeamsString);
+            }
+
+            File.WriteAllLines(resultFile, linesToWrite);
+        }
+
+        public static void RichestTeamsWins()
+        {
+            var resultFile = @"C:\Users\user\Desktop\DataProjects\RichestTeamTest.tsv";
+            using (var db = new sakilaEntities4())
+            {
+                var allMatches = db.competitionmatch.Where(x => x.CompetitionID == 3).ToList();
+                var relevantMatches = allMatches.Where(x => x.WinnerTeamID != null);
+                var cnt = 0;
+                var notParticipated = 0;
+                foreach (var match in relevantMatches)
+                {
+                    var winnerTeamID = match.WinnerTeamID;
+                    var loserTeamID = 0;
+                    if (match.HomeTeamID != winnerTeamID.Value)
+                    {
+                        loserTeamID = match.HomeTeamID;
+                    }
+                    else
+                    {
+                        loserTeamID = match.AwayTeamID;
+                    }
+
+                    var winnerTeam = db.team.First(x => x.TeamID == winnerTeamID.Value);
+                    var loserTeam = db.team.First(x => x.TeamID == loserTeamID);
+
+                    if (Math.Abs((int) (winnerTeam.MarketValue - loserTeam.MarketValue)) < 50)
+                    {
+                        notParticipated++;
+                        continue;
+                    }
+
+                    if (winnerTeam.MarketValue > loserTeam.MarketValue + 50)
+                    {
+                        cnt++;
+                    }
+                }
+
+                var percent = Math.Round((double) ((decimal)cnt/(allMatches.Count() - notParticipated)*100), 2);
+                var stringToWrite =
+                    $"Out of {allMatches.Count - notParticipated} so far, the reachest team won {cnt} out of them, which is {percent}%";
+                File.WriteAllText(resultFile, stringToWrite);
+            }
         }
     }
 }

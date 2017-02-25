@@ -1,0 +1,25 @@
+Correct Strength Winner: 4/10
+Correct Strength Winner (60%):4/6 
+Correct Strength Winner (80%): 4/6
+Correct Strength Winner (95%): 4/5
+
+Expected Prediction Winner (60%+): 4/5 
+Expected Prediction Winner (80%+): 4/5
+Expected Prediction Winner (95%+): 1/1
+
+Attributes clashing correct (60%+): 4/5
+Attributes clashing correct (70%+): 3/4
+Attributes clashing correct (80%+): 2/3
+
+Correct Winner by Shots-Conversion Rate (60%+): 4/10
+Correct Winner by Shots-Conversion Rate (80%+): 2/6
+Correct Winner by Shots-Conversion Rate (95%+): 1/1
+
+Correct Goals Range (2.5 Line) (2-): 
+Correct Goals Range (2.5 Line) (3+): 1/3
+Correct Goals Range (2.5 Line)(2.3 - 2.7): 1/2
+Correct Goals Range (2.5 Line)(std 1.0 or Less): 1/4
+
+Average Conversion (10+) (Less than 2.5): 0/6
+Average Conversion (8-) (More than 2.5): 0/2
+Average Conversion (8.5-9.5) (2-3 Goals): 0/1

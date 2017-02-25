@@ -11,11 +11,11 @@ namespace DataProjects
     {
         public static double? GetAverageTotalShotsPerTeam(sakilaEntities4 db, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
         {
-            return GetAverageEventValue(db, teamId, competitionId, (int)DataObjects.EventType.TotalShots, gamesToTake, endDate);
+            return GetAverageEventValue(db, teamId, competitionId, (int)DataObjects.EventType.TotalShots, gamesToTake, endDate, weigthed:5);
         }
         public static double? GetAverageShotsOnTargetAgainstTeam(sakilaEntities4 db, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
         {
-            return GetAverageEventValueAgainstTeam(db, teamId, competitionId, (int)DataObjects.EventType.TotalShots, gamesToTake, endDate);
+            return GetAverageEventValueAgainstTeam(db, teamId, competitionId, (int)DataObjects.EventType.TotalShots, gamesToTake, endDate, weighted:5);
         }
 
         public static Dictionary<int, List<DataObjects.AttributeType>> BuildAttributesDictionary(int competitionId, int gamesToTake = 50, DateTime? endDate = null)
@@ -26,7 +26,7 @@ namespace DataProjects
             using (var db = new sakilaEntities4())
             {
                 var foulsTeamsList = GetTeamsListPerEvent(db, competitionId, (int)DataObjects.EventType.Fouls, gamesToTake,
-                    endDate);
+                    endDate, weigthed:5);
                 var toughTeams = foulsTeamsList.Take(4);
                 var dictToReturn = toughTeams.ToDictionary(team => team, team => new List<DataObjects.AttributeType>
             {
@@ -43,7 +43,7 @@ namespace DataProjects
                 }
 
                 var possessionList = GetTeamsListPerEvent(db, competitionId, (int)DataObjects.EventType.Possession, gamesToTake,
-                    endDate);
+                    endDate, weigthed: 5);
 
                 var dominantTeams = possessionList.Take(4);
                 foreach (var team in dominantTeams)
@@ -78,7 +78,7 @@ namespace DataProjects
                 }
 
                 var shotsOnTargetList = GetTeamsListPerEvent(db, competitionId, (int)DataObjects.EventType.ShotsOnTarget, gamesToTake,
-                    endDate);
+                    endDate, weigthed: 5);
 
                 var dangerousTeams = shotsOnTargetList.Take(4);
                 foreach (var team in dangerousTeams)
@@ -184,17 +184,18 @@ namespace DataProjects
            
         }
         public static List<int> GetTeamsListPerEvent(sakilaEntities4 db, int competitionId, int eventTypeId,
-            int gamesToTake = 50, DateTime? endDate = null)
+            int gamesToTake = 50, DateTime? endDate = null, int weigthed = 0)
         {
             if (!endDate.HasValue)
                 endDate = DateTime.Now;
 
             var allEvents = db.matchevent.Where(x => x.competitionmatch.CompetitionID == competitionId)
                 .Where(x => x.EventTypeID == eventTypeId)
-                .Where(x => x.competitionmatch.MatchDate < endDate.Value);
+                .Where(x => x.competitionmatch.MatchDate < endDate.Value)
+                .ToList();
 
             var groupByTeams = allEvents.GroupBy(x => x.TeamID)
-                .Select(x => new {TeamID = x.Key, Average = x.Average(y => y.eventvalue)})
+                .Select(x => new {TeamID = x.Key, Average = x.OrderBy(z => z.competitionmatch.MatchDate).Select(y => (int)y.eventvalue).WeightedAverage(weigthed)})
                 .OrderByDescending(x => x.Average)
                 .Select(x => x.TeamID)
                 .ToList();
@@ -323,7 +324,7 @@ namespace DataProjects
         {
             return GetAverageEventValueAgainstTeam(db, teamId, competitionId, (int)DataObjects.EventType.Possession, gamesToTake);
         }
-        public static double? GetAverageEventValue(sakilaEntities4 db, int teamId, int competitionId, int eventTypeId, int gamesToTake = 50, DateTime? endDate = null)
+        public static double? GetAverageEventValue(sakilaEntities4 db, int teamId, int competitionId, int eventTypeId, int gamesToTake = 50, DateTime? endDate = null, int weigthed = 0)
         {
             if (!endDate.HasValue)
                 endDate = DateTime.Now;
@@ -338,12 +339,13 @@ namespace DataProjects
                         && x.competitionmatch.MatchDate < endDate)
                         .OrderByDescending(x => x.competitionmatch.MatchDate)
                         .Take(gamesToTake)
-                        .Select(x => x.eventvalue)
-                        .Average();
+                        .OrderBy(x => x.competitionmatch.MatchDate)
+                        .Select(x => (int)x.eventvalue)
+                        .WeightedAverage(weigthed);
 
-            return average;
+            return Math.Round(average, 2);
         }
-        public static double? GetAverageEventValueAgainstTeam(sakilaEntities4 db, int teamId, int competitionId, int eventTypeId, int gamesToTake = 50, DateTime? endDate = null)
+        public static double? GetAverageEventValueAgainstTeam(sakilaEntities4 db, int teamId, int competitionId, int eventTypeId, int gamesToTake = 50, DateTime? endDate = null, int weighted = 0)
         {
             if (!endDate.HasValue)
                 endDate = DateTime.Now;
@@ -354,6 +356,7 @@ namespace DataProjects
                 .Where(x => x.MatchDate < endDate)
                 .OrderByDescending(x => x.MatchDate)
                 .Take(gamesToTake)
+                .OrderBy(x => x.MatchDate)
                 .Select(x => x.CompetitionMatchID);
 
             var average =
@@ -365,8 +368,8 @@ namespace DataProjects
                         x.eventvalue != null &&
                         matches.Contains(x.MatchID))
                         .OrderByDescending(x => x.competitionmatch.MatchDate)
-                        .Select(x => x.eventvalue)
-                        .Average();
+                        .Select(x => (int)x.eventvalue)
+                        .WeightedAverage(weighted);
 
             return average;
         }
@@ -477,12 +480,14 @@ namespace DataProjects
                 endDate = DateTime.Now;
             using (var db = new sakilaEntities4())
             {
-                var allEvents = db.matchevent.Where(x => x.competitionmatch.CompetitionID == competitionId)
+                var allEvents = db.matchevent
+                .Where(x => x.competitionmatch.CompetitionID == competitionId)
                 .Where(x => x.EventTypeID == eventTypeId)
-                .Where(x => x.competitionmatch.MatchDate < endDate.Value);
+                .Where(x => x.competitionmatch.MatchDate < endDate.Value)
+                .ToList();
 
                 var groupByTeams = allEvents.GroupBy(x => x.team.TeamName)
-                    .Select(x => new { TeamName = x.Key, Average = x.Average(y => y.eventvalue)})
+                    .Select(x => new { TeamName = x.Key, Average = x.OrderBy(z => z.competitionmatch.MatchDate).Select(y => (int)y.eventvalue).WeightedAverage(5)})
                     .ToList()
                     .OrderByDescending(x => x.Average)
                     .Select(x => x.TeamName + "\t" + Math.Round((double) x.Average, 2))

@@ -1,0 +1,6 @@
+Correct Results: 0/10
+Correct Winner: 5/10
+Correct Goals Range: 4/10
+Correct Expected Prediction: 12/20
+Correct Expected Prediction (40%+): 10/13
+All in-line Correct: 4/5

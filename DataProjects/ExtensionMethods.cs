@@ -26,5 +26,24 @@ namespace DataProjects
             aggregated.AddRange(source);
             return aggregated.Average(x => x);
         }
+
+        public static double WeightedAverage(this IEnumerable<int> source, int n)
+        {
+            var aggregated = source.TakeLast(n).ToList();
+            aggregated.AddRange(source);
+            return aggregated.Average(x => x);
+        }
+
+        public static Dictionary<string, int> ToNamesAndPlaces(this IEnumerable<string> fileLines)
+        {
+            var result = fileLines
+                .Select(tab => tab.Split('\t'))
+                .Select(x => x[0])
+                .ToList();
+
+            var namesAndPlaces = result.ToDictionary(x => x, x => result.IndexOf(x));
+            return namesAndPlaces;
+        }
+
     }
 }

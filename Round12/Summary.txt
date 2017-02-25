@@ -1,0 +1,8 @@
+Correct Result: 1/10
+Correct Winner: 5/10
+Correct Goals Range (2.5 Line): 4/10
+Correct Goals Range (2.5 Line)(std 1.0 or Less): 0/2 
+Correct Expected Prediction: 7/20
+Correct Expected Prediction (44%+) (Not Clashing with 40%+): 3/8
+Correct Expected Prediction Matches - Same Prediction (Both 40%+): 1/4
+90%+ Correct Winner: 3/5

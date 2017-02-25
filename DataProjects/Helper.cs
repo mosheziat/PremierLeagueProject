@@ -537,6 +537,34 @@ namespace DataProjects
             return result;
         }
 
+        public static string PrintMatchDetails(int competitionMatchId, sakilaEntities4 db)
+        {
+            var match = db.competitionmatch.First(x => x.CompetitionMatchID == competitionMatchId);
+            var homeTeam = db.team.First(x => x.TeamID == match.HomeTeamID).TeamName;
+            var awayTeam = db.team.First(x => x.TeamID == match.AwayTeamID).TeamName;
+
+            return $"{homeTeam} Vs. {awayTeam} {match.HomeGoals}:{match.AwayGoals}";
+        }
+
+        public static List<string> GetNearestItems(List<string> items, int index, int itemsToTake)
+        {
+            var num = itemsToTake / 2;
+
+            if (index <= num)
+            {
+                return items.Take(num + 1).ToList();
+            }
+
+            if (index + num >= items.Count)
+            {
+                return items.TakeLast(num + 1).ToList();
+            }
+
+            var startPoint = index - num;
+
+            return items.GetRange(startPoint, itemsToTake + 1);
+        }
+
         public class LetterDistribution
         {
             public string Letter;

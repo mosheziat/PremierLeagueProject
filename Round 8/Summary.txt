@@ -1,0 +1,7 @@
+Correct Result: 0/10
+Correct Winner: 3/10
+Correct Goals Range: 4/10
+Correct Goals Range (std Less than 1.0): 1/3
+Correct Expected Prediction: 9/20
+Correct Expected Prediction (40%+): 8/15
+95%+ Correct Winner: 2/3

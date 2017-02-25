@@ -153,6 +153,7 @@
     <Compile Include="rental.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReportObject.cs" />
     <Compile Include="SecondaryStatsCalculator.cs" />
     <Compile Include="staff.cs">
       <DependentUpon>Model1.tt</DependentUpon>
