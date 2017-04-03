@@ -1,12 +1,12 @@
-Watford - Sunderland	Goals	2-3	85%
-Swansea - Middlesbrough	Goals	2-3	70%
-Swansea - Middlesbrough	Winner	1	60%
-Manchester United - West Bromwich	Winner	1	80%
-Manchester United - West Bromwich	Goals	2-3	70%
-Liverpool - Everton	Goals	2.5+	75%
-Liverpool - Everton	Winner	1	60%
-Hull City - West Ham	Goals	2.5+	74%
-Chelsea - Crystal Palace	Goals	2.5+	66%
-Chelsea - Crystal Palace	Winner	1	70%
-Burnley - Tottenham	Winner	85%
-Arsenal - Manchester City	Winner	1	70%
+Watford - Sunderland	Goals	2-3	85% X
+Swansea - Middlesbrough	Goals	2-3	70%	X 
+Swansea - Middlesbrough	Winner	1	60%	X
+Manchester United - West Bromwich	Winner	1	80% X
+Manchester United - West Bromwich	Goals	2-3	70% X
+Liverpool - Everton	Goals	2.5+	75% V
+Liverpool - Everton	Winner	1	60% V
+Hull City - West Ham	Goals	2.5+	74% V
+Chelsea - Crystal Palace	Goals	2.5+	66% V
+Chelsea - Crystal Palace	Winner	1	70% X
+Burnley - Tottenham	Winner	85% V
+Arsenal - Manchester City	Winner	1	70%	X

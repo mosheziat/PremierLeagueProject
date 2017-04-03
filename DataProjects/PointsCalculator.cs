@@ -34,6 +34,25 @@ namespace DataProjects
                 Lost = losts
             };
         }
+
+        public static TeamBalance GetTeamBalance(List<competitionmatch> latestMatches, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
+        {
+            if (!endDate.HasValue)
+                endDate = DateTime.Now;
+
+            latestMatches = latestMatches.Take(gamesToTake).ToList();
+            var wins = latestMatches.Count(x => x.WinnerTeamID == teamId);
+            var losts = latestMatches.Count(x => x.WinnerTeamID != null && x.WinnerTeamID != teamId);
+            var draws = latestMatches.Count(x => x.WinnerTeamID == null);
+
+            return new TeamBalance
+            {
+                Win = wins,
+                Draw = draws,
+                Lost = losts
+            };
+        }
+
         public static TeamBalance GetTeamBalanceHome(sakilaEntities4 db, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
         {
             var latestMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, gamesToTake, endDate)
@@ -50,6 +69,23 @@ namespace DataProjects
                 Lost = losts
             };
         }
+
+        public static TeamBalance GetTeamBalanceHome(List<competitionmatch> latestMatches, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
+        {
+            latestMatches = latestMatches.Where(x => x.HomeTeamID == teamId)
+                .ToList();
+            var wins = latestMatches.Count(x => x.WinnerTeamID == teamId);
+            var losts = latestMatches.Count(x => x.WinnerTeamID != null && x.WinnerTeamID != teamId);
+            var draws = latestMatches.Count(x => x.WinnerTeamID == null);
+
+            return new TeamBalance
+            {
+                Win = wins,
+                Draw = draws,
+                Lost = losts
+            };
+        }
+
         public static TeamBalance GetTeamBalanceAway(sakilaEntities4 db, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
         {
             var latestMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, gamesToTake, endDate)
@@ -66,6 +102,24 @@ namespace DataProjects
                 Lost = losts
             };
         }
+
+        public static TeamBalance GetTeamBalanceAway(List<competitionmatch> latestMatches, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
+        {
+            latestMatches = latestMatches
+                .Where(x => x.AwayTeamID == teamId)
+                .ToList();
+            var wins = latestMatches.Count(x => x.WinnerTeamID == teamId);
+            var losts = latestMatches.Count(x => x.WinnerTeamID != null && x.WinnerTeamID != teamId);
+            var draws = latestMatches.Count(x => x.WinnerTeamID == null);
+
+            return new TeamBalance
+            {
+                Win = wins,
+                Draw = draws,
+                Lost = losts
+            };
+        }
+
         public static int CalculatePointsForTeamInMatches(List<competitionmatch> matches, int teamId)
         {
             var result = 0;

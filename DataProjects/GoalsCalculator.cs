@@ -65,6 +65,22 @@ namespace DataProjects
             var result = Math.Round(MainCalculator.CalculateStdDev(allValues.ToList()), 2);
             return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
         }
+
+        public static MainCalculator.TeamStdDevAndAverage GetGoalsScoringAverage(List<competitionmatch> relevantMatches, int teamId,
+            int competitionId, int matchesToTake = 50, DateTime? endDate = null)
+        {
+            if (!endDate.HasValue)
+                endDate = DateTime.Now;
+
+            //var relevantMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, matchesToTake, endDate);
+            relevantMatches = relevantMatches.Take(matchesToTake).ToList();
+            var homeGoalsValues = relevantMatches.Where(x => x.HomeTeamID == teamId).Select(x => x.HomeGoals).ToList();
+            var awayGoalsValues = relevantMatches.Where(x => x.AwayTeamID == teamId).Select(x => x.AwayGoals).ToList();
+            var allValues = homeGoalsValues.Concat(awayGoalsValues).ToList();
+            var avg = Math.Round(allValues.Average(), 2);
+            var result = Math.Round(MainCalculator.CalculateStdDev(allValues.ToList()), 2);
+            return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
+        }
         public static MainCalculator.TeamStdDevAndAverage GetGoalsScoringAverageAtHome(sakilaEntities4 db, int teamId,
             int competitionId, int matchesToTake = 50)
         {
@@ -77,6 +93,20 @@ namespace DataProjects
             var result = Math.Round(MainCalculator.CalculateStdDev(allValues.ToList()), 2);
             return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
         }
+
+        public static MainCalculator.TeamStdDevAndAverage GetGoalsScoringAverageAtHome(List<competitionmatch> allMatches , int teamId,
+    int competitionId, int matchesToTake = 50)
+        {
+
+            var relevantMatches = allMatches.Where(x => x.HomeTeamID == teamId).ToList();
+            var homeGoalsValues = relevantMatches.Where(x => x.HomeTeamID == teamId).Select(x => x.HomeGoals).ToList();
+            var awayGoalsValues = relevantMatches.Where(x => x.AwayTeamID == teamId).Select(x => x.AwayGoals).ToList();
+            var allValues = homeGoalsValues.Concat(awayGoalsValues).ToList();
+            var avg = Math.Round(allValues.Average(), 2);
+            var result = Math.Round(MainCalculator.CalculateStdDev(allValues.ToList()), 2);
+            return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
+        }
+
         public static MainCalculator.TeamStdDevAndAverage GetGoalsScoringAverageAtAway(sakilaEntities4 db, int teamId,
                 int competitionId, int matchesToTake = 50)
         {
@@ -89,6 +119,20 @@ namespace DataProjects
             var result = Math.Round(MainCalculator.CalculateStdDev(allValues.ToList()), 2);
             return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
         }
+
+        public static MainCalculator.TeamStdDevAndAverage GetGoalsScoringAverageAtAway(List<competitionmatch> allMatches , int teamId,
+        int competitionId, int matchesToTake = 50)
+        {
+
+            var relevantMatches = allMatches.Where(x => x.AwayTeamID == teamId).ToList();
+            var homeGoalsValues = relevantMatches.Where(x => x.HomeTeamID == teamId).Select(x => x.HomeGoals).ToList();
+            var awayGoalsValues = relevantMatches.Where(x => x.AwayTeamID == teamId).Select(x => x.AwayGoals).ToList();
+            var allValues = homeGoalsValues.Concat(awayGoalsValues).ToList();
+            var avg = Math.Round(allValues.Average(), 2);
+            var result = Math.Round(MainCalculator.CalculateStdDev(allValues.ToList()), 2);
+            return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
+        }
+
         public static MainCalculator.TeamStdDevAndAverage GetGoalsConcededAverage(sakilaEntities4 db, int teamId,
                 int competitionId, int matchesToTake = 50, DateTime? endDate = null)
         {
@@ -103,6 +147,21 @@ namespace DataProjects
             var result = Math.Round(MainCalculator.CalculateStdDev(allValues.ToList()), 2);
             return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
         }
+
+        public static MainCalculator.TeamStdDevAndAverage GetGoalsConcededAverage(List<competitionmatch> relevantMatches, int teamId,
+        int competitionId, int matchesToTake = 50, DateTime? endDate = null)
+        {
+            if (!endDate.HasValue)
+                endDate = DateTime.Now;
+            relevantMatches = relevantMatches.Take(matchesToTake).ToList();
+            var homeGoalsValues = relevantMatches.Where(x => x.HomeTeamID == teamId).Select(x => x.AwayGoals).ToList();
+            var awayGoalsValues = relevantMatches.Where(x => x.AwayTeamID == teamId).Select(x => x.HomeGoals).ToList();
+            var allValues = homeGoalsValues.Concat(awayGoalsValues).ToList();
+            var avg = Math.Round(allValues.Average(), 2);
+            var result = Math.Round(MainCalculator.CalculateStdDev(allValues.ToList()), 2);
+            return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
+        }
+
         public static MainCalculator.TeamStdDevAndAverage GetGoalsConcededAverageAtHome(sakilaEntities4 db, int teamId,
         int competitionId, int matchesToTake = 50)
         {
@@ -116,6 +175,26 @@ namespace DataProjects
                     int competitionId, int matchesToTake = 50)
         {
             var relevantMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, matchesToTake);
+            var awayGoalsValues = relevantMatches.Where(x => x.AwayTeamID == teamId).Select(x => x.HomeGoals).ToList();
+            var avg = Math.Round(awayGoalsValues.Average(), 2);
+            var result = Math.Round(MainCalculator.CalculateStdDev(awayGoalsValues.ToList()), 2);
+            return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
+        }
+
+        public static MainCalculator.TeamStdDevAndAverage GetGoalsConcededAverageAtHome(List<competitionmatch> relevantMatches, int teamId,
+                int competitionId, int matchesToTake = 50)
+        {
+            //var relevantMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, matchesToTake);
+            var homeGoalsValues = relevantMatches.Where(x => x.HomeTeamID == teamId).Select(x => x.AwayGoals).ToList();
+            var avg = Math.Round(homeGoalsValues.Average(), 2);
+            var result = Math.Round(MainCalculator.CalculateStdDev(homeGoalsValues.ToList()), 2);
+            return new MainCalculator.TeamStdDevAndAverage { StdDev = result, Average = avg };
+        }
+
+        public static MainCalculator.TeamStdDevAndAverage GetGoalsConcededAverageAtAway(List<competitionmatch> relevantMatches, int teamId,
+                    int competitionId, int matchesToTake = 50)
+        {
+            //var relevantMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, matchesToTake);
             var awayGoalsValues = relevantMatches.Where(x => x.AwayTeamID == teamId).Select(x => x.HomeGoals).ToList();
             var avg = Math.Round(awayGoalsValues.Average(), 2);
             var result = Math.Round(MainCalculator.CalculateStdDev(awayGoalsValues.ToList()), 2);
@@ -160,6 +239,70 @@ namespace DataProjects
                           teamGoalsConceded.Count;
             return positionName + " (" + Math.Round(percent * 100, 2) + ")";
 
+        }
+
+        public static List<MainCalculator.PositionGoals> GetTeamScorersAgainstByPosition(sakilaEntities4 db, int teamId, int competitionId,
+                                                      int gamesToTake = 50)
+        {
+            var returnVal = new List<MainCalculator.PositionGoals>();
+            var latestMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, gamesToTake);
+            var matchesIds = latestMatches.Select(x => x.CompetitionMatchID);
+
+            var teamGoalsConceded = db.matchgoal
+                .Where(x => matchesIds.Contains(x.MatchID) && x.TeamID != teamId)
+                .ToList();
+
+            var groupByPosition = teamGoalsConceded
+                .GroupBy(x => x.player.PositionID)
+                .OrderByDescending(x => x.Count())
+                .ToList();
+
+
+            foreach (var g in groupByPosition)
+            {
+                var position = db.playerposition.First(x => x.PlayerPositionID == g.First().player.PositionID).PlayerPositionName;
+                var cnt = g.Count();
+                var newItem = new MainCalculator.PositionGoals
+                {
+                    Goals = cnt,
+                    Position = position
+                };
+                returnVal.Add(newItem);
+            }
+
+            return returnVal;
+        }
+
+        public static List<MainCalculator.PositionGoals> GetTeamScorersByPosition(sakilaEntities4 db, int teamId, int competitionId,
+                                              int gamesToTake = 50)
+        {
+            var returnVal = new List<MainCalculator.PositionGoals>();
+            var latestMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, gamesToTake);
+            var matchesIds = latestMatches.Select(x => x.CompetitionMatchID);
+
+            var teamGoalsConceded = db.matchgoal
+                .Where(x => matchesIds.Contains(x.MatchID) && x.TeamID == teamId)
+                .ToList();
+
+            var groupByPosition = teamGoalsConceded
+                .GroupBy(x => x.player.PositionID)
+                .OrderByDescending(x => x.Count())
+                .ToList();
+
+
+            foreach (var g in groupByPosition)
+            {
+                var position = db.playerposition.First(x => x.PlayerPositionID == g.First().player.PositionID).PlayerPositionName;
+                var cnt = g.Count();
+                var newItem = new MainCalculator.PositionGoals
+                {
+                    Goals = cnt,
+                    Position = position
+                };
+                returnVal.Add(newItem);
+            }
+
+            return returnVal;
         }
 
         public static void PrintGoalScroingTable(int competitionId, int gamesToTake = 50, DateTime? endDate = null)

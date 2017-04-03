@@ -347,7 +347,6 @@ namespace DataProjects
                 Confidence = conf
             };
         }
-
         public static MatchStrengthDetails GetMatchStrengthDetails(sakilaEntities4 db, competitionmatch match, int competitionId)
         {
             var homeTeamStrength = CalculateTeamStrength(db, match.HomeTeamID, "Home", competitionId, match.MatchDate);
@@ -564,8 +563,9 @@ namespace DataProjects
             return "None";
         }
 
+
         public static List<string> GetAttributeAdventageList(List<DataObjects.AttributeType> homeAttrs,
-            List<DataObjects.AttributeType> awayAttrs, List<AttributesMatch> fullMap)
+    List<DataObjects.AttributeType> awayAttrs, List<AttributesMatch> fullMap)
         {
             var linesToWrite = new List<string>();
             var clashingReaultList = new List<ClashingResults>();
@@ -583,7 +583,67 @@ namespace DataProjects
                     var clashingResult = GetAttributesClashResult(attr, awayAttr, fullMap, out percent, out count);
                     if (percent > 0)
                     {
-                        linesToWrite.Add(clashingResult + " has adventage due to clasihng of home teams's "
+                        linesToWrite.Add(clashingResult + " has adventage due to clashing of home teams's "
+                            + attr.ToString().Replace("_", " ") + " and away team's attr " +
+                            awayAttr.ToString().Replace("_", " ") + " in significance of " + percent + "%" + " (" + count + ")");
+                    }
+
+                    if (percent >= 0.6)
+                    {
+                        var newItem = new ClashingResults
+                        {
+                            Percent = percent,
+                            Winner = clashingResult
+                        };
+
+                        clashingReaultList.Add(newItem);
+                    }
+                }
+            }
+
+            if (clashingReaultList.Any())
+            {
+                var g = clashingReaultList.GroupBy(x => x.Winner);
+                if (g.Count() == 1 && g.First().Count() > 1)
+                {
+                    linesToWrite.Add("Team Attributes Winner: " + clashingReaultList.First().Winner + " (" + clashingReaultList.OrderByDescending(x => x.Percent).First().Percent * 100 + "%)");
+                }
+
+                else
+                {
+                    linesToWrite.Add("Team Attributes Winner: None");
+                }
+            }
+
+            else
+            {
+                linesToWrite.Add("Team Attributes Winner: None");
+            }
+
+            return linesToWrite;
+        }
+
+        public static ClashingResults GetAttributeAdventageWinner(List<DataObjects.AttributeType> homeAttrs,
+            List<DataObjects.AttributeType> awayAttrs, List<AttributesMatch> fullMap)
+        {
+            var returnVal = new ClashingResults();
+            var linesToWrite = new List<string>();
+            var clashingReaultList = new List<ClashingResults>();
+            foreach (var attr in homeAttrs)
+            {
+                if (awayAttrs.Contains(attr))
+                {
+                    continue;
+                }
+
+                foreach (var awayAttr in awayAttrs)
+                {
+                    double percent;
+                    int count;
+                    var clashingResult = GetAttributesClashResult(attr, awayAttr, fullMap, out percent, out count);
+                    if (percent > 0)
+                    {
+                        linesToWrite.Add(clashingResult + " has adventage due to clashing of home teams's "
                             + attr.ToString().Replace("_", " ") + " and away team's attr " + 
                             awayAttr.ToString().Replace("_", " ") + " in significance of " + percent + "%" + " ("+ count +")");
                     }
@@ -606,7 +666,11 @@ namespace DataProjects
                 var g = clashingReaultList.GroupBy(x => x.Winner);
                 if (g.Count() == 1 && g.First().Count() > 1)
                 {
-                    linesToWrite.Add("Team Attributes Winner: "+ clashingReaultList.First().Winner + " (" + clashingReaultList.OrderByDescending(x => x.Percent).First().Percent * 100 + "%)");
+                    returnVal = new ClashingResults
+                    {
+                        Winner = clashingReaultList.First().Winner,
+                        Percent = clashingReaultList.OrderByDescending(x => x.Percent).First().Percent * 100
+                    };
                 }
 
                 else
@@ -620,7 +684,7 @@ namespace DataProjects
                 linesToWrite.Add("Team Attributes Winner: None");
             }
 
-            return linesToWrite;
+            return returnVal;
         }
         public class AttributesMatch
         {
@@ -651,6 +715,17 @@ namespace DataProjects
             public int Count;
             public decimal Percent;
         }
+        public class LettersWinner
+        {
+            public string Winner;
+            public double CountAverage;
+            public decimal Percent;
+        }
+        public class PositionGoals
+        {
+            public string Position;
+            public int Goals;
+        }
 
 
         public class TeamPoints
@@ -675,6 +750,56 @@ namespace DataProjects
             public string Winner;
             public decimal Confidence;
         }
+        public class Recommendation
+        {
+            public string Type;
+            public string Result;
+            public decimal Confidence;
+            public string HomeTeam;
+            public string AwayTeam;
+        }
+
+        public static LettersWinner GetLettersExpectedWinner(Helper.LetterDistribution homeLetters,
+            Helper.LetterDistribution awayLetters)
+        {
+            var decimalList = new List<Helper.LetterDistribution>
+            {
+                awayLetters,
+                homeLetters
+            };
+
+            var averageCount = decimalList.Select(x => x.Count).Average();
+            string winner;
+
+            if (IsTheSameResult(homeLetters.Letter, awayLetters.Letter, out winner))
+            {
+                var conf = Math.Round(decimalList.Select(x => x.Percent).Sum() * 100);
+                return new LettersWinner
+                {
+                    CountAverage = averageCount,
+                    Percent = conf,
+                    Winner = winner
+                };
+            }
+
+            var higherPercent = decimalList.OrderByDescending(x => x.Percent).First();
+            if (higherPercent.Percent == homeLetters.Percent)
+            {
+                return new LettersWinner
+                {
+                    CountAverage = averageCount,
+                    Percent = Math.Round(higherPercent.Percent * 100),
+                    Winner = "Home"
+                };
+            }
+
+            return new LettersWinner
+            {
+                CountAverage = averageCount,
+                Percent = Math.Round(higherPercent.Percent * 100),
+                Winner = "Away"
+            };
+        }
 
         public static string GetLettersExpectedWinners(Helper.LetterDistribution homeLetters, Helper.LetterDistribution awayLetters)
         {
@@ -691,19 +816,13 @@ namespace DataProjects
                 return winner + "(" + conf + "%)";
             }
 
-            else
+            var higherPercent = decimalList.OrderByDescending(x => x.Percent).First();
+            if (higherPercent.Percent == homeLetters.Percent)
             {
-                var higherPercent = decimalList.OrderByDescending(x => x.Percent).First();
-                if (higherPercent.Percent == homeLetters.Percent)
-                {
-                    return "Home (" + Math.Round(higherPercent.Percent * 100) + "%)";
-                }
-
-                else
-                {
-                    return "Away (" + Math.Round(higherPercent.Percent * 100) + "%)";
-                }
+                return "Home (" + Math.Round(higherPercent.Percent * 100) + "%)";
             }
+
+            return "Away (" + Math.Round(higherPercent.Percent * 100) + "%)";
 
             if (IsTheSameResult(homeLetters.Letter, awayLetters.Letter, out winner))
             {

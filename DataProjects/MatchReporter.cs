@@ -301,5 +301,36 @@ namespace DataProjects
                 CreateMatchReport(combinedLetterDict, attributeDict, attributeClashingMap, match.HomeTeam, match.AwayTeam, 3);
             }
         }
+
+        public static void PrintReportForNextDaysNewVersion(int daysToGet, int competitionId)
+        {
+            var matches = PremierLeagueMainProject.GetNextMatches(daysToGet);
+            var combinedLetterDict = LettersSequenceCalculator.GetCombinedLettersDictionary();
+            var attributeDict = SecondaryStatsCalculator.BuildAttributesDictionary(competitionId);
+            var attributeClashingMap = MainCalculator.BuildAttributeMatchMap();
+            var recs = new List<MainCalculator.Recommendation>();
+            var recsPath = @"C:\Users\user\Desktop\DataProjects\RecommendationsFile.tsv";
+            foreach (var match in matches)
+            {
+                var path = @"C:\Users\user\Desktop\DataProjects\" + match.HomeTeam + "VS" + match.AwayTeam + ".tsv";
+                Console.WriteLine(match.HomeTeam + " Vs. " + match.AwayTeam);
+                var reportObj = new ReportObject();
+                reportObj.Init(combinedLetterDict, attributeDict, attributeClashingMap, competitionId);
+                reportObj.Build(match.HomeTeam, match.AwayTeam);
+
+                reportObj.CalculateExpectedWinnerByStrength();
+                reportObj.CalculateExpectedWinnerByLetters();
+                reportObj.CalculateAttributesExpectedWinner();
+
+                reportObj.FindRecommendations();
+                recs.AddRange(reportObj.MatchRecommendations);
+
+                var linesToWrite = reportObj.GetLinesToWrite();
+                File.WriteAllLines(path, linesToWrite);
+            }
+
+            var recsToWrite = recs.Select(x => $"{x.HomeTeam} VS. {x.AwayTeam} ({x.Type}): {x.Result} ({x.Confidence})");
+            File.WriteAllLines(recsPath, recsToWrite);
+        }
     }
 }

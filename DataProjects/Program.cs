@@ -25,7 +25,8 @@ namespace DataProjects
             //SecondaryStatsCalculator.PrintTableOfAccuracyInFrontOfGoal(3);
             //MainCalculator.PrineSimiliarTeamFile();
             //PremierLeagueMainProject.MainHandler();
-            MatchReporter.PrintReportForNextDays(15);
+            //MatchReporter.PrintReportForNextDays(4);
+            MatchReporter.PrintReportForNextDaysNewVersion(3, 3);
             Console.WriteLine("Hello world");
             Console.Read();
 
