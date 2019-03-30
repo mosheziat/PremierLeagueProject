@@ -58,6 +58,64 @@ namespace DataProjects
 
             return latestMatchesLetters;
         }
+
+        public static string GetTeamLetterSequence(List<competitionmatch> matches, int teamId, int competitionId,
+    int gamesToTake = 50)
+        {
+            var latestMatches = matches
+                .OrderBy(x => x.MatchDate)
+                .Reverse()
+                .Select(x => GetCompetitionMatchResultLetter(x, teamId))
+                .ToList();
+            var firstLetter = latestMatches.First();
+            var sequence = firstLetter;
+            var curLetter = latestMatches[1];
+            var i = 1;
+            while (curLetter == firstLetter && i < latestMatches.Count - 1)
+            {
+                sequence += " " + curLetter;
+                i++;
+                curLetter = latestMatches[i];
+            }
+
+            return sequence;
+        }
+
+        public static int GetTeamLetterScore(List<competitionmatch> matches, int teamId, int competitionId,
+                int gamesToTake = 50)
+        {
+            var latestMatches = matches
+                .OrderBy(x => x.MatchDate)
+                .Reverse()
+                .Select(x => GetCompetitionMatchResultLetter(x, teamId))
+                .ToList();
+
+            var firstLetter = latestMatches.First();
+            var curLetter = latestMatches[1];
+            var i = 1;
+            var sequence = 1;
+            while (i < latestMatches.Count)
+            {
+                curLetter = latestMatches[i];
+                if (curLetter != firstLetter)
+                    break;
+                i++;
+
+            }
+
+            var factor = 0;
+            if (firstLetter.Equals("W"))
+            {
+                factor = 1;
+            }
+            else if (firstLetter.Equals("L"))
+            {
+                factor = -1;
+            }
+
+            return factor * i;
+        }
+
         public static List<List<string>> GetAllTeamsLettersSequence(sakilaEntities4 db, int competitionId, int gamesToTake = 50)
         {
             var toReturn = new List<List<string>>();
@@ -84,6 +142,7 @@ namespace DataProjects
                 var allSequences = new List<List<string>>();
                 foreach (var competitionId in competitionIds)
                 {
+                    Console.WriteLine($"Building Sequence Dictionary for competition ID: {competitionId}");
                     allSequences.AddRange(GetAllTeamsLettersSequence(db, competitionId, gamesToTake));
                 }
 
@@ -118,18 +177,20 @@ namespace DataProjects
 
         public static Dictionary<string, List<Helper.LetterDistribution>> GetCombinedLettersDictionary(int sequenceAmount = 3)
         {
-            var competitionId = 3;
-            var competitionLastYearId = 2;
-            var competitionTwoYearsAgo = 4;
-            var competitionThreeYearsAgo = 5;
-            var competitionFourYearsAgo = 6;
+            var competitionId = 8;
+            var competitionLastYearId = 3;
+            var competitionTwoYearsAgo = 2;
+            var competitionThreeYearsAgo = 4;
+            var competitionFourYearsAgo = 5;
             var competitionFiveYearsAgo = 6;
+            var competitionSixYearsAgo = 7;
 
             var competitionIds = new List<int>
             {
                 competitionId, competitionLastYearId,
                 competitionTwoYearsAgo, competitionThreeYearsAgo,
-                competitionFourYearsAgo,competitionFiveYearsAgo
+                competitionFourYearsAgo,competitionFiveYearsAgo,
+                competitionSixYearsAgo
             };
             var combinedLetterDict = GetFullSequenceDictionary(competitionIds, 50, sequenceAmount);
 

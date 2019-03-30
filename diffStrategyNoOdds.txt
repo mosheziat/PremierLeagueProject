@@ -1,0 +1,508 @@
+C:\Users\user\AppData\Local\Programs\Python\Python36-32\python.exe C:/Users/user/Desktop/DataProjects/PredictionsModel/diffStrategy.py
+C:\Users\user\AppData\Local\Programs\Python\Python36-32\lib\site-packages\sklearn\ensemble\weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
+  from numpy.core.umath_tests import inner1d
+(1229, 68)
+Number of Matches: 300.00000000000006
+2 200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 73.15853658536591
+Correct: 29.995355059699214
+Won: 65.25820580341244
+Ratios:  2.175610379458093
+Recall:  0.24386178861788632
+Precision:  0.41000485329143754
+Balance:  -7.900330781953471
+Balance Percent Change:  -0.10798918555095585
+F-Measure:  0.3058254098227252
+2 400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 69.90243902439026
+Correct: 28.869152127737706
+Won: 63.25095139575995
+Ratios:  2.1909528591588923
+Recall:  0.23300813008130083
+Precision:  0.41299205765430763
+Balance:  -6.6514876286303135
+Balance Percent Change:  -0.0951538704723806
+F-Measure:  0.2979271799587888
+2 600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 70.30487804878052
+Correct: 29.247108997434914
+Won: 64.30207548915755
+Ratios:  2.1985788576504124
+Recall:  0.234349593495935
+Precision:  0.416003978801329
+Balance:  -6.002802559622978
+Balance Percent Change:  -0.08538244750894779
+F-Measure:  0.29980726631642785
+2 800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 69.53658536585368
+Correct: 29.095724105808028
+Won: 63.32550325954074
+Ratios:  2.17645393629849
+Recall:  0.23178861788617888
+Precision:  0.4184232509077968
+Balance:  -6.2110821063129436
+Balance Percent Change:  -0.08932106852291498
+F-Measure:  0.2983204449935708
+2 1000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 70.13414634146339
+Correct: 29.468517580210065
+Won: 64.342630925289
+Ratios:  2.1834362977423427
+Recall:  0.23378048780487795
+Precision:  0.4201736118200706
+Balance:  -5.791515416174391
+Balance Percent Change:  -0.08257768459855681
+F-Measure:  0.30041372013836704
+2 1200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 70.2439024390244
+Correct: 29.96100129133878
+Won: 65.19544381953264
+Ratios:  2.1760101802198295
+Recall:  0.23414634146341462
+Precision:  0.4265281433836423
+Balance:  -5.048458619491754
+Balance Percent Change:  -0.07187041784693121
+F-Measure:  0.3023274141654858
+2 1400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 68.3780487804878
+Correct: 28.497309618756862
+Won: 61.8997646120957
+Ratios:  2.1721266126593726
+Recall:  0.2279268292682926
+Precision:  0.41676108235028764
+Balance:  -6.478284168392101
+Balance Percent Change:  -0.09474216190621584
+F-Measure:  0.2946884231907945
+2 1600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 69.74390243902441
+Correct: 28.38105276202824
+Won: 62.40775061113505
+Ratios:  2.198923032715405
+Recall:  0.232479674796748
+Precision:  0.4069323879150752
+Balance:  -7.33615182788936
+Balance Percent Change:  -0.10518699945566136
+F-Measure:  0.29590780256955423
+2 1800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 69.2439024390244
+Correct: 28.393286268611845
+Won: 62.003471696714364
+Ratios:  2.1837370676341132
+Recall:  0.23081300813008127
+Precision:  0.41004745932127
+Balance:  -7.240430742310032
+Balance Percent Change:  -0.1045641635909515
+F-Measure:  0.2953662844532505
+2 2000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 71.87804878048782
+Correct: 29.232134461865513
+Won: 63.97764310382911
+Ratios:  2.188606623552943
+Recall:  0.23959349593495932
+Precision:  0.40669070679894326
+Balance:  -7.900405676658707
+Balance Percent Change:  -0.1099140253624048
+F-Measure:  0.3015405538121684
+4 200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 82.75609756097565
+Correct: 35.62146816596911
+Won: 74.94431218571061
+Ratios:  2.1039085709922674
+Recall:  0.27585365853658544
+Precision:  0.430439196818371
+Balance:  -7.811785375265032
+Balance Percent Change:  -0.0943952845228017
+F-Measure:  0.3362294445417364
+4 400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 84.45121951219518
+Correct: 37.38634908857236
+Won: 78.03826088660426
+Ratios:  2.087346392174402
+Recall:  0.28150406504065056
+Precision:  0.44269756321486375
+Balance:  -6.4129586255909174
+Balance Percent Change:  -0.07593683859905485
+F-Measure:  0.3441615118396431
+4 600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 80.46341463414639
+Correct: 35.21530805776304
+Won: 74.00657403350495
+Ratios:  2.10154555263618
+Recall:  0.26821138211382123
+Precision:  0.4376561474290039
+Balance:  -6.456840600641442
+Balance Percent Change:  -0.08024566978669262
+F-Measure:  0.33259600499989195
+4 800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 82.03658536585372
+Correct: 35.36593805908067
+Won: 74.53031161590258
+Ratios:  2.1074037818930678
+Recall:  0.2734552845528457
+Precision:  0.43109958686555855
+Balance:  -7.5062737499511485
+Balance Percent Change:  -0.09149910026698285
+F-Measure:  0.3346409626254019
+4 1000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 81.73170731707322
+Correct: 35.919946910422325
+Won: 75.34511894009377
+Ratios:  2.0975843624710944
+Recall:  0.272439024390244
+Precision:  0.4394860708228333
+Balance:  -6.3865883769794465
+Balance Percent Change:  -0.07814089031816089
+F-Measure:  0.33636447759223476
+4 1200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 80.95121951219518
+Correct: 36.02957985975799
+Won: 75.76880698938238
+Ratios:  2.102961158145776
+Recall:  0.2698373983739839
+Precision:  0.44507766623985434
+Balance:  -5.182412522812797
+Balance Percent Change:  -0.06401895553941685
+F-Measure:  0.3359800498745902
+4 1400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 81.97560975609758
+Correct: 35.41537384928277
+Won: 73.92328313274224
+Ratios:  2.087321835069075
+Recall:  0.2732520325203252
+Precision:  0.4320233049153803
+Balance:  -8.052326623355341
+Balance Percent Change:  -0.09822832239142187
+F-Measure:  0.3347664093671437
+4 1600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 82.18292682926834
+Correct: 36.2257287555815
+Won: 76.52671157819168
+Ratios:  2.1124961238053985
+Recall:  0.2739430894308944
+Precision:  0.4407938504166317
+Balance:  -5.6562152510766595
+Balance Percent Change:  -0.06882469959760881
+F-Measure:  0.3378933491559331
+4 1800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 80.74390243902447
+Correct: 34.450295546327325
+Won: 72.58180028940454
+Ratios:  2.1068556637431324
+Recall:  0.2691463414634148
+Precision:  0.426661264884283
+Balance:  -8.162102149619926
+Balance Percent Change:  -0.10108629757873937
+F-Measure:  0.330074915652401
+4 2000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 82.51219512195124
+Correct: 35.870306951382545
+Won: 75.7887148469473
+Ratios:  2.1128538138708675
+Recall:  0.27504065040650405
+Precision:  0.43472733816337095
+Balance:  -6.723480275003936
+Balance Percent Change:  -0.0814846855675913
+F-Measure:  0.3369204916633701
+6 200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 102.67073170731707
+Correct: 44.73312585463945
+Won: 92.67375875858141
+Ratios:  2.0717031727164636
+Recall:  0.3422357723577235
+Precision:  0.4356950136691335
+Balance:  -9.99697294873566
+Balance Percent Change:  -0.09736925784491318
+F-Measure:  0.3833513782814015
+6 400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 101.71951219512195
+Correct: 43.960205404571944
+Won: 90.70038269738063
+Ratios:  2.0632383734937605
+Recall:  0.33906504065040644
+Precision:  0.43217082402288687
+Balance:  -11.019129497741318
+Balance Percent Change:  -0.10832857197156073
+F-Measure:  0.37999793507350366
+6 600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 101.70731707317076
+Correct: 44.54972723150065
+Won: 92.27045672917849
+Ratios:  2.071178937857447
+Recall:  0.33902439024390246
+Precision:  0.43801890083729644
+Balance:  -9.436860343992265
+Balance Percent Change:  -0.09278447820232201
+F-Measure:  0.382215746474159
+6 800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 103.52439024390243
+Correct: 45.560770423745616
+Won: 94.71795616214766
+Ratios:  2.078936665934473
+Recall:  0.34508130081300803
+Precision:  0.440096969577941
+Balance:  -8.806434081754773
+Balance Percent Change:  -0.08506627337777023
+F-Measure:  0.38684013675060397
+6 1000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 103.08536585365853
+Correct: 45.202821380093695
+Won: 94.21119892626476
+Ratios:  2.0841884654516996
+Recall:  0.3436178861788617
+Precision:  0.4384989179188079
+Balance:  -8.874166927393773
+Balance Percent Change:  -0.08608561316056897
+F-Measure:  0.38530324493108004
+6 1200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 102.59756097560977
+Correct: 44.08720913753173
+Won: 90.74530996492776
+Ratios:  2.0583137771738804
+Recall:  0.3419918699186992
+Precision:  0.42971010926870334
+Balance:  -11.85225101068201
+Balance Percent Change:  -0.11552176190133422
+F-Measure:  0.3808655873774423
+6 1400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 105.23170731707317
+Correct: 45.68487893498564
+Won: 94.60262697154569
+Ratios:  2.0707645325311055
+Recall:  0.3507723577235772
+Precision:  0.4341360612665225
+Balance:  -10.629080345527484
+Balance Percent Change:  -0.10100644203653421
+F-Measure:  0.3880272554069935
+6 1600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 102.34146341463418
+Correct: 44.57471397380596
+Won: 92.80309927806526
+Ratios:  2.0819673533429826
+Recall:  0.34113821138211387
+Precision:  0.4355489210977226
+Balance:  -9.538364136568916
+Balance Percent Change:  -0.09320136549078299
+F-Measure:  0.3826054886175003
+6 1800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 100.96341463414639
+Correct: 44.283241701897566
+Won: 92.26052082089902
+Ratios:  2.0834184055894354
+Recall:  0.3365447154471546
+Precision:  0.43860681477903113
+Balance:  -8.702893813247371
+Balance Percent Change:  -0.08619848927241021
+F-Measure:  0.38085664522888757
+6 2000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 102.13414634146342
+Correct: 44.947843142829306
+Won: 93.20351514896286
+Ratios:  2.0735926049397535
+Recall:  0.34044715447154467
+Precision:  0.4400863448014332
+Balance:  -8.930631192500556
+Balance Percent Change:  -0.08744020988478156
+F-Measure:  0.38390701731312094
+8 200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 127.78048780487808
+Correct: 54.69137606992537
+Won: 112.68065409549955
+Ratios:  2.0603002190223245
+Recall:  0.4259349593495935
+Precision:  0.42801038726225227
+Balance:  -15.09983370937853
+Balance Percent Change:  -0.11817010537975178
+F-Measure:  0.42697015124696575
+8 400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 128.14634146341464
+Correct: 54.36053256090582
+Won: 111.7706316002941
+Ratios:  2.0560989073288733
+Recall:  0.4271544715447154
+Precision:  0.42420666825221515
+Balance:  -16.375709863120548
+Balance Percent Change:  -0.12778913292499855
+F-Measure:  0.4256754665740093
+8 600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 130.19512195121953
+Correct: 55.207822586266985
+Won: 114.3451620427739
+Ratios:  2.071176813106507
+Recall:  0.43398373983739835
+Precision:  0.42403910191774935
+Balance:  -15.84995990844564
+Balance Percent Change:  -0.12174004425745057
+F-Measure:  0.42895379081311624
+8 800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 128.57317073170734
+Correct: 54.58069873153655
+Won: 112.92080198744664
+Ratios:  2.068877911271615
+Recall:  0.4285772357723577
+Precision:  0.4245107935109548
+Balance:  -15.652368744260698
+Balance Percent Change:  -0.12173899620879988
+F-Measure:  0.42653432282082543
+8 1000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 129.32926829268297
+Correct: 55.18923707950118
+Won: 113.88195561343463
+Ratios:  2.063481244529353
+Recall:  0.4310975609756098
+Precision:  0.4267343178235828
+Balance:  -15.447312679248341
+Balance Percent Change:  -0.11944173877400882
+F-Measure:  0.4289048428833242
+8 1200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 127.45121951219515
+Correct: 54.00571400393321
+Won: 111.03846327190344
+Ratios:  2.056050277639447
+Recall:  0.42483739837398377
+Precision:  0.4237363456437204
+Balance:  -16.412756240291714
+Balance Percent Change:  -0.128776768893304
+F-Measure:  0.42428615768253497
+8 1400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 128.78048780487808
+Correct: 55.56342361077401
+Won: 114.506463431084
+Ratios:  2.06082447750539
+Recall:  0.4292682926829269
+Precision:  0.43145840303820715
+Balance:  -14.274024373794077
+Balance Percent Change:  -0.11083996199347672
+F-Measure:  0.43036056150376406
+8 1600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 130.45121951219517
+Correct: 55.12347476980943
+Won: 112.9484105574605
+Ratios:  2.049007451528096
+Recall:  0.43483739837398383
+Precision:  0.42256005713044514
+Balance:  -17.50280895473466
+Balance Percent Change:  -0.13417129422158006
+F-Measure:  0.42861082621539354
+8 1800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 128.40243902439025
+Correct: 55.39101724562795
+Won: 114.91266330747426
+Ratios:  2.0745721783353672
+Recall:  0.42800813008130073
+Precision:  0.4313860209081101
+Balance:  -13.489775716915986
+Balance Percent Change:  -0.10505856290123572
+F-Measure:  0.4296904370119879
+8 2000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 128.10975609756096
+Correct: 54.46891150521789
+Won: 113.2198660132817
+Ratios:  2.0786144405040243
+Recall:  0.4270325203252031
+Precision:  0.425173797565718
+Balance:  -14.889890084279259
+Balance Percent Change:  -0.11622760465596377
+F-Measure:  0.4261011319420084
+10 200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 154.6219512195122
+Correct: 64.61433524943568
+Won: 134.48928551596697
+Ratios:  2.081415602231109
+Recall:  0.5154065040650405
+Precision:  0.41788591296267263
+Balance:  -20.13266570354523
+Balance Percent Change:  -0.13020574080690187
+F-Measure:  0.4615511999637802
+10 400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 153.73170731707327
+Correct: 64.01313156335064
+Won: 133.77482026079343
+Ratios:  2.0898027794250793
+Recall:  0.5124390243902441
+Precision:  0.41639511250156663
+Balance:  -19.95688705627984
+Balance Percent Change:  -0.1298163365552075
+F-Measure:  0.4594514709056664
+10 600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 155.74390243902437
+Correct: 65.9923661693721
+Won: 137.5597887620407
+Ratios:  2.0844803232087163
+Recall:  0.5191463414634144
+Precision:  0.423723594541423
+Balance:  -18.184113676983657
+Balance Percent Change:  -0.11675650469913555
+F-Measure:  0.46660635894276387
+10 800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 151.93902439024396
+Correct: 62.9996666200648
+Won: 132.02130452394638
+Ratios:  2.09558735159876
+Recall:  0.5064634146341465
+Precision:  0.41463782509393304
+Balance:  -19.917719866297574
+Balance Percent Change:  -0.1310902182387351
+F-Measure:  0.4559735231613488
+10 1000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 153.4024390243903
+Correct: 63.89801848087751
+Won: 133.23488115620623
+Ratios:  2.0851175720899526
+Recall:  0.5113414634146343
+Precision:  0.4165384780532597
+Balance:  -20.167557868184076
+Balance Percent Change:  -0.13146829995954318
+F-Measure:  0.4590968840199424
+10 1200 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 152.9268292682927
+Correct: 64.1049122584931
+Won: 134.52302676661782
+Ratios:  2.098482347564483
+Recall:  0.5097560975609755
+Precision:  0.4191868265706885
+Balance:  -18.403802501674875
+Balance Percent Change:  -0.1203438441098357
+F-Measure:  0.46005633997672213
+10 1400 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 152.70731707317077
+Correct: 64.64577055335778
+Won: 135.01082733759037
+Ratios:  2.0884711587768017
+Recall:  0.5090243902439024
+Precision:  0.42333119193222624
+Balance:  -17.6964897355804
+Balance Percent Change:  -0.11588501503893886
+F-Measure:  0.46223974192674283
+10 1600 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 150.43902439024396
+Correct: 63.05826188969259
+Won: 132.5639616286187
+Ratios:  2.1022457273007618
+Recall:  0.5014634146341465
+Precision:  0.4191615981642988
+Balance:  -17.87506276162526
+Balance Percent Change:  -0.11881932121054399
+F-Measure:  0.45663370726815916
+10 1800 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 152.20731707317074
+Correct: 64.067526405516
+Won: 134.6459050493486
+Ratios:  2.101624841844308
+Recall:  0.5073577235772357
+Precision:  0.4209227758394609
+Balance:  -17.56141202382213
+Balance Percent Change:  -0.1153782377977257
+F-Measure:  0.460116142665743
+10 2000 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'isHomeFavorite', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 151.0853658536586
+Correct: 63.53727473666496
+Won: 131.59326275913753
+Ratios:  2.071119091974526
+Recall:  0.5036178861788619
+Precision:  0.42053890777355113
+Balance:  -19.49210309452107
+Balance Percent Change:  -0.12901383919208387
+F-Measure:  0.4583441190387197
+0 0 0 []
+
+Process finished with exit code 0

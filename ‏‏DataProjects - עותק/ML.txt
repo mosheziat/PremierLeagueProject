@@ -1,0 +1,17 @@
+Value
+Pts Season
+Pts Last3
+Pts H/A
+Goals Season
+Goals Last3
+Goals H/A
+Goals Against Season
+Goals Against Last3
+Goals Against H/A
+Last3 Letters
+Shots Total
+Shots on Target
+Shots Total Against
+Shots on Target Against
+Fouls
+Possession

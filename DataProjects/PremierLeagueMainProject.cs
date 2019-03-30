@@ -72,9 +72,8 @@ namespace DataProjects
         {
             var teams = new List<string>
             {
-                "Burnley",
-                "Middlesbrough",
-                "Hull City"
+                "Brighton & Hove Albion",
+                "Huddersfield Town",
             };
 
             using (var db = new sakilaEntities4())
@@ -95,6 +94,110 @@ namespace DataProjects
             }
 
     }
+
+        public static string NormalizeDate(DateTime date)
+        {
+            var year = date.Year.ToString();
+            var month = date.Month.ToString();
+            if (month.Length == 1)
+            {
+                month = "0" + month;
+            }
+            var day = date.Day.ToString();
+            if (day.Length == 1)
+            {
+                day = "0" + day;
+            }
+
+            return year+month+day;
+        }
+        public static List<string> GetMatchesForDate(DateTime date)
+        {
+            string normalizedDate = NormalizeDate(date);
+            string url = $"http://www.espn.com/soccer/fixtures/_/date/{normalizedDate}/league/eng.1";
+            var dom = CQ.CreateFromUrl(url);
+            var links = dom[".record a"]
+                .Where(x => x.HasAttribute("href"))
+                .Select(x => x.GetAttribute("href"))
+                .Where(x => !x.Contains("matchstats") || x.Contains("gameId=513548"))
+                .Select(x => "http://www.espn.com" + x.Replace("/report", "/matchstats"))
+                .ToList();
+
+            return links;
+        }
+        public static DataObjects.MatchDetails GetMatchStatisticsFromEspn(string url)
+        {
+            var awayDetails = new DataObjects.TeamDetails();
+            var homeDetails = new DataObjects.TeamDetails();
+            var matchDetails = new DataObjects.MatchDetails();
+
+            var summaryPage = url.Replace("matchstats", "match");
+            var summaryPageDom = CQ.CreateFromUrl(summaryPage);
+            var title = summaryPageDom["title"].Text();
+            var dateStr = title.Split('-')[2].Trim();
+            matchDetails.Date = DateTime.Parse(dateStr);
+
+            var dom = CQ.CreateFromUrl(url);
+
+            homeDetails.Name = dom[".team.away .long-name"].Text();
+            awayDetails.Name = dom[".team.home .long-name"].Text();
+
+            homeDetails.Goals = int.Parse(dom[".score-container [data-home-away=home]"].Text());
+            awayDetails.Goals = int.Parse(dom[".score-container [data-home-away=away]"].Text());
+
+            var awayScorers = dom[".team.home [data-event-type=goal]"]
+                .Select(x => x.Cq().Text().Trim())
+                .SelectMany(x => x.Split(')').ToList())
+                .Where(x => !string.IsNullOrEmpty(x))
+                .Select(Helper.RemoveDiacritics)
+                .Select(Helper.NormalizePlayerName)
+                .ToList();
+
+            var awayGoals = GetGoalsForTeam(awayScorers);
+            var homeScorers = dom[".team.away [data-event-type=goal]"]
+               .Select(x => x.Cq().Text().Trim())
+                .SelectMany(x => x.Split(')').ToList())
+                .Where(x => !string.IsNullOrEmpty(x))
+                .Select(Helper.RemoveDiacritics)
+                .Select(Helper.NormalizePlayerName)
+                .ToList();
+
+
+            var homeGoals = GetGoalsForTeam(homeScorers);
+            homeDetails.GoalsDetails = homeGoals;
+            awayDetails.GoalsDetails = awayGoals;
+
+            homeDetails.Possession = int.Parse(dom[".possession [data-home-away=home]"].First().Text().Replace("%", "").Trim());
+            awayDetails.Possession = int.Parse(dom[".possession [data-home-away=away]"].First().Text().Replace("%", "").Trim());
+
+            var homeShots = dom[".shots [data-home-away=home]"].First().Text();
+            homeDetails.TotalShots = int.Parse(homeShots.Split('(').First());
+            homeDetails.OnTarget = int.Parse(homeShots.Split('(').Last().Replace(")", "").Trim());
+
+            var awayShots = dom[".shots [data-home-away=away]"].First().Text();
+            awayDetails.TotalShots = int.Parse(awayShots.Split('(').First());
+            awayDetails.OnTarget = int.Parse(awayShots.Split('(').Last().Replace(")", "").Trim());
+
+            homeDetails.Fouls = int.Parse(dom["[data-stat=foulsCommitted]"].First().Text());
+            awayDetails.Fouls = int.Parse(dom["[data-stat=foulsCommitted]"].Last().Text());
+
+            homeDetails.YellowCards = int.Parse(dom["[data-stat=yellowCards]"].First().Text());
+            awayDetails.YellowCards = int.Parse(dom["[data-stat=yellowCards]"].Last().Text());
+            
+            homeDetails.RedCards = int.Parse(dom["[data-stat=redCards]"].First().Text());
+            awayDetails.RedCards = int.Parse(dom["[data-stat=redCards]"].Last().Text());
+
+            homeDetails.Offsides = int.Parse(dom["[data-stat=offsides]"].First().Text());
+            awayDetails.Offsides = int.Parse(dom["[data-stat=offsides]"].Last().Text());
+            
+            homeDetails.Corners = int.Parse(dom["[data-stat=wonCorners]"].First().Text());
+            awayDetails.Corners = int.Parse(dom["[data-stat=wonCorners]"].Last().Text());
+
+            matchDetails.HomeTeam = homeDetails;
+            matchDetails.AwayTeam = awayDetails;
+
+            return matchDetails;
+        }
         public static DataObjects.MatchDetails GetMatchStatistics(string url)
         {
             var awayDetails = new DataObjects.TeamDetails();
@@ -103,7 +206,7 @@ namespace DataProjects
 
             var dom = CQ.CreateFromUrl(url);
             var date = dom[".fixture__date"].Text().Replace("Sept", "sep");
-            matchDetails.Date = DateTime.ParseExact(date, "ddd, dd MMM yyyy", new CultureInfo("us"));
+            matchDetails.Date = DateTime.ParseExact(date, "ddd dd MMM yyyy", new CultureInfo("us"));
 
             var matchHeaderQuery = ".match-overview-header";
             var teamNames = matchHeaderQuery + " " + ".fixture__team-name--HorA";
@@ -139,42 +242,48 @@ namespace DataProjects
             var percentageRowQuery = ".percentage-row";
             var relevantDetails = dom[percentageRowQuery].ToList();
 
-            var possesion = relevantDetails.First(x => x.Cq().Text().Contains("Possession"));
-            var possessionElements = possesion.ChildElements.ToList();
-            homeDetails.Possession = int.Parse(possessionElements[1].Cq().Text().Replace("Home", "").Trim().Trim('%'));
-            awayDetails.Possession = int.Parse(possessionElements.Last().Cq().Text().Replace("Away", "").Trim().Trim('%'));
+            try
+            {
+                var possesion = relevantDetails.First(x => x.Cq().Text().Contains("Possession"));
+                var possessionElements = possesion.ChildElements.ToList();
+                homeDetails.Possession = int.Parse(possessionElements[1].Cq().Text().Replace("Home", "").Trim().Trim('%'));
+                awayDetails.Possession = int.Parse(possessionElements.Last().Cq().Text().Replace("Away", "").Trim().Trim('%'));
 
-            var totalShots = relevantDetails.First(x => x.Cq().Text().Contains("Shots"));
-            var totalShotsElements = totalShots.ChildElements.ToList();
-            homeDetails.TotalShots = int.Parse(totalShotsElements[1].Cq().Text().Replace("Home", ""));
-            awayDetails.TotalShots = int.Parse(totalShotsElements.Last().Cq().Text().Replace("Away", ""));
+                var totalShots = relevantDetails.First(x => x.Cq().Text().Contains("Shots"));
+                var totalShotsElements = totalShots.ChildElements.ToList();
+                homeDetails.TotalShots = int.Parse(totalShotsElements[1].Cq().Text().Replace("Home", ""));
+                awayDetails.TotalShots = int.Parse(totalShotsElements.Last().Cq().Text().Replace("Away", ""));
 
 
-            var shotsOnTarget = relevantDetails.First(x => x.Cq().Text().Contains("Shots on Target"));
-            var shotsOnTargetElements = shotsOnTarget.ChildElements.ToList();
-            homeDetails.OnTarget = int.Parse(shotsOnTargetElements[1].Cq().Text().Replace("Home", ""));
-            awayDetails.OnTarget = int.Parse(shotsOnTargetElements.Last().Cq().Text().Replace("Away", ""));
+                var shotsOnTarget = relevantDetails.First(x => x.Cq().Text().Contains("Shots on Target"));
+                var shotsOnTargetElements = shotsOnTarget.ChildElements.ToList();
+                homeDetails.OnTarget = int.Parse(shotsOnTargetElements[1].Cq().Text().Replace("Home", ""));
+                awayDetails.OnTarget = int.Parse(shotsOnTargetElements.Last().Cq().Text().Replace("Away", ""));
 
-            var corners = relevantDetails.First(x => x.Cq().Text().Contains("Corners"));
-            var cornernsElements = corners.ChildElements.ToList();
-            homeDetails.Corners = int.Parse(cornernsElements[1].Cq().Text().Replace("Home", ""));
-            awayDetails.Corners = int.Parse(cornernsElements.Last().Cq().Text().Replace("Away", ""));
+                var corners = relevantDetails.First(x => x.Cq().Text().Contains("Corners"));
+                var cornernsElements = corners.ChildElements.ToList();
+                homeDetails.Corners = int.Parse(cornernsElements[1].Cq().Text().Replace("Home", ""));
+                awayDetails.Corners = int.Parse(cornernsElements.Last().Cq().Text().Replace("Away", ""));
 
-            var fouls = relevantDetails.First(x => x.Cq().Text().Contains("Fouls"));
-            var foulsElements = fouls.ChildElements.ToList();
-            homeDetails.Fouls = int.Parse(foulsElements[1].Cq().Text().Replace("Home", ""));
-            awayDetails.Fouls = int.Parse(foulsElements.Last().Cq().Text().Replace("Away", ""));
+                var fouls = relevantDetails.First(x => x.Cq().Text().Contains("Fouls"));
+                var foulsElements = fouls.ChildElements.ToList();
+                homeDetails.Fouls = int.Parse(foulsElements[1].Cq().Text().Replace("Home", ""));
+                awayDetails.Fouls = int.Parse(foulsElements.Last().Cq().Text().Replace("Away", ""));
+                }
+            catch (Exception)
+            {
+                Console.WriteLine("No Stats for this match!");
+            }
 
             matchDetails.HomeTeam = homeDetails;
             matchDetails.AwayTeam = awayDetails;
 
             return matchDetails;
         }
-        public static void AddFullMatchDetailsToDb(DataObjects.MatchDetails match, sakilaEntities4 db, int homeTeamID,
+
+        public static void addOnlyStatisticsToDb(DataObjects.MatchDetails match, sakilaEntities4 db, int homeTeamID,
             int awayTeamID)
         {
-            Helper.AddMatchDetailsToDb(match, db, homeTeamID, awayTeamID);
-            Helper.AddGoalsDetailsToDb(match, db, homeTeamID, awayTeamID);
 
             Helper.AddEventToDb((int)DataObjects.EventType.Possession, homeTeamID, match.MatchID, match.HomeTeam.Possession, db);
             Helper.AddEventToDb((int)DataObjects.EventType.Corner, homeTeamID, match.MatchID, match.HomeTeam.Corners, db);
@@ -187,6 +296,21 @@ namespace DataProjects
             Helper.AddEventToDb((int)DataObjects.EventType.Fouls, awayTeamID, match.MatchID, match.AwayTeam.Fouls, db);
             Helper.AddEventToDb((int)DataObjects.EventType.TotalShots, awayTeamID, match.MatchID, match.AwayTeam.TotalShots, db);
             Helper.AddEventToDb((int)DataObjects.EventType.ShotsOnTarget, awayTeamID, match.MatchID, match.AwayTeam.OnTarget, db);
+        }
+
+        public static void addOnlyPossessionToDb(DataObjects.MatchDetails match, sakilaEntities4 db, int homeTeamID,
+            int awayTeamID)
+        {
+            Helper.AddEventToDb((int)DataObjects.EventType.Possession, homeTeamID, match.MatchID, match.HomeTeam.Possession, db);
+            Helper.AddEventToDb((int)DataObjects.EventType.Possession, awayTeamID, match.MatchID, match.AwayTeam.Possession, db);
+        }
+
+        public static void AddFullMatchDetailsToDb(DataObjects.MatchDetails match, sakilaEntities4 db, int homeTeamID,
+            int awayTeamID)
+        {
+            Helper.AddMatchDetailsToDb(match, db, homeTeamID, awayTeamID);
+            Helper.AddGoalsDetailsToDb(match, db, homeTeamID, awayTeamID);
+            addOnlyStatisticsToDb(match, db, homeTeamID, awayTeamID);
         }
 
         public static void FixShotsIssue()
@@ -224,10 +348,15 @@ namespace DataProjects
         }
         public static List<string> ExtractAllMatches()
         {
-            var matchesPage = "http://www.bbc.com/sport/football/premier-league/results";
+            var matchesPage = "http://www.bbc.com/sport/football/premier-league/scores-fixtures";
             var dom = CQ.CreateFromUrl(matchesPage);
-            var links = dom[".report .report"]
-                .Select(x => BbcSitePath + x.GetAttribute("href")).ToList();
+            var links = dom["a"].Where(x => x.HasAttribute("href"))
+                .Select(x => x.GetAttribute("href"))
+                .Where(Helper.IsRelevantMatchLink)
+                .Select(x => BbcSitePath + x)
+                .Reverse()
+                .ToList();
+
             return links;
         }
 
@@ -285,9 +414,318 @@ namespace DataProjects
             }
         }
 
-        public static void MainHandler()
+        public static void UpdateBetsOdds(string season, int competitionId)
         {
-            var matches = ExtractAllMatches();
+            var i = 1;
+            var page = $"http://www.betexplorer.com/soccer/england/premier-league-{season}/results/";
+            var dom = CQ.CreateFromUrl(page);
+            var allResults = dom[".table-main tr"].Skip(1).ToList();
+
+            using (var db = new sakilaEntities4())
+            {
+                foreach (var result in allResults)
+                {
+                    var resultOdds = new List<String>();
+                    var odds = result.ChildElements.Where(x => x.ClassName == "table-main__odds" || x.ClassName == "table-main__odds colored").ToList();
+                    foreach (var element in odds)
+                    {
+                        var text = element.InnerText;
+                        var odd = element.GetAttribute("data-odd");
+                        if (odd == null)
+                        {
+                            var e = element.FirstElementChild.FirstElementChild.FirstElementChild;
+                            odd = e.GetAttribute("data-odd");
+                        }
+
+                        resultOdds.Add(odd);
+                    }
+
+                    var elements = result.ChildElements.Select(x => x.Cq().Text()).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+                    if (elements.Count != 3)
+                    {
+                        continue;
+                    }
+
+                    Console.WriteLine(i++);
+
+                    var teams = elements[0];
+                    var matchResult = elements[1];
+                    var date = elements[2];
+
+                    if (matchResult.Equals("POSTP."))
+                        continue;
+
+                    var homeTeam = teams.Split('-').First();
+                    var awayTeam = teams.Split('-').Last();
+
+                    var homeGoals = int.Parse(matchResult.Split(':').First().Trim());
+                    var awayGoals = int.Parse(matchResult.Split(':').Last().Trim());
+
+                    var normalizedHomeTeamName =
+                     Helper.NormalizeTeamName(homeTeam);
+                    var normalizedAwayTeamName =
+                        Helper.NormalizeTeamName(awayTeam);
+
+                    Console.WriteLine(normalizedHomeTeamName + " VS. " + normalizedAwayTeamName);
+
+
+                    var homeTeamId = db.team.First(x => x.TeamName == normalizedHomeTeamName).TeamID;
+                    var awayTeamId = db.team.First(x => x.TeamName == normalizedAwayTeamName).TeamID;
+                    var parsedDate = DateTime.Today;
+                    try
+                    {
+                        parsedDate = DateTime.Parse(date);
+                    }
+
+                    catch
+                    {
+
+
+                        try
+                        {
+                            var year = season.Split('-').First();
+                            var dateMonth = int.Parse(date.Split('.')[1]);
+                            if (dateMonth <= 5)
+                            {
+                                year = season.Split('-').Last();
+                            }
+                            parsedDate = DateTime.Parse(date + year);
+                        }
+
+                        catch
+                        {
+                            if (date.Equals("Today"))
+                            {
+                                parsedDate = DateTime.Today;
+                            }
+
+                            else if (date.Equals("Yesterday"))
+                            {
+                                parsedDate = DateTime.Today.AddDays(-1);
+                            }
+
+                            else
+                            {
+                                throw new Exception("Failed to parse date!");
+                            }
+                        }
+
+                    }
+
+                    var match =
+                             db.competitionmatch
+                             .FirstOrDefault(x => x.HomeTeamID == homeTeamId &&
+                                    x.AwayTeamID == awayTeamId &&
+                                    x.MatchDate == parsedDate);
+
+                    if (match == null)
+                    {
+                        throw new Exception();
+                    }
+
+                    var oddsAlreadyExists = db.matchodds.FirstOrDefault(x => x.MatchID == match.CompetitionMatchID);
+                    if (oddsAlreadyExists != null)
+                    {
+                        continue;
+                    }
+
+                    var newOdds = new matchodds();
+                    newOdds.HomeTeamOdds = decimal.Parse(resultOdds[0]);
+                    newOdds.DrawOdds = decimal.Parse(resultOdds[1]);
+                    newOdds.AwayTeamOdds = decimal.Parse(resultOdds[2]);
+                    newOdds.MatchID = match.CompetitionMatchID;
+                    db.matchodds.Add(newOdds);
+                    db.SaveChanges();
+                
+                }
+            }
+
+        }
+
+        public static void SolvePossessionIssue()
+        {
+            var i = 0;
+            using (var db = new sakilaEntities4())
+            {
+                var evs = db.matchevent.Where(x => x.competitionmatch.CompetitionID == 2 && x.EventTypeID == 7 && x.eventvalue == 0).ToList();
+                Console.WriteLine(evs.Count());
+                foreach (var e in evs)
+                {
+                    Console.WriteLine(i++);
+                    e.EventTypeID = 16;
+                    db.SaveChanges();
+                }
+            }
+
+        }
+
+        public static void MainUpdatorFromEspn(int daysToTake, int competitionId)
+        {
+            using (var db = new sakilaEntities4())
+            {
+                for (var i = 0; i <= daysToTake; i++)
+                {
+                    var relevantDate = DateTime.Today.AddDays(i*-1);
+                    Console.WriteLine(relevantDate);
+
+                    var matches = GetMatchesForDate(relevantDate);
+                    foreach (var match in matches)
+                    {
+                        var matchDetails = GetMatchStatisticsFromEspn(match);
+                        if (matchDetails.Date == DateTime.Today)
+                        {
+                            // continue;
+                        }
+                        var normalizedHomeTeamName =
+                             Helper.NormalizeTeamName(matchDetails.HomeTeam.Name);
+                        var normalizedAwayTeamName =
+                            Helper.NormalizeTeamName(matchDetails.AwayTeam.Name);
+
+                        Console.WriteLine(normalizedHomeTeamName + " VS. " + normalizedAwayTeamName);
+
+
+                        var homeTeamId = db.team.First(x => x.TeamName == normalizedHomeTeamName).TeamID;
+                        var awayTeamId = db.team.First(x => x.TeamName == normalizedAwayTeamName).TeamID;
+
+                        var matchAlreadyExists =
+                            db.competitionmatch
+                                .FirstOrDefault(x => x.HomeTeamID == homeTeamId &&
+                                x.AwayTeamID == awayTeamId
+                                && x.CompetitionID == competitionId);
+
+                        if (matchAlreadyExists != null)
+                        {
+                            //check if events exists
+                            var eventExist = db.matchevent.FirstOrDefault(x => x.competitionmatch.HomeTeamID == homeTeamId
+                                                                      && x.competitionmatch.AwayTeamID == awayTeamId
+                                                                      && x.competitionmatch.CompetitionID == competitionId
+                                                                      && x.EventTypeID != 7);
+
+                            if (eventExist != null)
+                            {
+
+                                //check if possession exists
+                                var possessionExist = db.matchevent.FirstOrDefault(x => x.competitionmatch.HomeTeamID == homeTeamId
+                                                                          && x.competitionmatch.AwayTeamID == awayTeamId
+                                                                          && x.competitionmatch.CompetitionID == competitionId
+                                                                          && x.EventTypeID == 7);
+
+                                if (possessionExist != null)
+                                {
+                                    Console.WriteLine("Match Exists!");
+                                    continue;
+                                }
+
+                                matchDetails.MatchID = matchAlreadyExists.CompetitionMatchID;
+                                addOnlyPossessionToDb(matchDetails, db, homeTeamId, awayTeamId);
+                                Console.WriteLine("updating events");
+                                continue;
+                            }
+
+                            matchDetails.MatchID = matchAlreadyExists.CompetitionMatchID;
+                            addOnlyStatisticsToDb(matchDetails, db, homeTeamId, awayTeamId);
+                            Console.WriteLine("updating events");
+                            continue;
+                        }
+
+                        AddFullMatchDetailsToDb(matchDetails, db, homeTeamId, awayTeamId);
+                    }
+
+                }
+            }
+        }
+
+
+        public static void MainUpdatorFromEspn(int startYear, int startMonth, int startDay, int daysToTake, int competitionId)
+        {
+            var startDate = new DateTime(startYear, startMonth, startDay);
+            using (var db = new sakilaEntities4())
+            {
+                for (var i = 0; i <= daysToTake; i++)
+                {
+                    var relevantDate = startDate.AddDays(i * -1);
+                    Console.WriteLine(relevantDate);
+
+                    var matches = GetMatchesForDate(relevantDate);
+                    foreach (var match in matches)
+                    {
+
+                        try
+                        {
+                            var matchDetails = GetMatchStatisticsFromEspn(match);
+                            if (matchDetails.Date == DateTime.Today)
+                            {
+                                continue;
+                            }
+                            var normalizedHomeTeamName =
+                                 Helper.NormalizeTeamName(matchDetails.HomeTeam.Name);
+                            var normalizedAwayTeamName =
+                                Helper.NormalizeTeamName(matchDetails.AwayTeam.Name);
+
+                            Console.WriteLine(normalizedHomeTeamName + " VS. " + normalizedAwayTeamName);
+
+
+                            var homeTeamId = db.team.First(x => x.TeamName == normalizedHomeTeamName).TeamID;
+                            var awayTeamId = db.team.First(x => x.TeamName == normalizedAwayTeamName).TeamID;
+
+                            var matchAlreadyExists =
+                                db.competitionmatch
+                                    .FirstOrDefault(x => x.HomeTeamID == homeTeamId &&
+                                    x.AwayTeamID == awayTeamId
+                                    && x.CompetitionID == competitionId);
+
+                            if (matchAlreadyExists != null)
+                            {
+                                //check if events exists
+                                var eventExist = db.matchevent.FirstOrDefault(x => x.competitionmatch.HomeTeamID == homeTeamId
+                                                                          && x.competitionmatch.AwayTeamID == awayTeamId
+                                                                          && x.competitionmatch.CompetitionID == competitionId
+                                                                          && x.EventTypeID != 7);
+
+                                if (eventExist != null)
+                                {
+
+                                    //check if possession exists
+                                    var possessionExist = db.matchevent.FirstOrDefault(x => x.competitionmatch.HomeTeamID == homeTeamId
+                                                                              && x.competitionmatch.AwayTeamID == awayTeamId
+                                                                              && x.competitionmatch.CompetitionID == competitionId
+                                                                              && x.EventTypeID == 7);
+
+                                    if (possessionExist != null)
+                                    {
+                                        Console.WriteLine("Match Exists!");
+                                        continue;
+                                    }
+
+                                    matchDetails.MatchID = matchAlreadyExists.CompetitionMatchID;
+                                    addOnlyPossessionToDb(matchDetails, db, homeTeamId, awayTeamId);
+                                    Console.WriteLine("updating Possession");
+                                    continue;
+                                }
+
+                                matchDetails.MatchID = matchAlreadyExists.CompetitionMatchID;
+                                addOnlyStatisticsToDb(matchDetails, db, homeTeamId, awayTeamId);
+                                Console.WriteLine("updating events");
+                                continue;
+                            }
+
+                            AddFullMatchDetailsToDb(matchDetails, db, homeTeamId, awayTeamId);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Caught!");
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+        public static void MainUpdator()
+        {
+            var matches = ExtractAllMatches()
+                .ToList();
             using (var db = new sakilaEntities4())
             {
                 foreach (var match in matches)
@@ -328,7 +766,7 @@ namespace DataProjects
             var dom = CQ.CreateFromUrl(page);
             var allMatches = new List<string>();
             var i = 0;
-            var path = @"C:\Users\user\Desktop\DataProjects\PremierLeagueMatches.tsv";
+            var path = @"C:\Users\user\Desktop\DataProjects\PremierLeagueMatches2018.tsv";
 
             var allVenues = dom[".table-stats"].Take(50).ToList();
             foreach (var venue in allVenues)
@@ -342,7 +780,11 @@ namespace DataProjects
                     .Replace("nd", "")
                     .Replace("st", "")
                     .Replace("rd", "");
-                var date = DateTime.Parse(potentialDate);
+                DateTime date;
+                if (!DateTime.TryParse(potentialDate, out date))
+                {
+                    continue;
+                }
                 var elements = venue.ChildElements.Last().ChildElements.ToList();
                 var matchesToAdd = elements.Where(x => x.ClassName == "preview");
                 foreach (var match in matchesToAdd)
@@ -360,18 +802,13 @@ namespace DataProjects
 
         public static List<FutureMatch> GetNextMatches(int nextDaysToGet)
         {
-            var path = @"C:\Users\user\Desktop\DataProjects\PremierLeagueMatches.tsv";
+            var path = @"C:\Users\user\Desktop\DataProjects\2019\Fixtures.tsv";
             var today = DateTime.Today;
             var nextDays = today.AddDays(nextDaysToGet);
 
-            var all = File.ReadAllLines(path)
-                .Select(tab => tab.Split('\t'))
-                .Select(x => new FutureMatch {HomeTeam = x[0], AwayTeam = x[1], Date = DateTime.Parse(x[2])})
-                .ToList();
-
             var matches = File.ReadAllLines(path)
                 .Select(tab => tab.Split('\t'))
-                .Select(x => new FutureMatch {HomeTeam = x[0], AwayTeam = x[1], Date = DateTime.Parse(x[2])})
+                .Select(x => new FutureMatch {HomeTeam = x[1], AwayTeam = x[2], Date = DateTime.Parse(x[0])})
                 .Where(x => x.Date >= today && x.Date <= nextDays)
                 .ToList();
 

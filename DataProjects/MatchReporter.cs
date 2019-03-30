@@ -302,17 +302,28 @@ namespace DataProjects
             }
         }
 
-        public static void PrintReportForNextDaysNewVersion(int daysToGet, int competitionId)
+        public static void PrintReportForNextDaysNewVersion(int daysToGet, int competitionId, bool withAttr = false)
         {
+            Console.WriteLine($"Started: {DateTime.Now.Hour}:{DateTime.Now.Minute}");
             var matches = PremierLeagueMainProject.GetNextMatches(daysToGet);
+            Console.WriteLine($"Got {matches.Count} new matches");
             var combinedLetterDict = LettersSequenceCalculator.GetCombinedLettersDictionary();
-            var attributeDict = SecondaryStatsCalculator.BuildAttributesDictionary(competitionId);
-            var attributeClashingMap = MainCalculator.BuildAttributeMatchMap();
+            var attributeClashingMap = new List<MainCalculator.AttributesMatch>();
+            var attributeDict = new Dictionary<int, List<DataObjects.AttributeType>>();
+            if (withAttr)
+            {
+                Console.WriteLine("Starting building attributes dictionary");
+                attributeDict = SecondaryStatsCalculator.BuildAttributesDictionary(competitionId);
+                Console.WriteLine("Finished building attributes dictionary");
+                attributeClashingMap = MainCalculator.BuildAttributeMatchMap();
+                Console.WriteLine($"Ended build: {DateTime.Now.Hour}:{DateTime.Now.Minute}");
+            }
+        
             var recs = new List<MainCalculator.Recommendation>();
-            var recsPath = @"C:\Users\user\Desktop\DataProjects\RecommendationsFile.tsv";
+            var recsPath = @"C:\Users\user\Desktop\DataProjects\2018\RecommendationsFile.tsv";
             foreach (var match in matches)
             {
-                var path = @"C:\Users\user\Desktop\DataProjects\" + match.HomeTeam + "VS" + match.AwayTeam + ".tsv";
+                var path = @"C:\Users\user\Desktop\DataProjects\2018\" + match.HomeTeam + "VS" + match.AwayTeam + ".tsv";
                 Console.WriteLine(match.HomeTeam + " Vs. " + match.AwayTeam);
                 var reportObj = new ReportObject();
                 reportObj.Init(combinedLetterDict, attributeDict, attributeClashingMap, competitionId);
@@ -320,7 +331,7 @@ namespace DataProjects
 
                 reportObj.CalculateExpectedWinnerByStrength();
                 reportObj.CalculateExpectedWinnerByLetters();
-                reportObj.CalculateAttributesExpectedWinner();
+                //reportObj.CalculateAttributesExpectedWinner();
 
                 reportObj.FindRecommendations();
                 recs.AddRange(reportObj.MatchRecommendations);
@@ -329,7 +340,10 @@ namespace DataProjects
                 File.WriteAllLines(path, linesToWrite);
             }
 
-            var recsToWrite = recs.Select(x => $"{x.HomeTeam} VS. {x.AwayTeam} ({x.Type}): {x.Result} ({x.Confidence})");
+            var recsToWrite = recs.Where(x => x.Result != null)
+                .Where(x => x.Confidence >= 60m)
+                .OrderByDescending(x => x.Confidence)
+                .Select(x => $"{x.HomeTeam} VS. {x.AwayTeam} ({x.Type}): {x.Result} ({x.Confidence}%) (Ratio: {Math.Round(100/x.Confidence, 2)})");
             File.WriteAllLines(recsPath, recsToWrite);
         }
     }

@@ -1,0 +1,278 @@
+C:\Users\user\AppData\Local\Programs\Python\Python36-32\python.exe C:/Users/user/Desktop/DataProjects/PredictionsModel/main.py
+C:\Users\user\AppData\Local\Programs\Python\Python36-32\lib\site-packages\sklearn\ensemble\weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
+  from numpy.core.umath_tests import inner1d
+(1229, 60)
+2 200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5167226890756303
+Precision:  0.6541163018228033
+******** 0.5773581800290517 ********
+2 400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.4980672268907563
+Precision:  0.6662052313364224
+2 600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.4978991596638656
+Precision:  0.6640127903802633
+2 800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5025210084033614
+Precision:  0.6669670822336432
+2 1000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.4896638655462183
+Precision:  0.6754546477129957
+2 1200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.49638655462184855
+Precision:  0.6662826023841443
+2 1400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5043697478991597
+Precision:  0.655253654431972
+2 1600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.49924369747899155
+Precision:  0.6647511066233268
+2 1800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5050420168067228
+Precision:  0.655607826806389
+2 2000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5120168067226891
+Precision:  0.659945440967448
+2 2200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5081512605042017
+Precision:  0.6526663867529671
+2 2400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.49983193277310917
+Precision:  0.6637119934830815
+2 2600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.507983193277311
+Precision:  0.6531053929657911
+2 2800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.504201680672269
+Precision:  0.6603874355469962
+2 3000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.4947058823529411
+Precision:  0.6689419177574996
+2 3200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.49546218487394955
+Precision:  0.6698890558377463
+2 3400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5000840336134454
+Precision:  0.6595257215930356
+2 3600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5091596638655461
+Precision:  0.6600868960050126
+2 3800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.4958823529411765
+Precision:  0.6616969296632514
+4 200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5408403361344539
+Precision:  0.6397756786002228
+******** 0.5861626282319305 ********
+4 400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5208403361344538
+Precision:  0.6604987702635065
+4 600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5284033613445378
+Precision:  0.6558355638191143
+4 800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5289915966386555
+Precision:  0.6556059631678626
+4 1000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.521764705882353
+Precision:  0.6536429255081556
+4 1200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5143697478991596
+Precision:  0.6553405540984621
+4 1400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5239495798319328
+Precision:  0.6611547925426318
+4 1600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5373949579831933
+Precision:  0.6566571692652494
+******** 0.5910700945692262 ********
+4 1800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5200840336134454
+Precision:  0.6535023982835709
+4 2000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5189915966386554
+Precision:  0.6577654889607678
+4 2200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5263865546218489
+Precision:  0.6504076122515637
+4 2400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5298319327731092
+Precision:  0.6620554287291569
+4 2600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.525546218487395
+Precision:  0.6490478727369634
+4 2800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5347899159663867
+Precision:  0.6520945424091583
+4 3000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5267226890756302
+Precision:  0.6527219229375092
+4 3200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5273949579831931
+Precision:  0.6527532160398881
+4 3400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5354621848739497
+Precision:  0.6650069370403909
+******** 0.5932448589700408 ********
+4 3600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5245378151260507
+Precision:  0.6652023537550698
+4 3800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5345378151260505
+Precision:  0.6484397309288249
+6 200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5340336134453783
+Precision:  0.6345740697289082
+6 400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5333613445378151
+Precision:  0.6462624210947717
+6 600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5367226890756305
+Precision:  0.6331457605775934
+6 800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5368067226890757
+Precision:  0.6290256627102903
+6 1000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5440336134453783
+Precision:  0.6295311303844977
+6 1200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5315966386554623
+Precision:  0.6336402534996416
+6 1400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5275630252100839
+Precision:  0.6291227335287257
+6 1600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5318487394957985
+Precision:  0.6438060351179535
+6 1800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5411764705882354
+Precision:  0.6323270813089682
+6 2000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5375630252100843
+Precision:  0.6359019193153914
+6 2200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.525966386554622
+Precision:  0.6335669531038771
+6 2400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5318487394957984
+Precision:  0.6385227257899369
+6 2600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5335294117647058
+Precision:  0.6365257031728976
+6 2800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5381512605042017
+Precision:  0.6294114070355705
+6 3000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5377310924369748
+Precision:  0.6408209538119248
+6 3200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5410084033613449
+Precision:  0.63366497478823
+6 3400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5200840336134454
+Precision:  0.6415903514029861
+6 3600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.539747899159664
+Precision:  0.6326368452295054
+6 3800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.538655462184874
+Precision:  0.6389172752341229
+8 200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5545378151260506
+Precision:  0.6144130824407565
+8 400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5571428571428574
+Precision:  0.6136108604447069
+8 600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5486554621848739
+Precision:  0.6200737966349739
+8 800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5481512605042017
+Precision:  0.6154018300762618
+8 1000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5572268907563028
+Precision:  0.6071200247907863
+8 1200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5463025210084035
+Precision:  0.6223562906966462
+8 1400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5557142857142858
+Precision:  0.6153440993114879
+8 1600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5433613445378154
+Precision:  0.6288544171156965
+8 1800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5520168067226892
+Precision:  0.611707887834051
+8 2000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5556302521008404
+Precision:  0.6235566395768375
+8 2200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5505042016806724
+Precision:  0.6145827227246956
+8 2400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5403361344537817
+Precision:  0.6157406022606309
+8 2600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5420168067226893
+Precision:  0.6179708338941725
+8 2800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5467226890756305
+Precision:  0.6197887829658797
+8 3000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5538655462184875
+Precision:  0.6068271114853073
+8 3200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5500840336134455
+Precision:  0.6000801628964795
+8 3400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5573949579831933
+Precision:  0.6152203737344697
+8 3600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.552016806722689
+Precision:  0.6131670282368975
+8 3800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5489915966386555
+Precision:  0.6202390193845109
+10 200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5782352941176471
+Precision:  0.5901501296501415
+10 400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5876470588235296
+Precision:  0.5858541177493108
+10 600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.574873949579832
+Precision:  0.5998892473614199
+10 800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5821848739495801
+Precision:  0.5921552340166774
+10 1000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5804201680672272
+Precision:  0.5858403392284375
+10 1200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5831092436974791
+Precision:  0.5887251365505413
+10 1400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.580420168067227
+Precision:  0.5997540775772568
+10 1600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.583529411764706
+Precision:  0.5950507326978013
+10 1800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5753781512605044
+Precision:  0.5844919099705294
+10 2000 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5900000000000002
+Precision:  0.5850044143226977
+10 2200 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5893277310924371
+Precision:  0.5759566305307925
+10 2400 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5902521008403362
+Precision:  0.5852457370695813
+10 2600 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Recall:  0.5845378151260505
+Precision:  0.5881206859527862
+10 2800 ['HomeTeamOdds', 'DrawOdds', 'AwayTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+
+Process finished with exit code 1

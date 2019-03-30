@@ -265,6 +265,7 @@ warning 6005: The data type 'geometry' is currently not supported for the target
     <Property Name="TeamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TeamName" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="TeamTypeID" Type="int" />
+    <Property Name="MarketValue" Type="int" />
   </EntityType>
   <EntityType Name="teamtype">
     <Key>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -166,6 +167,16 @@ namespace DataProjects
                 result = "Queens Park Rangers";
             }
 
+            if (result.Equals("Wolves"))
+            {
+                result = "Wolverhampton wanderers";
+            }
+
+            if (result.Equals("Cardiff"))
+            {
+                result = "Cardiff City";
+            }
+
             if (result.StartsWith("Man "))
             {
                 result = result.Replace("Man ", "Manchester ");
@@ -195,6 +206,26 @@ namespace DataProjects
                 result = "West Bromwich Albion";
             }
 
+            if (result.Contains(" and "))
+            {
+                result = result.Replace(" and ", " & ");
+            }
+
+            if (result.Trim().Equals("Huddersfield"))
+            {
+                result = result + " Town";
+            }
+
+            if (result.Trim().Equals("Brighton"))
+            {
+                result = result + " & Hove Albion";
+            }
+
+            if (result.Equals("Newcastle"))
+            {
+                result = "Newcastle United";
+            }
+            
             if (!result.EndsWith("City")
                 && (result.StartsWith("Norwich") || result.StartsWith("Leicester")
                 || result.StartsWith("Stoke") || result.StartsWith("Hull")
@@ -218,7 +249,7 @@ namespace DataProjects
             //Wayne Rooney (43)
 
             var name = s.Split('(').First().Trim();
-            var contentWithinParentheses = Helper.GetContentWithinParenthesis(s);
+            var contentWithinParentheses = Helper.GetContentWithinParenthesis(s).ToLower();
             var isOwnGoals = contentWithinParentheses.EndsWith("og");
             var minutes = contentWithinParentheses.Replace("og", "").Trim().Split(',').ToList();
 
@@ -228,7 +259,7 @@ namespace DataProjects
                 g.IsOwnGoal = isOwnGoals;
                 g.Scorer = name;
 
-                var min = minute.Replace("pen", "").Replace("minutes", "").Replace("'", "").Trim();
+                var min = minute.ToLower().Replace("pen", "").Replace("minutes", "").Replace("'", "").Trim();
                 if (minute.Contains("+"))
                 {
                     min = minute.Split('+').First().Trim().Replace("'", "");
@@ -262,6 +293,22 @@ namespace DataProjects
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
+        public static bool IsRelevantMatchLink(string s)
+        {
+            if (!s.Contains("/sport/football"))
+            {
+                return false;
+            }
+
+            var lastIdentifire = s.Split('/').Last();
+            double d;
+            if (!double.TryParse(lastIdentifire, out d))
+            {
+                return false;
+            }
+
+            return true;
+        }
         public static void AddMatchDetailsToDb(DataObjects.MatchDetails match, sakilaEntities4 db, int homeTeamID, int awayTeamID)
         {
             var newMatch = new competitionmatch();
@@ -272,7 +319,7 @@ namespace DataProjects
             newMatch.WinnerTeamID = Helper.GetWinnerTeamID(homeTeamID, match.HomeTeam.Goals, awayTeamID,
                 match.AwayTeam.Goals);
             newMatch.MatchDate = match.Date;
-            newMatch.CompetitionID = 3;
+            newMatch.CompetitionID = 9;
 
             db.competitionmatch.Add(newMatch);
             db.SaveChanges();
@@ -343,7 +390,22 @@ namespace DataProjects
                 return p.PlayerID;
             }
 
-            return 0;
+            return AddPlayerNameAsNa(name, teamID, db);
+        }
+
+        public static int AddPlayerNameAsNa(string name, int teamId, sakilaEntities4 db)
+        {
+            var newPlayer = new player
+            {
+                TeamID = teamId,
+                PlayerName = "NA " + name,
+                PositionID = 1 //NA
+            };
+
+            db.player.Add(newPlayer);
+            db.SaveChanges();
+
+            return newPlayer.PlayerID;
         }
 
         public static void UpdateMarketValue()

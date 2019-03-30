@@ -52,5 +52,6 @@ namespace DataProjects
         public DbSet<store> store { get; set; }
         public DbSet<team> team { get; set; }
         public DbSet<teamtype> teamtype { get; set; }
+        public DbSet<matchodds> matchodds { get; set; }
     }
 }

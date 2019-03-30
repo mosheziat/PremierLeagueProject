@@ -544,7 +544,43 @@ namespace DataProjects
   
             return result;
         }
+
+        public static List<string> GetLatestMatches()
+        {
+            var path =
+                 $"http://www.livescore.com/soccer/england/premier-league/";
+
+            var dom = CQ.CreateFromUrl(path);
+
+            var links = dom[".scorelink"]
+                .Select(x => "http://www.livescore.com" + x.GetAttribute("href"))
+                .Where(x => x.Contains("/soccer/england/premier-league/"))
+                .ToList();
+
+            return links;
+        }
+
+        public static DataObjects.MatchDetails GetMatchStatisticsFromLivescore(string url)
+        {
+            var awayDetails = new DataObjects.TeamDetails();
+            var homeDetails = new DataObjects.TeamDetails();
+            var matchDetails = new DataObjects.MatchDetails();
+            var dom = CQ.CreateFromUrl(url);
+
+            string homeTeam = dom["[data-type=home-team]"].Text();
+            string awayTeam = dom["[data-type=away-team]"].Text();
+
+            int homeGoals = int.Parse(dom[".sco [data-type=home]"].Text());
+            int awayGoals = int.Parse(dom[".sco [data-type=away]"].Text());
+
+
+
+            return matchDetails;
+        }
+
     }
+
+
 
 
 

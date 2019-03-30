@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="sakilaModelStoreContainer" CdmEntityContainer="sakilaEntities2">
+  <EntityContainerMapping StorageEntityContainer="sakilaModelStoreContainer" CdmEntityContainer="sakilaEntities4">
     <EntitySetMapping Name="actor">
       <EntityTypeMapping TypeName="sakilaModel.actor">
         <MappingFragment StoreEntitySet="actor">
@@ -286,6 +286,7 @@
           <ScalarProperty Name="TeamID" ColumnName="TeamID" />
           <ScalarProperty Name="TeamName" ColumnName="TeamName" />
           <ScalarProperty Name="TeamTypeID" ColumnName="TeamTypeID" />
+          <ScalarProperty Name="MarketValue" ColumnName="MarketValue" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

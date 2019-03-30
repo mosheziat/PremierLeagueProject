@@ -24,12 +24,25 @@ namespace DataProjects
             //SecondaryStatsCalculator.PrintTableOfAccuracyInFrontOfGoalAgainst(3);
             //SecondaryStatsCalculator.PrintTableOfAccuracyInFrontOfGoal(3);
             //MainCalculator.PrineSimiliarTeamFile();
-            //PremierLeagueMainProject.MainHandler();
-            //MatchReporter.PrintReportForNextDays(4);
-            MatchReporter.PrintReportForNextDaysNewVersion(3, 3);
+            //PremierLeagueMainProject.AddAllPlayersToDb();
+            //var ml = new MachineLearningProject.StatisticLine();
+            //ml.Init(4404);
+            //ml.AggregateStats();
+            //var s = ml.Print();
+            //PremierLeagueMainProject.SolvePossessionIssue();
+            PremierLeagueMainProject.MainUpdatorFromEspn(12, 9);
+            PremierLeagueMainProject.UpdateBetsOdds("2018-2019", 9);
+            MachineLearningProject.PrintTrainingFile();
+            MachineLearningProject.PrintTestFile(7, 9);
+            //PremierLeagueMainProject.MainUpdatorFromEspn(2014,5,20,300,5);
+            //MatchReporter.PrintReportForNextDaysNewVersion(daysToGet:7, competitionId: 8);
             Console.WriteLine("Hello world");
             Console.Read();
 
+
+            /*
+             * missing: home team = 40 away team 26
+             * palace vs leicster
             /*
              * Average goals per game:
              * SELECT        (SUM(HomeGoals) + SUM(AwayGoals)) / COUNT(*) AS Expr1
@@ -145,6 +158,61 @@ namespace DataProjects
             where cm.competitionID = 2 and playerID != 553
             group by PlayerPositionName
             order by 2 desc
+
+
+            away matches of a team
+            SELECT        competitionmatch.HomeGoals, competitionmatch.AwayGoals, competitionmatch.WinnerTeamID
+            FROM            competitionmatch INNER JOIN
+                         team ON team.TeamID = competitionmatch.AwayTeamID
+            WHERE        (competitionmatch.CompetitionID = 8) AND (team.TeamName = 'Tottenham Hotspur')
+            ORDER BY competitionmatch.MatchDate DESC
+
+            first half goals of a team
+            SELECT        mg.MatchGoalID, mg.MatchID, mg.TeamID, mg.ScorerID, mg.AssistantID, mg.ScoringMinute
+            FROM            matchgoal mg INNER JOIN
+                         competitionmatch cm ON mg.MatchID = cm.CompetitionMatchID INNER JOIN
+                         team t ON t.TeamID = mg.TeamID
+            WHERE        (cm.CompetitionID = 8) AND (t.TeamName = 'Tottenham Hotspur') AND (mg.ScoringMinute <= 45)
+
+
+            goals by minute of a team in away matches
+            SELECT        mg.MatchGoalID, mg.MatchID, mg.TeamID, mg.ScorerID, mg.AssistantID, mg.ScoringMinute
+FROM            matchgoal mg INNER JOIN
+                         competitionmatch cm ON mg.MatchID = cm.CompetitionMatchID INNER JOIN
+                         team t ON t.TeamID = mg.TeamID INNER JOIN
+                         team t1 ON t1.TeamID = cm.HomeTeamID INNER JOIN
+                         team t2 ON t2.TeamID = cm.AwayTeamID
+WHERE        (cm.CompetitionID = 8) AND (t.TeamName = 'Crystal Palace') AND (t2.TeamName = 'Crystal Palace')
+ORDER BY mg.ScoringMinute
+
+            scorer
+
+            SELECT        mg.MatchGoalID, mg.MatchID, mg.TeamID, mg.ScorerID, mg.AssistantID, mg.ScoringMinute
+FROM            matchgoal mg INNER JOIN
+                         competitionmatch cm ON mg.MatchID = cm.CompetitionMatchID INNER JOIN
+                         team t ON t.TeamID = mg.TeamID
+WHERE        (cm.CompetitionID = 8) AND (t.TeamName = 'Tottenham Hotspur') AND (cm.AwayTeamID = 28) AND (mg.ScorerID = 126)
+
+
+
+
+
+
+
+
+            SELECT        cm.MatchDate, T1.TeamName, t2.TeamName AS Expr1, t3.TeamName AS Expr2, et.EventName, me1.eventvalue
+FROM            matchevent me1 INNER JOIN
+                         competitionmatch cm ON cm.CompetitionMatchID = me1.MatchID INNER JOIN
+                         team T1 ON T1.TeamID = cm.HomeTeamID INNER JOIN
+                         team t2 ON t2.TeamID = cm.AwayTeamID INNER JOIN
+                         team t3 ON t3.TeamID = me1.TeamID INNER JOIN
+                         eventtype et ON et.EventTypeID = me1.EventTypeID
+WHERE        (me1.MatchID IN
+                             (SELECT        me.MatchID
+                               FROM            matchevent me INNER JOIN
+                                                         competitionmatch cm ON cm.CompetitionMatchID = me.MatchID
+                               WHERE        (me.EventTypeID = 7) AND (cm.CompetitionID IN (2, 3, 8)) AND (me.eventvalue = 0))) AND (me1.eventvalue = 0) AND (me1.EventTypeID IN (5, 7, 10, 17))
+ORDER BY cm.MatchDate
 
              */
         }

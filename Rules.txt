@@ -1,0 +1,11 @@
+1. Recommendations are availabe from Round 8 to Round 33
+2. Maximum of 2 Matches for a bet
+3. Maximum of 4 Matches for Round
+4. Only one bet for Match
+5. Taking Matches of 1.2+ only
+
+Recommendations:
+
+1. You can use recommendation only when there is more than 0.2 diff between you and the bookie
+2. 100% Recommendation: 200 NIS
+3. 80% - 99%+ Recommendation: 100 NIS

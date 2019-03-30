@@ -260,7 +260,7 @@ namespace DataProjects
 
             foreach (var g in groupByPosition)
             {
-                var position = db.playerposition.First(x => x.PlayerPositionID == g.First().player.PositionID).PlayerPositionName;
+                var position = db.playerposition.First(x => x.PlayerPositionID == g.Key).PlayerPositionName;
                 var cnt = g.Count();
                 var newItem = new MainCalculator.PositionGoals
                 {
@@ -292,7 +292,7 @@ namespace DataProjects
 
             foreach (var g in groupByPosition)
             {
-                var position = db.playerposition.First(x => x.PlayerPositionID == g.First().player.PositionID).PlayerPositionName;
+                var position = db.playerposition.First(x => x.PlayerPositionID == g.Key).PlayerPositionName;
                 var cnt = g.Count();
                 var newItem = new MainCalculator.PositionGoals
                 {
@@ -388,6 +388,16 @@ namespace DataProjects
             var teamGoals = db.matchgoal
                 .Where(x => matchesIds.Contains(x.MatchID) && x.TeamID == teamId)
                 .ToList();
+
+            if (!teamGoals.Any())
+            {
+                return new TopScorer
+                {
+                    Name = "NA",
+                    Goals = 0,
+                    Position = "NA"
+                };
+            }
 
             var mostGoals = teamGoals
                 .GroupBy(x => x.ScorerID)

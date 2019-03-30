@@ -178,6 +178,11 @@ namespace DataProjects
                 return 0;
             }
 
+            if (oponentStength == 0.0m)
+            {
+                oponentStength = 0.1m;
+            }
+
             return (double) (teamStrength/oponentStength/5);
         }
         public static string GetExpectedWinnerAccordingToResult(double homeGoals, double awayGoals, out decimal percent, int devide = 2, double minimalGap = 2)
@@ -428,7 +433,7 @@ namespace DataProjects
         }
         public static AttributesMatch GetAttributeMatch(sakilaEntities4 db, competitionmatch match)
         {
-            var attributesDict = SecondaryStatsCalculator.BuildAttributesDictionary(match.CompetitionID, 50, match.MatchDate);
+            var attributesDict = SecondaryStatsCalculator.BuildAttributesDictionary(match.CompetitionID, db, 50, match.MatchDate);
             var homeTeamAttributes = Helper.GetTeamAttributeFromDict((int)match.HomeTeamID, attributesDict);
             var awayTeamAttributes = Helper.GetTeamAttributeFromDict((int)match.AwayTeamID, attributesDict);
             List<DataObjects.AttributeType> winnerAttributes = null;
@@ -452,6 +457,7 @@ namespace DataProjects
         {
             using (var db = new sakilaEntities4())
             {
+
                 var allAttributeMatches = db.competitionmatch
                     .Where(x => x.CompetitionID == competitionId)
                     .OrderBy(x => x.MatchDate)
@@ -515,12 +521,13 @@ namespace DataProjects
             {
                 competitionIDs = new List<int>
                 {
-                    2,3
+                    2,3,8
                 };
             }
             var fullMap = new List<AttributesMatch>();
             foreach (var competitionId in competitionIDs)
             {
+                Console.WriteLine($"Building attribute clash map for competitionID: {competitionId}");
                 var attributeMatches = GetAttributeMatchesForCompetition(competitionId);
                 fullMap.AddRange(attributeMatches);
             }

@@ -337,6 +337,7 @@
     <Property Name="TeamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TeamName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TeamTypeID" Type="Int32" />
+    <Property Name="MarketValue" Type="Int32" />
     <NavigationProperty Name="competitionmatch" Relationship="Self.competitionmatch_ibfk_1" FromRole="team" ToRole="competitionmatch" />
     <NavigationProperty Name="competitionmatch1" Relationship="Self.competitionmatch_ibfk_2" FromRole="team" ToRole="competitionmatch" />
     <NavigationProperty Name="competitionmatch2" Relationship="Self.competitionmatch_ibfk_3" FromRole="team" ToRole="competitionmatch" />
@@ -873,7 +874,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="sakilaEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="sakilaEntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="actor" EntityType="Self.actor" />
     <EntitySet Name="address" EntityType="Self.address" />
     <EntitySet Name="category" EntityType="Self.category" />

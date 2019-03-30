@@ -1,0 +1,560 @@
+2 250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 94.33064516129029
+Correct: 66.55453824316847
+Won: 86.18347333453745
+Ratios:  1.294930077039244
+Recall:  0.3144354838709676
+Precision:  0.7055452459735738
+Balance:  -8.147171826752839
+Balance Percent Change:  -0.08636824027676775
+F-Measure:  0.43500520023427147
+2 500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 95.9637096774194
+Correct: 68.50239107635345
+Won: 88.6117811290857
+Ratios:  1.2935574910125127
+Recall:  0.31987903225806463
+Precision:  0.7138364211494452
+Balance:  -7.351928548333703
+Balance Percent Change:  -0.07661155006457235
+F-Measure:  0.44178753995627534
+2 750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 95.74596774193553
+Correct: 67.05634023764111
+Won: 86.66781187532149
+Ratios:  1.2924626003772237
+Recall:  0.3191532258064517
+Precision:  0.7003568068618651
+Balance:  -9.07815586661404
+Balance Percent Change:  -0.09481502021142475
+F-Measure:  0.4384873654268192
+2 1000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 94.39112903225808
+Correct: 66.33270404497746
+Won: 86.00619207778968
+Ratios:  1.296588060385303
+Recall:  0.31463709677419355
+Precision:  0.7027429878745102
+Balance:  -8.384936954468401
+Balance Percent Change:  -0.0888318324024163
+F-Measure:  0.4346635378843808
+2 1250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 96.79838709677425
+Correct: 67.26845523995124
+Won: 87.38402237200101
+Ratios:  1.2990341767221525
+Recall:  0.3226612903225808
+Precision:  0.6949336374034781
+Balance:  -9.414364724773236
+Balance Percent Change:  -0.09725745445904195
+F-Measure:  0.4407022441321248
+2 1500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 95.92741935483875
+Correct: 67.25946961354407
+Won: 86.9105649237998
+Ratios:  1.2921684548386414
+Recall:  0.3197580645161291
+Precision:  0.7011495781487568
+Balance:  -9.01685443103895
+Balance Percent Change:  -0.09399663299275574
+F-Measure:  0.4392135442534642
+2 1750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 94.72983870967742
+Correct: 67.18343368168462
+Won: 87.16114039674555
+Ratios:  1.297360608415988
+Recall:  0.31576612903225804
+Precision:  0.7092108948647591
+Balance:  -7.568698312931872
+Balance Percent Change:  -0.07989772194300873
+F-Measure:  0.4369752174297503
+2 2000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 96.79838709677423
+Correct: 67.34912235250181
+Won: 87.60098456524629
+Ratios:  1.3006997196896983
+Recall:  0.32266129032258073
+Precision:  0.6957669892285446
+Balance:  -9.197402531527942
+Balance Percent Change:  -0.09501607214108676
+F-Measure:  0.4408696793205446
+4 250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 121.87500000000003
+Correct: 82.71012205596212
+Won: 110.44781756640849
+Ratios:  1.335360350353236
+Recall:  0.40625
+Precision:  0.6786471553309711
+Balance:  -11.42718243359154
+Balance Percent Change:  -0.09376149689100749
+F-Measure:  0.5082516909523995
+4 500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 121.54838709677422
+Correct: 82.98516595655468
+Won: 110.84012315568685
+Ratios:  1.335661884603751
+Recall:  0.40516129032258064
+Precision:  0.682733584037472
+Balance:  -10.708263941087367
+Balance Percent Change:  -0.08809877446223681
+F-Measure:  0.5085366727514007
+4 750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 121.11290322580642
+Correct: 83.4580842805574
+Won: 111.45819426019337
+Ratios:  1.3354990738285966
+Recall:  0.40370967741935465
+Precision:  0.6890932514841603
+Balance:  -9.654708965613054
+Balance Percent Change:  -0.07971660086136763
+F-Measure:  0.5091377537716806
+4 1000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 121.51209677419358
+Correct: 82.91089842515836
+Won: 110.54988348436568
+Ratios:  1.3333576837809369
+Recall:  0.4050403225806452
+Precision:  0.6823262920006394
+Balance:  -10.9622132898279
+Balance Percent Change:  -0.09021499571519226
+F-Measure:  0.5083283921193718
+4 1250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 123.31451612903228
+Correct: 83.59003714604167
+Won: 111.74381620553886
+Ratios:  1.3368078304632072
+Recall:  0.4110483870967742
+Precision:  0.6778604804204541
+Balance:  -11.570699923493422
+Balance Percent Change:  -0.09383080181238532
+F-Measure:  0.5117663478832194
+4 1500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 123.84677419354843
+Correct: 83.59190696190986
+Won: 111.70183888242718
+Ratios:  1.3362757585291853
+Recall:  0.41282258064516136
+Precision:  0.6749623274908393
+Balance:  -12.144935311121245
+Balance Percent Change:  -0.09806420385355433
+F-Measure:  0.5123065925790465
+4 1750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 119.60080645161293
+Correct: 81.50804174279955
+Won: 109.06890562296583
+Ratios:  1.3381367444348031
+Recall:  0.3986693548387097
+Precision:  0.6815007704465218
+Balance:  -10.531900828647096
+Balance Percent Change:  -0.08805877770488113
+F-Measure:  0.5030568169143813
+4 2000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 120.41129032258065
+Correct: 82.59636533653656
+Won: 110.63880793157001
+Ratios:  1.3395118233202552
+Recall:  0.4013709677419354
+Precision:  0.685951999312205
+Balance:  -9.77248239101064
+Balance Percent Change:  -0.08115918669113384
+F-Measure:  0.5064203114082593
+6 250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 130.42741935483872
+Correct: 86.48962664910819
+Won: 118.2813788394016
+Ratios:  1.3675787886017106
+Recall:  0.434758064516129
+Precision:  0.6631245720948132
+Balance:  -12.146040515437122
+Balance Percent Change:  -0.09312490100254764
+F-Measure:  0.5251904819024694
+6 500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 129.2540322580645
+Correct: 86.18512244146282
+Won: 117.29520282389811
+Ratios:  1.3609681056445135
+Recall:  0.43084677419354833
+Precision:  0.6667886559189762
+Balance:  -11.958829434166404
+Balance Percent Change:  -0.09252190608869967
+F-Measure:  0.5234593082369648
+6 750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 132.58064516129036
+Correct: 88.57833583037115
+Won: 120.89104081460721
+Ratios:  1.3647924143225652
+Recall:  0.44193548387096776
+Precision:  0.6681091023701958
+Balance:  -11.689604346683154
+Balance Percent Change:  -0.0881697651452987
+F-Measure:  0.5319806485150016
+6 1000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 129.64112903225808
+Correct: 87.06958073912855
+Won: 118.61883129552226
+Ratios:  1.3623452678716719
+Recall:  0.43213709677419354
+Precision:  0.6716200436472856
+Balance:  -11.022297736735823
+Balance Percent Change:  -0.08502161172935473
+F-Measure:  0.525898180257783
+6 1250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 128.60080645161293
+Correct: 86.09519756119639
+Won: 117.58632007787222
+Ratios:  1.3657709536503702
+Recall:  0.42866935483870966
+Precision:  0.6694763426199072
+Balance:  -11.01448637374071
+Balance Percent Change:  -0.08564865709364737
+F-Measure:  0.5226701566737585
+6 1500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 129.01209677419357
+Correct: 86.94630232945457
+Won: 118.70142072202806
+Ratios:  1.36522678413911
+Recall:  0.4300403225806452
+Precision:  0.6739391460448423
+Balance:  -10.310676052165505
+Balance Percent Change:  -0.07992022693974199
+F-Measure:  0.5250478219956226
+6 1750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 129.6290322580645
+Correct: 87.22986102127506
+Won: 119.08059851031527
+Ratios:  1.3651357128870345
+Recall:  0.4320967741935483
+Precision:  0.6729191717455585
+Balance:  -10.548433747749243
+Balance Percent Change:  -0.08137400676377418
+F-Measure:  0.5262660769246006
+6 2000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 127.89919354838717
+Correct: 86.38951070691591
+Won: 117.35658727098013
+Ratios:  1.3584587562849242
+Recall:  0.4263306451612905
+Precision:  0.675450003320254
+Balance:  -10.542606277407046
+Balance Percent Change:  -0.08242902855692001
+F-Measure:  0.5227266172928127
+8 250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.29435483870972
+Correct: 88.2190480633699
+Won: 122.38941907106091
+Ratios:  1.387335521724805
+Recall:  0.44431451612903233
+Precision:  0.6618363408571778
+Balance:  -10.904935767648809
+Balance Percent Change:  -0.08181093476047141
+F-Measure:  0.5316878646114582
+8 500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.40725806451618
+Correct: 88.36032704385718
+Won: 122.73004670130233
+Ratios:  1.3889723002087342
+Recall:  0.4480241935483872
+Precision:  0.65740740728037
+Balance:  -11.677211363213857
+Balance Percent Change:  -0.08687932133552441
+F-Measure:  0.5328858398090074
+8 750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 131.43145161290323
+Correct: 87.30428426311614
+Won: 121.26412269283173
+Ratios:  1.3889824962927135
+Recall:  0.43810483870967737
+Precision:  0.6642571712610156
+Balance:  -10.167328920071498
+Balance Percent Change:  -0.07735841608153801
+F-Measure:  0.5279831457268571
+8 1000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.5362903225807
+Correct: 88.34961279640802
+Won: 122.65400107323507
+Ratios:  1.3882800070202654
+Recall:  0.4451209677419356
+Precision:  0.6616150005589028
+Balance:  -10.882289249345632
+Balance Percent Change:  -0.0814931223793736
+F-Measure:  0.5321932561268452
+8 1250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.37096774193554
+Correct: 88.36538746286838
+Won: 122.34809974069128
+Ratios:  1.3845703985862408
+Recall:  0.44790322580645175
+Precision:  0.6576226170565163
+Balance:  -12.022868001244262
+Balance Percent Change:  -0.08947519098273243
+F-Measure:  0.5328709291500565
+8 1500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.1975806451614
+Correct: 88.88922518890212
+Won: 123.43029806896561
+Ratios:  1.3885855997356131
+Recall:  0.4439919354838712
+Precision:  0.6673486467123091
+Balance:  -9.767282576195782
+Balance Percent Change:  -0.07332927917223843
+F-Measure:  0.5332252273390591
+8 1750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.08064516129036
+Correct: 88.28247036998461
+Won: 122.29181831979488
+Ratios:  1.3852333063096205
+Recall:  0.4469354838709678
+Precision:  0.6584281442245933
+Balance:  -11.788826841495478
+Balance Percent Change:  -0.08792340480845896
+F-Measure:  0.5324490398517823
+8 2000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.20967741935488
+Correct: 88.4621231592218
+Won: 123.32416800416664
+Ratios:  1.3940900760678907
+Recall:  0.4440322580645162
+Precision:  0.6640818060142573
+Balance:  -9.885509415188238
+Balance Percent Change:  -0.07421014453828195
+F-Measure:  0.5322082868954738
+10 250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.70967741935482
+Correct: 87.2019251133887
+Won: 123.16863825896738
+Ratios:  1.412453200990817
+Recall:  0.449032258064516
+Precision:  0.6473322984949832
+Balance:  -11.541039160387442
+Balance Percent Change:  -0.0856734228860179
+F-Measure:  0.5302489613919235
+10 500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.4637096774193
+Correct: 87.56729120848851
+Won: 122.92937427225739
+Ratios:  1.4038275316701927
+Recall:  0.44487903225806424
+Precision:  0.6561131218376737
+Balance:  -10.534335405161912
+Balance Percent Change:  -0.07893033567419423
+F-Measure:  0.5302326081237088
+10 750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.91129032258064
+Correct: 87.59461186823714
+Won: 122.88831418436818
+Ratios:  1.4029209281641781
+Recall:  0.44637096774193535
+Precision:  0.6541241717351042
+Balance:  -11.022976138212456
+Balance Percent Change:  -0.0823155098547633
+F-Measure:  0.5306375813700397
+10 1000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.97177419354838
+Correct: 87.31498668090902
+Won: 123.22945208090545
+Ratios:  1.4113207453291514
+Recall:  0.4465725806451612
+Precision:  0.6517416613052051
+Balance:  -10.742322112642938
+Balance Percent Change:  -0.08018347280467866
+F-Measure:  0.5299939570776919
+10 1250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.41935483870972
+Correct: 88.34873285310157
+Won: 124.23228763858742
+Ratios:  1.4061581148554767
+Recall:  0.44806451612903236
+Precision:  0.657261991467758
+Balance:  -10.1870672001223
+Balance Percent Change:  -0.07578571711154096
+F-Measure:  0.5328665768041703
+10 1500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.68548387096786
+Correct: 87.95256982456922
+Won: 123.80908681023806
+Ratios:  1.407680151440583
+Recall:  0.4489516129032261
+Precision:  0.6530218943923463
+Balance:  -10.8763970607298
+Balance Percent Change:  -0.08075404080776565
+F-Measure:  0.5320912541138402
+10 1750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.16532258064524
+Correct: 87.58033735323896
+Won: 123.15570757889235
+Ratios:  1.4062027082878976
+Recall:  0.4472177419354841
+Precision:  0.6527792403331004
+Balance:  -11.009615001752891
+Balance Percent Change:  -0.08206006432947782
+F-Measure:  0.5307913795218916
+10 2000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 136.2580645161291
+Correct: 87.63224264603721
+Won: 123.25842076218082
+Ratios:  1.406541896457498
+Recall:  0.4541935483870969
+Precision:  0.643134356540519
+Balance:  -12.999643753948291
+Balance Percent Change:  -0.09540458247452575
+F-Measure:  0.5323977895304854
+12 250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 135.21774193548384
+Correct: 87.43209134652471
+Won: 124.7873247748053
+Ratios:  1.4272485405870987
+Recall:  0.45072580645161275
+Precision:  0.6466022142881295
+Balance:  -10.430417160678545
+Balance Percent Change:  -0.07713793331688076
+F-Measure:  0.531181741430328
+12 500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.71774193548384
+Correct: 86.37600346293398
+Won: 123.3221163742051
+Ratios:  1.4277358459531597
+Recall:  0.44572580645161275
+Precision:  0.6459576882819984
+Balance:  -10.395625561278749
+Balance Percent Change:  -0.07774305347075358
+F-Measure:  0.5274789129487947
+12 750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.1532258064517
+Correct: 87.09908006683207
+Won: 123.8809181862475
+Ratios:  1.4222988129288199
+Recall:  0.44717741935483896
+Precision:  0.6492507320881977
+Balance:  -10.272307620204202
+Balance Percent Change:  -0.07657145445778901
+F-Measure:  0.5295928721044406
+12 1000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.60887096774195
+Correct: 86.45271610099029
+Won: 123.11724069201975
+Ratios:  1.4240991636190998
+Recall:  0.44536290322580646
+Precision:  0.6470582041057972
+Balance:  -10.491630275722201
+Balance Percent Change:  -0.07852495272005751
+F-Measure:  0.5275909050138093
+12 1250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.42741935483872
+Correct: 85.73914930866512
+Won: 121.47695213261422
+Ratios:  1.4168201237370721
+Recall:  0.444758064516129
+Precision:  0.6425901791643683
+Balance:  -11.950467222224503
+Balance Percent Change:  -0.08956530284411232
+F-Measure:  0.52567733662739
+12 1500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.43145161290326
+Correct: 87.17645367476517
+Won: 123.92138007388839
+Ratios:  1.4215005870301847
+Recall:  0.44810483870967743
+Precision:  0.6484825733027912
+Balance:  -10.510071539014874
+Balance Percent Change:  -0.07818164137123752
+F-Measure:  0.5299863480697693
+12 1750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 133.06451612903234
+Correct: 86.11997994250927
+Won: 122.85973312128763
+Ratios:  1.4266112602825098
+Recall:  0.44354838709677435
+Precision:  0.6472046977497663
+Balance:  -10.204783007744709
+Balance Percent Change:  -0.07669049048244504
+F-Measure:  0.5263640392981367
+12 2000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 136.3185483870968
+Correct: 87.69526427860482
+Won: 124.70628779233759
+Ratios:  1.4220413019812566
+Recall:  0.45439516129032254
+Precision:  0.6433113124824442
+Balance:  -11.612260594759206
+Balance Percent Change:  -0.08518474361819395
+F-Measure:  0.5325969274658048
+14 250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.56451612903234
+Correct: 85.80614162448101
+Won: 122.87280031838553
+Ratios:  1.4319814175554209
+Recall:  0.44854838709677436
+Precision:  0.6376580103940812
+Balance:  -11.691715810646812
+Balance Percent Change:  -0.08688557836031427
+F-Measure:  0.5266411111963851
+14 500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 135.2782258064517
+Correct: 85.89936963117336
+Won: 122.98389857950806
+Ratios:  1.43172061806233
+Recall:  0.4509274193548389
+Precision:  0.6349829702384864
+Balance:  -12.294327226943636
+Balance Percent Change:  -0.09088178939110017
+F-Measure:  0.5273570173891465
+14 750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.14112903225808
+Correct: 84.89240551301592
+Won: 121.64112670126343
+Ratios:  1.4328858508151605
+Recall:  0.4471370967741935
+Precision:  0.6328588862003771
+Balance:  -12.500002330994647
+Balance Percent Change:  -0.09318545640083783
+F-Measure:  0.5240291436344152
+14 1000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 136.36693548387098
+Correct: 85.91008916331938
+Won: 123.60877347289497
+Ratios:  1.4388155649321757
+Recall:  0.45455645161290315
+Precision:  0.6299920787871671
+Balance:  -12.758162010976008
+Balance Percent Change:  -0.09355759125704632
+F-Measure:  0.5280851079519615
+14 1250 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.3951612903226
+Correct: 86.53232823903288
+Won: 124.0810718912967
+Ratios:  1.4339273473439997
+Recall:  0.44798387096774184
+Precision:  0.6438649085892635
+Balance:  -10.314089399025889
+Balance Percent Change:  -0.07674449957871048
+F-Measure:  0.5283535587174231
+14 1500 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.9637096774194
+Correct: 86.33769588892167
+Won: 122.92160560101802
+Ratios:  1.4237304381989022
+Recall:  0.4498790322580646
+Precision:  0.639710453241689
+Balance:  -12.042104076401372
+Balance Percent Change:  -0.08922475608579186
+F-Measure:  0.5282582540666487
+14 1750 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 134.08064516129033
+Correct: 86.04778519358767
+Won: 123.21926067454197
+Ratios:  1.431986429369763
+Recall:  0.4469354838709677
+Precision:  0.6417614197043708
+Balance:  -10.861384486748364
+Balance Percent Change:  -0.08100635609026807
+F-Measure:  0.5269160768315597
+14 2000 0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue', 'AwayValue', 'HomePtsSeas', 'AwayPtsSeas', 'HomePtsLast', 'AwayPtsLast', 'HomePtsHome', 'AwayPtsAway', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeGoalsLast', 'AwayGoalsLast', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcSeas', 'AwayGoalsConcSeas', 'HomeGoalsConcLast', 'AwayGoalsConcLast', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeTotalShots', 'AwayTotalShots', 'HomeShotsTarget', 'AwayShotsTarget', 'HomeTotalShotsAgst', 'AwayTotalShotsAgst', 'HomeShotsTargetAgst', 'AwayShotsTargetAgst', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePossession', 'AwayPossession', 'HomeExpectedWin', 'AwayExpectedWin', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints', 'AwayWeightedPoints', 'ChanceCreationHome', 'ChanceCreationAway', 'ShotsAccuracyHome', 'ShotsAccuracyAway', 'ScoringRateHome', 'ScoringRateAway', 'KeeperStrengthHome', 'KeeperStrengthAway', 'Round', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'isHomeFavorite']
+Participated: 135.07258064516128
+Correct: 86.36748460738326
+Won: 123.78579962133233
+Ratios:  1.4332453953481274
+Recall:  0.45024193548387087
+Precision:  0.6394153735336752
+Balance:  -11.28678102382895
+Balance Percent Change:  -0.0835608601680572
+F-Measure:  0.5284076249945264

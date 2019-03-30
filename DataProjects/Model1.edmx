@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="sakilaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="sakilaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="actor">
           <Key>
             <PropertyRef Name="actor_id" />
@@ -176,6 +176,16 @@ warning 6005: The data type 'geometry' is currently not supported for the target
           <Property Name="ScorerID" Type="int" Nullable="false" />
           <Property Name="AssistantID" Type="int" />
           <Property Name="ScoringMinute" Type="int" />
+        </EntityType>
+        <EntityType Name="matchodds">
+          <Key>
+            <PropertyRef Name="MatchOddsID" />
+          </Key>
+          <Property Name="MatchOddsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HomeTeamOdds" Type="decimal" Precision="5" Scale="3" Nullable="false" />
+          <Property Name="DrawOdds" Type="decimal" Precision="5" Scale="3" Nullable="false" />
+          <Property Name="AwayTeamOdds" Type="decimal" Precision="5" Scale="3" Nullable="false" />
+          <Property Name="MatchID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="matchplayer">
           <Key>
@@ -675,6 +685,18 @@ warning 6005: The data type 'geometry' is currently not supported for the target
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="matchodds_ibfk_1">
+          <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="1" />
+          <End Role="matchodds" Type="Self.matchodds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competitionmatch">
+              <PropertyRef Name="CompetitionMatchID" />
+            </Principal>
+            <Dependent Role="matchodds">
+              <PropertyRef Name="MatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="matchplayer_ibfk_1">
           <End Role="player" Type="Self.player" Multiplicity="1" />
           <End Role="matchplayer" Type="Self.matchplayer" Multiplicity="*" />
@@ -813,6 +835,7 @@ warning 6005: The data type 'geometry' is currently not supported for the target
           <EntitySet Name="language" EntityType="Self.language" Schema="sakila" store:Type="Tables" />
           <EntitySet Name="matchevent" EntityType="Self.matchevent" Schema="sakila" store:Type="Tables" />
           <EntitySet Name="matchgoal" EntityType="Self.matchgoal" Schema="sakila" store:Type="Tables" />
+          <EntitySet Name="matchodds" EntityType="Self.matchodds" Schema="sakila" store:Type="Tables" />
           <EntitySet Name="matchplayer" EntityType="Self.matchplayer" Schema="sakila" store:Type="Tables" />
           <EntitySet Name="payment" EntityType="Self.payment" Schema="sakila" store:Type="Tables" />
           <EntitySet Name="player" EntityType="Self.player" Schema="sakila" store:Type="Tables" />
@@ -955,6 +978,10 @@ warning 6005: The data type 'geometry' is currently not supported for the target
             <End Role="team" EntitySet="team" />
             <End Role="matchgoal" EntitySet="matchgoal" />
           </AssociationSet>
+          <AssociationSet Name="matchodds_ibfk_1" Association="Self.matchodds_ibfk_1">
+            <End Role="competitionmatch" EntitySet="competitionmatch" />
+            <End Role="matchodds" EntitySet="matchodds" />
+          </AssociationSet>
           <AssociationSet Name="matchplayer_ibfk_1" Association="Self.matchplayer_ibfk_1">
             <End Role="player" EntitySet="player" />
             <End Role="matchplayer" EntitySet="matchplayer" />
@@ -996,8 +1023,7 @@ warning 6005: The data type 'geometry' is currently not supported for the target
             <End Role="team" EntitySet="team" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sakilaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1075,6 +1101,7 @@ warning 6005: The data type 'geometry' is currently not supported for the target
           <NavigationProperty Name="matchevent" Relationship="Self.matchevent_ibfk_1" FromRole="competitionmatch" ToRole="matchevent" />
           <NavigationProperty Name="matchgoal" Relationship="Self.matchgoal_ibfk_1" FromRole="competitionmatch" ToRole="matchgoal" />
           <NavigationProperty Name="matchplayer" Relationship="Self.matchplayer_ibfk_2" FromRole="competitionmatch" ToRole="matchplayer" />
+          <NavigationProperty Name="matchodds" Relationship="sakilaModel.matchodds_ibfk_1" FromRole="competitionmatch" ToRole="matchodds" />
         </EntityType>
         <EntityType Name="country">
           <Key>
@@ -2075,7 +2102,35 @@ warning 6005: The data type 'geometry' is currently not supported for the target
             <End Role="teamtype" EntitySet="teamtype" />
             <End Role="team" EntitySet="team" />
           </AssociationSet>
+          <EntitySet Name="matchodds" EntityType="sakilaModel.matchodds" />
+          <AssociationSet Name="matchodds_ibfk_1" Association="sakilaModel.matchodds_ibfk_1">
+            <End Role="competitionmatch" EntitySet="competitionmatch" />
+            <End Role="matchodds" EntitySet="matchodds" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="matchodds">
+          <Key>
+            <PropertyRef Name="MatchOddsID" />
+          </Key>
+          <Property Name="MatchOddsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HomeTeamOdds" Type="Decimal" Nullable="false" />
+          <Property Name="DrawOdds" Type="Decimal" Nullable="false" />
+          <Property Name="AwayTeamOdds" Type="Decimal" Nullable="false" />
+          <Property Name="MatchID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="competitionmatch" Relationship="sakilaModel.matchodds_ibfk_1" FromRole="matchodds" ToRole="competitionmatch" />
+        </EntityType>
+        <Association Name="matchodds_ibfk_1">
+          <End Type="sakilaModel.competitionmatch" Role="competitionmatch" Multiplicity="1" />
+          <End Type="sakilaModel.matchodds" Role="matchodds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="competitionmatch">
+              <PropertyRef Name="CompetitionMatchID" />
+            </Principal>
+            <Dependent Role="matchodds">
+              <PropertyRef Name="MatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2376,6 +2431,17 @@ warning 6005: The data type 'geometry' is currently not supported for the target
               <MappingFragment StoreEntitySet="teamtype">
                 <ScalarProperty Name="TeamTypeID" ColumnName="TeamTypeID" />
                 <ScalarProperty Name="TeamTypeName" ColumnName="TeamTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="matchodds">
+            <EntityTypeMapping TypeName="sakilaModel.matchodds">
+              <MappingFragment StoreEntitySet="matchodds">
+                <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+                <ScalarProperty Name="AwayTeamOdds" ColumnName="AwayTeamOdds" />
+                <ScalarProperty Name="DrawOdds" ColumnName="DrawOdds" />
+                <ScalarProperty Name="HomeTeamOdds" ColumnName="HomeTeamOdds" />
+                <ScalarProperty Name="MatchOddsID" ColumnName="MatchOddsID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

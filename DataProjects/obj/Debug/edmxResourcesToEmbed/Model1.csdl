@@ -74,6 +74,7 @@
     <NavigationProperty Name="matchevent" Relationship="Self.matchevent_ibfk_1" FromRole="competitionmatch" ToRole="matchevent" />
     <NavigationProperty Name="matchgoal" Relationship="Self.matchgoal_ibfk_1" FromRole="competitionmatch" ToRole="matchgoal" />
     <NavigationProperty Name="matchplayer" Relationship="Self.matchplayer_ibfk_2" FromRole="competitionmatch" ToRole="matchplayer" />
+    <NavigationProperty Name="matchodds" Relationship="sakilaModel.matchodds_ibfk_1" FromRole="competitionmatch" ToRole="matchodds" />
   </EntityType>
   <EntityType Name="country">
     <Key>
@@ -1074,5 +1075,33 @@
       <End Role="teamtype" EntitySet="teamtype" />
       <End Role="team" EntitySet="team" />
     </AssociationSet>
+    <EntitySet Name="matchodds" EntityType="sakilaModel.matchodds" />
+    <AssociationSet Name="matchodds_ibfk_1" Association="sakilaModel.matchodds_ibfk_1">
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+      <End Role="matchodds" EntitySet="matchodds" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="matchodds">
+    <Key>
+      <PropertyRef Name="MatchOddsID" />
+    </Key>
+    <Property Name="MatchOddsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HomeTeamOdds" Type="Decimal" Nullable="false" />
+    <Property Name="DrawOdds" Type="Decimal" Nullable="false" />
+    <Property Name="AwayTeamOdds" Type="Decimal" Nullable="false" />
+    <Property Name="MatchID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="competitionmatch" Relationship="sakilaModel.matchodds_ibfk_1" FromRole="matchodds" ToRole="competitionmatch" />
+  </EntityType>
+  <Association Name="matchodds_ibfk_1">
+    <End Type="sakilaModel.competitionmatch" Role="competitionmatch" Multiplicity="1" />
+    <End Type="sakilaModel.matchodds" Role="matchodds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="competitionmatch">
+        <PropertyRef Name="CompetitionMatchID" />
+      </Principal>
+      <Dependent Role="matchodds">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

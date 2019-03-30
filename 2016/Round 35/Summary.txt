@@ -1,0 +1,15 @@
+Correct Strength Winner: 3/10
+Correct Strength Winner (60%): 3/8
+Correct Strength Winner (80%): 0/4
+Correct Strength Winner (95%): 0/3
+
+Expected Prediction Winner (60%+): 3/3  
+Expected Prediction Winner (80%+): 3/3
+Expected Prediction Winner (90%+): 1/1
+
+Attributes clashing correct (60%+): 0/2
+Attributes clashing correct (70%+): 0/1
+Attributes clashing correct (80%+):
+
+Correct Goals Range (2.5 Line) (3+): 1/1
+Correct Goals Range (2.5 Line) (2-):

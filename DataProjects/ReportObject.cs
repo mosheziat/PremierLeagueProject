@@ -23,7 +23,7 @@ namespace DataProjects
         private int StrengthFactor = 10;
 
         public MainCalculator.LettersWinner LettersExpectedWinner;
-        private int LettersFactor = 10;
+        private int LettersFactor = 7;
 
         public MainCalculator.ClashingResults ClashingAttributesExpectedWinner;
         private int AttributesFactor = 5;
@@ -71,7 +71,7 @@ namespace DataProjects
             var awayTeamStengthDiff = MainCalculator.StrengthDiffCaculator(AwayTeamStats.TeamStrength, HomeTeamStats.TeamStrength);
 
             var homeCalculatedGoals = Math.Round(HomeExpectedGoals.Average + homeTeamStengthDiff, 2);
-            var awayCalculatedGoals = Math.Round(HomeExpectedGoals.Average + awayTeamStengthDiff, 2);
+            var awayCalculatedGoals = Math.Round(AwayExpectedGoals.Average + awayTeamStengthDiff, 2);
             StrengthExpectedWinner = MainCalculator.GetExpectedWinner(homeCalculatedGoals, awayCalculatedGoals);
         }
         public void CalculateExpectedWinnerByLetters()
@@ -89,51 +89,64 @@ namespace DataProjects
         {
             var winnerRecommendation = new MainCalculator.Recommendation();
             var winnerSignals = new List<string>();
-            if (StrengthExpectedWinner?.Confidence >= 0.8m)
+            if (StrengthExpectedWinner?.Confidence >= 0.95m)
             {
                 winnerSignals.Add(StrengthExpectedWinner.Winner.Trim());
             }
 
-            if (LettersExpectedWinner?.Percent >= 0.8m)
+            if (LettersExpectedWinner?.Percent >= 80)
             {
                 winnerSignals.Add(LettersExpectedWinner.Winner.Trim());
             }
 
-            if (ClashingAttributesExpectedWinner?.Percent >= 0.7)
+            /*
+            if (ClashingAttributesExpectedWinner?.Percent >= 70)
             {
                 winnerSignals.Add(ClashingAttributesExpectedWinner.Winner.Trim());
             }
-
-            if (winnerSignals.Any() && winnerSignals.Distinct().Count() == 1)
+            */
+            if (winnerSignals.Any() && winnerSignals.Distinct().Count() == 1 && !winnerSignals.First().Trim().Equals("Draw"))
             {
                 var recommendationConfidence = 50;
-                if (StrengthExpectedWinner?.Confidence >= 0.8m)
+                if (StrengthExpectedWinner != null && StrengthExpectedWinner.Winner.Equals(winnerSignals.First()) && StrengthExpectedWinner?.Confidence >= 0.6m)
                 {
                     recommendationConfidence += StrengthFactor;
-                    if (StrengthExpectedWinner.Confidence >= 0.95m)
+                    if (StrengthExpectedWinner?.Confidence >= 0.8m)
                     {
-                        recommendationConfidence += StrengthFactor;
+                        //recommendationConfidence += StrengthFactor;
+                        if (StrengthExpectedWinner.Confidence >= 0.95m)
+                        {
+                            recommendationConfidence += StrengthFactor * 2;
+                        }
                     }
                 }
 
-                if (LettersExpectedWinner?.Percent >= 0.8m)
+                if (LettersExpectedWinner?.Percent >= 70)
                 {
                     recommendationConfidence += LettersFactor;
-                    if (LettersExpectedWinner.Percent >= 0.9m)
+
+                    if (LettersExpectedWinner?.Percent >= 80)
                     {
                         recommendationConfidence += LettersFactor;
+                        if (LettersExpectedWinner.Percent >= 90)
+                        {
+                            recommendationConfidence += LettersFactor;
+                        }
                     }
                 }
 
-                if (ClashingAttributesExpectedWinner?.Percent >= 0.7)
+                /*
+                if (ClashingAttributesExpectedWinner?.Percent >= 70)
                 {
                     recommendationConfidence += AttributesFactor;
-                    if (ClashingAttributesExpectedWinner?.Percent >= 0.8)
+                    if (ClashingAttributesExpectedWinner?.Percent >= 80)
                     {
                         recommendationConfidence += AttributesFactor;
                     }
                 }
-
+                */
+                recommendationConfidence = (int) Math.Round((double) recommendationConfidence);
+                recommendationConfidence = Math.Min(recommendationConfidence, 100);
                 winnerRecommendation = new MainCalculator.Recommendation
                 {
                     Confidence = recommendationConfidence,
@@ -150,8 +163,8 @@ namespace DataProjects
         public MainCalculator.Recommendation FindGoalsRecommendations()
         {
             var expectedGoalsList = new List<MainCalculator.TeamStdDevAndAverage> {HomeExpectedGoals, AwayExpectedGoals};
-            var totalGoals = expectedGoalsList.Average(x => x.Average);
-            var stdAverage = expectedGoalsList.Average(x => x.Average);
+            var totalGoals = expectedGoalsList.Sum(x => x.Average);
+            var stdAverage = expectedGoalsList.Average(x => x.StdDev);
             var stdPunish = 0;
             if (stdAverage > 1.2)
             {
@@ -177,7 +190,7 @@ namespace DataProjects
                 return new MainCalculator.Recommendation
                 {
                     Confidence = (decimal) confidence,
-                    Result = "Over",
+                    Result = "Under",
                     Type = "Goals",
                     HomeTeam = HomeTeamName,
                     AwayTeam = AwayTeamName
@@ -202,25 +215,39 @@ namespace DataProjects
 
             linesToWrite.Add("Home Team: " + HomeTeamName);
             linesToWrite.Add("Away Team: " + AwayTeamName);
+            linesToWrite.Add("");
 
-            linesToWrite.Add($"Strength Expected Winner: {StrengthExpectedWinner.Winner} ( {Math.Min(StrengthExpectedWinner.Confidence * 100, 100)}%)");
+            linesToWrite.Add($"Strength Expected Winner: {StrengthExpectedWinner.Winner} ({Math.Min(StrengthExpectedWinner.Confidence * 100, 100)}%)");
             linesToWrite.Add($"Expected Goals: {Math.Round(HomeExpectedGoals.Average + AwayExpectedGoals.Average, 2)} (Average Std: {Math.Round((HomeExpectedGoals.StdDev + AwayExpectedGoals.StdDev) / 2, 1)})");
+            linesToWrite.Add("");
 
-            linesToWrite.Add($"{HomeTeamName} Expected Result According to Form: {HomeTeamStats.LettersDistribution.Letter} ({HomeTeamStats.LettersDistribution.Percent}, Count: {HomeTeamStats.LettersDistribution.Count}, {HomeTeamStats.TeamLastThreeResults}");
-            linesToWrite.Add($"{AwayTeamName} Expected Result According to Form: {AwayTeamStats.LettersDistribution.Letter} ({AwayTeamStats.LettersDistribution.Percent}, Count: {AwayTeamStats.LettersDistribution.Count}, {AwayTeamStats.TeamLastThreeResults}");
-            linesToWrite.Add($"Letters Expected Results: {LettersExpectedWinner.Winner} ({LettersExpectedWinner.Percent})");
+            linesToWrite.Add($"{HomeTeamName} Expected Result According to Form: {HomeTeamStats.LettersDistribution.Letter} ({Math.Round(HomeTeamStats.LettersDistribution.Percent, 2)}, Count: {HomeTeamStats.LettersDistribution.Count}, {HomeTeamStats.TeamLastThreeResults})");
+            linesToWrite.Add($"{AwayTeamName} Expected Result According to Form: {AwayTeamStats.LettersDistribution.Letter} ({Math.Round(AwayTeamStats.LettersDistribution.Percent, 2)}, Count: {AwayTeamStats.LettersDistribution.Count}, {AwayTeamStats.TeamLastThreeResults})");
+            linesToWrite.Add($"Letters Expected Results: {LettersExpectedWinner.Winner} ({LettersExpectedWinner.Percent}%)");
+            linesToWrite.Add("");
+            linesToWrite.Add("-----------------------");
+            linesToWrite.Add("");
 
+            /*
+             * 
             linesToWrite.Add("Home team attributes: ");
             linesToWrite.AddRange(HomeTeamStats.TeamAttributesString);
+            linesToWrite.Add("");
 
             linesToWrite.Add("Away Team attributes: ");
             linesToWrite.AddRange(AwayTeamStats.TeamAttributesString);
+            linesToWrite.Add("");
 
-            linesToWrite.Add($"Attributes Clashing Winner: {ClashingAttributesExpectedWinner.Winner} ({ClashingAttributesExpectedWinner.Percent})");
-
+            linesToWrite.Add($"Attributes Clashing Winner: {ClashingAttributesExpectedWinner.Winner} ({ClashingAttributesExpectedWinner.Percent}%)");
+            linesToWrite.Add("");
+            linesToWrite.Add("-----------------------");
+            linesToWrite.Add("");
+            */
             linesToWrite.Add($"{HomeTeamName} Top Scorer: {HomeTeamStats.TeamGoalsStats.TopScorer.Name} ({HomeTeamStats.TeamGoalsStats.TopScorer.Goals})");
             linesToWrite.Add($"{AwayTeamName} Top Scorer: {AwayTeamStats.TeamGoalsStats.TopScorer.Name} ({AwayTeamStats.TeamGoalsStats.TopScorer.Goals})");
-
+            linesToWrite.Add("");
+            linesToWrite.Add("-----------------------");
+            linesToWrite.Add("");
             var homeTeamScoringPositions =
                 HomeTeamStats.TeamGoalsStats.GoalsScoreDistribution.Select(x => x.Position + " => " + x.Goals).ToList();
 
@@ -229,9 +256,11 @@ namespace DataProjects
 
             linesToWrite.Add($"{HomeTeamName} Scoring positions: ");
             linesToWrite.AddRange(homeTeamScoringPositions);
+            linesToWrite.Add("");
 
             linesToWrite.Add($"{AwayTeamName} Scoring positions: ");
             linesToWrite.AddRange(awayTeamScoringPositions);
+            linesToWrite.Add("");
 
             var homeTeamConcededPositions =
                 HomeTeamStats.TeamGoalsStats.GoalsConcedeDistribution.Select(x => x.Position + " => " + x.Goals).ToList();
@@ -241,6 +270,7 @@ namespace DataProjects
 
             linesToWrite.Add($"{HomeTeamName} Conceded positions: ");
             linesToWrite.AddRange(homeTeamConcededPositions);
+            linesToWrite.Add("");
 
             linesToWrite.Add($"{AwayTeamName} Conceded positions: ");
             linesToWrite.AddRange(awayTeamConcededPositions);

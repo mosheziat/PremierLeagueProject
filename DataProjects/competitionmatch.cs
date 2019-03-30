@@ -19,6 +19,7 @@ namespace DataProjects
             this.matchevent = new HashSet<matchevent>();
             this.matchgoal = new HashSet<matchgoal>();
             this.matchplayer = new HashSet<matchplayer>();
+            this.matchodds = new HashSet<matchodds>();
         }
     
         public int CompetitionMatchID { get; set; }
@@ -37,5 +38,6 @@ namespace DataProjects
         public virtual ICollection<matchevent> matchevent { get; set; }
         public virtual ICollection<matchgoal> matchgoal { get; set; }
         public virtual ICollection<matchplayer> matchplayer { get; set; }
+        public virtual ICollection<matchodds> matchodds { get; set; }
     }
 }

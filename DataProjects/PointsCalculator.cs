@@ -53,6 +53,37 @@ namespace DataProjects
             };
         }
 
+        public static double GetWeightedBalance(sakilaEntities4 db, List<competitionmatch> latestMatches, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
+        {
+            if (!endDate.HasValue)
+                endDate = DateTime.Now;
+
+
+            var res = 0.0d;
+            latestMatches = latestMatches.Take(gamesToTake).ToList();
+            foreach (var match in latestMatches)
+            {
+                if (match.WinnerTeamID != null && match.WinnerTeamID != teamId)
+                    continue;
+
+                var oponentTeamID = match.HomeTeamID == teamId ? match.AwayTeamID : match.HomeTeamID;
+                var oponentTeamValue = db.team.First(x => x.TeamID == oponentTeamID).MarketValue.Value;
+
+                if (match.WinnerTeamID == teamId)
+                {
+                    res += oponentTeamValue * 3;
+                }
+
+                //if it ended with draw
+                else
+                {
+                    res += oponentTeamValue * 1;
+                }
+            }
+
+            return res / latestMatches.Count;
+        }
+
         public static TeamBalance GetTeamBalanceHome(sakilaEntities4 db, int teamId, int competitionId, int gamesToTake = 50, DateTime? endDate = null)
         {
             var latestMatches = MainCalculator.GetTeamLatesMatches(db, teamId, competitionId, gamesToTake, endDate)

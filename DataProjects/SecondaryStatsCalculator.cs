@@ -18,6 +18,178 @@ namespace DataProjects
             return GetAverageEventValueAgainstTeam(db, teamId, competitionId, (int)DataObjects.EventType.TotalShots, gamesToTake, endDate, weighted:5);
         }
 
+
+        public static Dictionary<int, List<DataObjects.AttributeType>> BuildAttributesDictionary(int competitionId, sakilaEntities4 db, int gamesToTake = 50, DateTime? endDate = null)
+        {
+            if (!endDate.HasValue)
+                endDate = DateTime.Now;
+
+            var allEvents = db.matchevent.Where(x => x.competitionmatch.CompetitionID == competitionId)
+                .Where(x => x.competitionmatch.MatchDate < endDate.Value)
+                .ToList();
+
+            {
+                var foulsTeamsList = GetTeamsListPerEvent(allEvents, competitionId, (int)DataObjects.EventType.Fouls, gamesToTake,
+                    endDate, weigthed: 5);
+                var toughTeams = foulsTeamsList.Take(4);
+                var dictToReturn = toughTeams.ToDictionary(team => team, team => new List<DataObjects.AttributeType>
+            {
+                DataObjects.AttributeType.Tough
+            });
+
+                var softTeams = foulsTeamsList.TakeLast(4);
+                foreach (var softTeam in softTeams)
+                {
+                    dictToReturn.Add(softTeam, new List<DataObjects.AttributeType>
+                {
+                    DataObjects.AttributeType.Soft
+                });
+                }
+
+                var possessionList = GetTeamsListPerEvent(allEvents, competitionId, (int)DataObjects.EventType.Possession, gamesToTake,
+                    endDate, weigthed: 5);
+
+                var dominantTeams = possessionList.Take(4);
+                foreach (var team in dominantTeams)
+                {
+                    if (dictToReturn.ContainsKey(team))
+                    {
+                        dictToReturn.First(x => x.Key == team).Value.Add(DataObjects.AttributeType.Dominant);
+                    }
+                    else
+                    {
+                        dictToReturn.Add(team, new List<DataObjects.AttributeType>
+                    {
+                        DataObjects.AttributeType.Dominant
+                    });
+                    }
+                }
+
+                var passiveTeams = possessionList.TakeLast(4);
+                foreach (var team in passiveTeams)
+                {
+                    if (dictToReturn.ContainsKey(team))
+                    {
+                        dictToReturn.First(x => x.Key == team).Value.Add(DataObjects.AttributeType.Passive);
+                    }
+                    else
+                    {
+                        dictToReturn.Add(team, new List<DataObjects.AttributeType>
+                    {
+                        DataObjects.AttributeType.Passive
+                    });
+                    }
+                }
+
+                var shotsOnTargetList = GetTeamsListPerEvent(allEvents, competitionId, (int)DataObjects.EventType.ShotsOnTarget, gamesToTake,
+                    endDate, weigthed: 5);
+
+                var dangerousTeams = shotsOnTargetList.Take(4);
+                foreach (var team in dangerousTeams)
+                {
+                    if (dictToReturn.ContainsKey(team))
+                    {
+                        dictToReturn.First(x => x.Key == team).Value.Add(DataObjects.AttributeType.Dangerous);
+                    }
+                    else
+                    {
+                        dictToReturn.Add(team, new List<DataObjects.AttributeType>
+                    {
+                        DataObjects.AttributeType.Dangerous
+                    });
+                    }
+                }
+
+                var anemicTeams = shotsOnTargetList.TakeLast(4);
+                foreach (var team in anemicTeams)
+                {
+                    if (dictToReturn.ContainsKey(team))
+                    {
+                        dictToReturn.First(x => x.Key == team).Value.Add(DataObjects.AttributeType.Anemic);
+                    }
+                    else
+                    {
+                        dictToReturn.Add(team, new List<DataObjects.AttributeType>
+                    {
+                        DataObjects.AttributeType.Anemic
+                    });
+                    }
+                }
+
+                var accurateInFrontOfGoalList = GetTeamsListAccuracyInFrontOfGoal(db, competitionId, 50, endDate);
+
+                var accurateTeams = accurateInFrontOfGoalList.TakeLast(4);
+                foreach (var team in accurateTeams)
+                {
+                    if (dictToReturn.ContainsKey(team))
+                    {
+                        dictToReturn.First(x => x.Key == team).Value.Add(DataObjects.AttributeType.Accurate_In_Front_Of_Goal);
+                    }
+                    else
+                    {
+                        dictToReturn.Add(team, new List<DataObjects.AttributeType>
+                    {
+                        DataObjects.AttributeType.Accurate_In_Front_Of_Goal
+                    });
+                    }
+                }
+
+                var inaccurateTeams = accurateInFrontOfGoalList.Take(4);
+                foreach (var team in inaccurateTeams)
+                {
+                    if (dictToReturn.ContainsKey(team))
+                    {
+                        dictToReturn.First(x => x.Key == team).Value.Add(DataObjects.AttributeType.Inaccurate_In_Front_Of_Goal);
+                    }
+                    else
+                    {
+                        dictToReturn.Add(team, new List<DataObjects.AttributeType>
+                    {
+                        DataObjects.AttributeType.Inaccurate_In_Front_Of_Goal
+                    });
+                    }
+                }
+
+                var accurateInFrontOfGoalAgainst = GetTeamsListAccuracyInFrontOfGoalAgainst(db, competitionId, 50, endDate);
+                var goodGoalkeeperTeams = accurateInFrontOfGoalAgainst.Take(4);
+                foreach (var team in goodGoalkeeperTeams)
+                {
+                    if (dictToReturn.ContainsKey(team))
+                    {
+                        dictToReturn.First(x => x.Key == team).Value.Add(DataObjects.AttributeType.Good_Goalkeeper);
+                    }
+                    else
+                    {
+                        dictToReturn.Add(team, new List<DataObjects.AttributeType>
+                    {
+                        DataObjects.AttributeType.Good_Goalkeeper
+                    });
+                    }
+                }
+
+                var poorGoalkeeperTeams = accurateInFrontOfGoalAgainst.TakeLast(4);
+                foreach (var team in poorGoalkeeperTeams)
+                {
+                    if (dictToReturn.ContainsKey(team))
+                    {
+                        dictToReturn.First(x => x.Key == team).Value.Add(DataObjects.AttributeType.Poor_Keeper);
+                    }
+                    else
+                    {
+                        dictToReturn.Add(team, new List<DataObjects.AttributeType>
+                    {
+                        DataObjects.AttributeType.Poor_Keeper
+                    });
+                    }
+                }
+
+                return dictToReturn;
+            }
+
+        }
+
+
+
         public static Dictionary<int, List<DataObjects.AttributeType>> BuildAttributesDictionary(int competitionId, int gamesToTake = 50, DateTime? endDate = null)
         {
             if (!endDate.HasValue)
@@ -203,6 +375,29 @@ namespace DataProjects
             return groupByTeams;
         }
 
+        public static List<int> GetTeamsListPerEvent(List<matchevent> allEvents,  int competitionId, int eventTypeId,
+                int gamesToTake = 50, DateTime? endDate = null, int weigthed = 0)
+        {
+            if (!endDate.HasValue)
+                endDate = DateTime.Now;
+
+            var relevantEvents = allEvents.Where(x => x.competitionmatch.CompetitionID == competitionId)
+                .Where(x => x.EventTypeID == eventTypeId)
+                .Where(x => x.competitionmatch.MatchDate < endDate.Value)
+                .ToList();
+
+            var groupByTeams = relevantEvents.GroupBy(x => x.TeamID)
+                .Select(x => new { TeamID = x.Key, Average = x.OrderBy(z => z.competitionmatch.MatchDate).Select(y => (int)y.eventvalue).WeightedAverage(weigthed) })
+                .OrderByDescending(x => x.Average)
+                .Select(x => x.TeamID)
+                .ToList();
+
+            return groupByTeams;
+        }
+
+
+
+
         public static List<int> GetTeamsListAccuracyInFrontOfGoal(sakilaEntities4 db, int competitionId,
             int gamesToTake = 50, DateTime? endDate = null)
         {
@@ -345,6 +540,27 @@ namespace DataProjects
 
             return Math.Round(average, 2);
         }
+
+        public static List<matchevent> GetMatchEventsForTeam(sakilaEntities4 db, int teamId, int competitionId, int eventTypeId, int gamesToTake = 50, DateTime? endDate = null)
+        {
+            if (!endDate.HasValue)
+                endDate = DateTime.Now;
+
+            var evs = db.matchevent.Where(
+                    x =>
+                        x.EventTypeID == eventTypeId &&
+                        x.TeamID == teamId &&
+                        x.competitionmatch.CompetitionID == competitionId &&
+                        x.eventvalue != null
+                        && x.competitionmatch.MatchDate < endDate)
+                        .OrderByDescending(x => x.competitionmatch.MatchDate)
+                        .Take(gamesToTake)
+                        .OrderBy(x => x.competitionmatch.MatchDate)
+                        .ToList();
+
+            return evs;
+        }
+
         public static double? GetAverageEventValueAgainstTeam(sakilaEntities4 db, int teamId, int competitionId, int eventTypeId, int gamesToTake = 50, DateTime? endDate = null, int weighted = 0)
         {
             if (!endDate.HasValue)
@@ -371,7 +587,36 @@ namespace DataProjects
                         .Select(x => (int)x.eventvalue)
                         .WeightedAverage(weighted);
 
-            return average;
+            return Math.Round(average, 2);
+        }
+
+        public static List<matchevent> GetEventsAgainstTeam(sakilaEntities4 db, int teamId, int competitionId, int eventTypeId, int gamesToTake = 50, DateTime? endDate = null, int weighted = 0)
+        {
+            if (!endDate.HasValue)
+                endDate = DateTime.Now;
+
+            var matches = db.competitionmatch
+                .Where(x => x.CompetitionID == competitionId)
+                .Where(x => x.HomeTeamID == teamId || x.AwayTeamID == teamId)
+                .Where(x => x.MatchDate < endDate)
+                .OrderByDescending(x => x.MatchDate)
+                .Take(gamesToTake)
+                .OrderBy(x => x.MatchDate)
+                .Select(x => x.CompetitionMatchID);
+
+            var evs =
+                db.matchevent
+                .Where(
+                    x =>
+                        x.EventTypeID == eventTypeId &&
+                        x.TeamID != teamId &&
+                        x.competitionmatch.CompetitionID == competitionId &&
+                        x.eventvalue != null &&
+                        matches.Contains(x.MatchID))
+                        .OrderByDescending(x => x.competitionmatch.MatchDate)
+                        .ToList();
+
+            return evs;
         }
 
         public static double GetStdEventValuePerTeamMatches(sakilaEntities4 db, int teamId, int competitionId, int eventTypeId, int gamesToTake = 50)

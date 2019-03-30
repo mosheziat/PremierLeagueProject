@@ -1,0 +1,118 @@
+C:\Users\user\AppData\Local\Programs\Python\Python36-32\python.exe C:/Users/user/Desktop/DataProjects/PredictionsModel/main.py
+C:\Users\user\AppData\Local\Programs\Python\Python36-32\lib\site-packages\sklearn\ensemble\weight_boosting.py:29: DeprecationWarning: numpy.core.umath_tests is an internal NumPy module and should not be imported. It will be removed in a future NumPy release.
+  from numpy.core.umath_tests import inner1d
+(1229, 64)
+Number of Matches: 290.00000000000006
+0.2 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 290.00000000000006
+Correct: 156.47815126050435
+Won: 253.23049420484872
+Ratios:  1.6183121551792325
+Recall:  1.0
+Precision:  0.5395798319327735
+Balance:  -36.76950579515133
+Balance Percent Change:  -0.12679139929362526
+F-Measure:  0.7009442716008955
+0.35 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 289.57352941176487
+Correct: 157.75478496819915
+Won: 255.34412105493155
+Ratios:  1.6186141111751688
+Recall:  0.9985294117647063
+Precision:  0.5447831688506188
+Balance:  -34.22940835683332
+Balance Percent Change:  -0.11820627536766362
+F-Measure:  0.7049537779505863
+0.4 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 247.9012605042016
+Correct: 142.32866133771904
+Won: 219.8537494122582
+Ratios:  1.544690629040533
+Recall:  0.8548319327731088
+Precision:  0.5741344801887636
+Balance:  -28.04751109194339
+Balance Percent Change:  -0.11313984864335946
+F-Measure:  0.6869139581162992
+0.45 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 194.84831932773116
+Correct: 121.92854436546884
+Won: 176.7620928441976
+Ratios:  1.4497187165162129
+Recall:  0.6718907563025212
+Precision:  0.6257613346943339
+Balance:  -18.08622648353355
+Balance Percent Change:  -0.09282208102145784
+F-Measure:  0.6480061325369066
+0.5 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 146.25504201680678
+Correct: 98.05680405234375
+Won: 132.742341285368
+Ratios:  1.3537290203187609
+Recall:  0.5043277310924371
+Precision:  0.6704507598519279
+Balance:  -13.51270073143877
+Balance Percent Change:  -0.09239134969368078
+F-Measure:  0.5756436862467823
+0.52 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 130.23193277310915
+Correct: 88.72722183169174
+Won: 117.20838700851581
+Ratios:  1.3209969228029084
+Recall:  0.4490756302521004
+Precision:  0.681301582049564
+Balance:  -13.023545764593337
+Balance Percent Change:  -0.10000270661177267
+F-Measure:  0.5413342272314146
+0.55 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 111.10168067226884
+Correct: 80.40596905631408
+Won: 103.09786799886629
+Ratios:  1.2822165967138515
+Recall:  0.3831092436974787
+Precision:  0.7237151460696448
+Balance:  -8.00381267340255
+Balance Percent Change:  -0.0720404284163121
+F-Measure:  0.5010044318258798
+0.57 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 100.37899159663866
+Correct: 72.38248032716682
+Won: 91.3363151493628
+Ratios:  1.2618566638850337
+Recall:  0.34613445378151253
+Precision:  0.7210919254700966
+Balance:  -9.042676447275852
+Balance Percent Change:  -0.09008534857186849
+F-Measure:  0.4677447345780171
+0.6 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 84.96512605042024
+Correct: 62.63185996339631
+Won: 77.41695963194233
+Ratios:  1.2360635573841623
+Recall:  0.2929831932773111
+Precision:  0.7371478496510337
+Balance:  -7.548166418477905
+Balance Percent Change:  -0.08883840664225758
+F-Measure:  0.4193096254906007
+0.62 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 77.15462184873951
+Correct: 57.7626220536497
+Won: 70.40112561198818
+Ratios:  1.218800724568907
+Recall:  0.26605042016806724
+Precision:  0.748660555512701
+Balance:  -6.753496236751332
+Balance Percent Change:  -0.08753197248495963
+F-Measure:  0.3925875645994312
+0.65 ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'AwayShotsTarget', 'AwayValue', 'HomeValue', 'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam']
+Participated: 65.74957983193275
+Correct: 51.13550405008757
+Won: 61.10437911029839
+Ratios:  1.1949501671176692
+Recall:  0.22672268907563015
+Precision:  0.7777312673449583
+Balance:  -4.64520072163436
+Balance Percent Change:  -0.07064989211350542
+F-Measure:  0.3510948872937955
+0 0
+
+Process finished with exit code 0

@@ -75,6 +75,8 @@
         <AssociationConnector Association="sakilaModel.fk_staff_store" ManuallyRouted="false" />
         <AssociationConnector Association="sakilaModel.fk_store_staff" ManuallyRouted="false" />
         <AssociationConnector Association="sakilaModel.team_ibfk_1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="sakilaModel.matchodds" Width="1.5" PointX="7.5" PointY="11.875" />
+        <AssociationConnector Association="sakilaModel.matchodds_ibfk_1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
