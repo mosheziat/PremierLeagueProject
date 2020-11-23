@@ -7,3 +7,4 @@ C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\CsQuery.xml
 C:\Users\user\Desktop\DataProjects\DataProjects\bin\Release\EntityFramework.xml
 C:\Users\user\Desktop\DataProjects\DataProjects\obj\Release\DataProjects.exe
 C:\Users\user\Desktop\DataProjects\DataProjects\obj\Release\DataProjects.pdb
+C:\Users\user\Desktop\DataProjects\DataProjects\obj\Release\DataProjects.csprojResolveAssemblyReference.cache

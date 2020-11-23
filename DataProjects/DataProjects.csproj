@@ -62,7 +62,6 @@
     <Compile Include="address.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="BlazerMagazine.cs" />
     <Compile Include="category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

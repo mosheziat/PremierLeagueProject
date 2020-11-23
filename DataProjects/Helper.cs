@@ -309,7 +309,7 @@ namespace DataProjects
 
             return true;
         }
-        public static void AddMatchDetailsToDb(DataObjects.MatchDetails match, sakilaEntities4 db, int homeTeamID, int awayTeamID)
+        public static void AddMatchDetailsToDb(DataObjects.MatchDetails match, sakilaEntities4 db, int homeTeamID, int awayTeamID, int competitionID = 10)
         {
             var newMatch = new competitionmatch();
             newMatch.HomeTeamID = homeTeamID;
@@ -319,7 +319,7 @@ namespace DataProjects
             newMatch.WinnerTeamID = Helper.GetWinnerTeamID(homeTeamID, match.HomeTeam.Goals, awayTeamID,
                 match.AwayTeam.Goals);
             newMatch.MatchDate = match.Date;
-            newMatch.CompetitionID = 9;
+            newMatch.CompetitionID = competitionID;
 
             db.competitionmatch.Add(newMatch);
             db.SaveChanges();

@@ -1,0 +1,7 @@
+Match,Winner Odds,Home Odds,Draw Odds,Away Odds,Winner,Winner Ratio,Real Ratio,Diff,Draw Ratio,Winner,Model Correct,Goals Odds,IsOver,Over Correct,Over Ratio
+Norwich City VS. Liverpool,0.7404,0.7404,0.1552,0.1044,A,1.350621286,1.2,-0.150621286,0,A,1,0.560392764,1,0,1.784462728
+Southampton VS. Burnley,0.6352,0.1644,0.2004,0.6352,H,1.574307305,1.6,0.025692695,0,A,0,0.509440243,0,0,1.96293876
+Arsenal VS. Newcastle United,0.5904,0.1128,0.2968,0.5904,H,1.693766938,1.25,-0.443766938,0,H,1,0.527250029,0,0,1.89663337
+Wolverhampton Wanderers VS. Leicester City,0.4212,0.4212,0.1964,0.3824,A,2.374169041,2.4,0.025830959,0,D,0,0.556081753,1,0,1.798296733
+Chelsea VS. Manchester United,0.404,0.2664,0.3296,0.404,H,2.475247525,1.7,-0.775247525,0,A,0,0.507050972,1,0,1.972188309
+Aston Villa VS. Tottenham Hotspur,0.4,0.264,0.336,0.4,H,2.5,3.75,1.25,0,A,0,0.519888779,1,1,1.923488331

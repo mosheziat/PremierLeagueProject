@@ -172,6 +172,16 @@ warning 6005: The data type 'geometry' is currently not supported for the target
     <Property Name="AssistantID" Type="int" />
     <Property Name="ScoringMinute" Type="int" />
   </EntityType>
+  <EntityType Name="matchodds">
+    <Key>
+      <PropertyRef Name="MatchOddsID" />
+    </Key>
+    <Property Name="MatchOddsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HomeTeamOdds" Type="decimal" Precision="5" Scale="3" Nullable="false" />
+    <Property Name="DrawOdds" Type="decimal" Precision="5" Scale="3" Nullable="false" />
+    <Property Name="AwayTeamOdds" Type="decimal" Precision="5" Scale="3" Nullable="false" />
+    <Property Name="MatchID" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="matchplayer">
     <Key>
       <PropertyRef Name="MatchPlayerID" />
@@ -670,6 +680,18 @@ warning 6005: The data type 'geometry' is currently not supported for the target
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="matchodds_ibfk_1">
+    <End Role="competitionmatch" Type="Self.competitionmatch" Multiplicity="1" />
+    <End Role="matchodds" Type="Self.matchodds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="competitionmatch">
+        <PropertyRef Name="CompetitionMatchID" />
+      </Principal>
+      <Dependent Role="matchodds">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="matchplayer_ibfk_1">
     <End Role="player" Type="Self.player" Multiplicity="1" />
     <End Role="matchplayer" Type="Self.matchplayer" Multiplicity="*" />
@@ -808,6 +830,7 @@ warning 6005: The data type 'geometry' is currently not supported for the target
     <EntitySet Name="language" EntityType="Self.language" Schema="sakila" store:Type="Tables" />
     <EntitySet Name="matchevent" EntityType="Self.matchevent" Schema="sakila" store:Type="Tables" />
     <EntitySet Name="matchgoal" EntityType="Self.matchgoal" Schema="sakila" store:Type="Tables" />
+    <EntitySet Name="matchodds" EntityType="Self.matchodds" Schema="sakila" store:Type="Tables" />
     <EntitySet Name="matchplayer" EntityType="Self.matchplayer" Schema="sakila" store:Type="Tables" />
     <EntitySet Name="payment" EntityType="Self.payment" Schema="sakila" store:Type="Tables" />
     <EntitySet Name="player" EntityType="Self.player" Schema="sakila" store:Type="Tables" />
@@ -949,6 +972,10 @@ warning 6005: The data type 'geometry' is currently not supported for the target
     <AssociationSet Name="matchgoal_ibfk_4" Association="Self.matchgoal_ibfk_4">
       <End Role="team" EntitySet="team" />
       <End Role="matchgoal" EntitySet="matchgoal" />
+    </AssociationSet>
+    <AssociationSet Name="matchodds_ibfk_1" Association="Self.matchodds_ibfk_1">
+      <End Role="competitionmatch" EntitySet="competitionmatch" />
+      <End Role="matchodds" EntitySet="matchodds" />
     </AssociationSet>
     <AssociationSet Name="matchplayer_ibfk_1" Association="Self.matchplayer_ibfk_1">
       <End Role="player" EntitySet="player" />

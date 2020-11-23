@@ -119,7 +119,7 @@ namespace DataProjects
             var links = dom[".record a"]
                 .Where(x => x.HasAttribute("href"))
                 .Select(x => x.GetAttribute("href"))
-                .Where(x => !x.Contains("matchstats") || x.Contains("gameId=513548"))
+                .Where(x => x.Contains("/report") || x.Contains("541677"))
                 .Select(x => "http://www.espn.com" + x.Replace("/report", "/matchstats"))
                 .ToList();
 
@@ -136,6 +136,9 @@ namespace DataProjects
             var title = summaryPageDom["title"].Text();
             var dateStr = title.Split('-')[2].Trim();
             matchDetails.Date = DateTime.Parse(dateStr);
+
+            if (matchDetails.Date > DateTime.Today)
+                return null;
 
             var dom = CQ.CreateFromUrl(url);
 
@@ -306,9 +309,9 @@ namespace DataProjects
         }
 
         public static void AddFullMatchDetailsToDb(DataObjects.MatchDetails match, sakilaEntities4 db, int homeTeamID,
-            int awayTeamID)
+            int awayTeamID, int competitionID = 10)
         {
-            Helper.AddMatchDetailsToDb(match, db, homeTeamID, awayTeamID);
+            Helper.AddMatchDetailsToDb(match, db, homeTeamID, awayTeamID, competitionID);
             Helper.AddGoalsDetailsToDb(match, db, homeTeamID, awayTeamID);
             addOnlyStatisticsToDb(match, db, homeTeamID, awayTeamID);
         }
@@ -471,7 +474,7 @@ namespace DataProjects
 
                     var homeTeamId = db.team.First(x => x.TeamName == normalizedHomeTeamName).TeamID;
                     var awayTeamId = db.team.First(x => x.TeamName == normalizedAwayTeamName).TeamID;
-                    var parsedDate = DateTime.Today;
+                    var parsedDate = DateTime.Today.AddDays(-1);
                     try
                     {
                         parsedDate = DateTime.Parse(date);
@@ -563,7 +566,7 @@ namespace DataProjects
         {
             using (var db = new sakilaEntities4())
             {
-                for (var i = 0; i <= daysToTake; i++)
+                for (var i = -1; i <= daysToTake; i++)
                 {
                     var relevantDate = DateTime.Today.AddDays(i*-1);
                     Console.WriteLine(relevantDate);
@@ -572,9 +575,13 @@ namespace DataProjects
                     foreach (var match in matches)
                     {
                         var matchDetails = GetMatchStatisticsFromEspn(match);
+
+                        if (matchDetails == null)
+                            continue;
+
                         if (matchDetails.Date == DateTime.Today)
                         {
-                            // continue;
+                             //continue;
                         }
                         var normalizedHomeTeamName =
                              Helper.NormalizeTeamName(matchDetails.HomeTeam.Name);
@@ -628,7 +635,7 @@ namespace DataProjects
                             continue;
                         }
 
-                        AddFullMatchDetailsToDb(matchDetails, db, homeTeamId, awayTeamId);
+                        AddFullMatchDetailsToDb(matchDetails, db, homeTeamId, awayTeamId, competitionId);
                     }
 
                 }
@@ -802,7 +809,7 @@ namespace DataProjects
 
         public static List<FutureMatch> GetNextMatches(int nextDaysToGet)
         {
-            var path = @"C:\Users\user\Desktop\DataProjects\2019\Fixtures.tsv";
+            var path = @"C:\Users\user\Desktop\DataProjects\2021\Fixtures.tsv";
             var today = DateTime.Today;
             var nextDays = today.AddDays(nextDaysToGet);
 

@@ -298,5 +298,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="matchodds">
+      <EntityTypeMapping TypeName="sakilaModel.matchodds">
+        <MappingFragment StoreEntitySet="matchodds">
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="AwayTeamOdds" ColumnName="AwayTeamOdds" />
+          <ScalarProperty Name="DrawOdds" ColumnName="DrawOdds" />
+          <ScalarProperty Name="HomeTeamOdds" ColumnName="HomeTeamOdds" />
+          <ScalarProperty Name="MatchOddsID" ColumnName="MatchOddsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

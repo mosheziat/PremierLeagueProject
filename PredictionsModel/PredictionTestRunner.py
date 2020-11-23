@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 import csv
 
 final_features = ['HomeValue','AwayValue','HomeShotsTargetVsTeam',	'AwayShotsTargetVsTeam', 'AwayShotsTarget',  'HomeShotsTarget', 'HomePossession', 'AwayPossession', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'AwayTotalShotsAgst', 'AwayWeightedPoints', 'HomeWeightedPoints', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam', 'HomeGoalsSeas', 'AwayGoalsSeas', 'HomeTotalShots', 'AwayTotalShots', 'AwayGoalsExpected', 'HomeGoalsExpected', 'AwayGoalsExpectedConc', 'HomeGoalsExpectedConc', 'HomePtsSeas', 'AwayPtsSeas']
-all_features = ['HomeValue','AwayValue', 'HomePtsSeas','AwayPtsSeas','HomePtsLast','AwayPtsLast','HomePtsHome','AwayPtsAway','HomeGoalsSeas','AwayGoalsSeas','HomeGoalsLast','AwayGoalsLast','HomeGoalsHome','AwayGoalsAway','HomeGoalsConcSeas','AwayGoalsConcSeas','HomeGoalsConcLast','AwayGoalsConcLast','HomeGoalsConcHome','AwayGoalsConcAway','HomeTotalShots','AwayTotalShots','HomeShotsTarget','AwayShotsTarget','HomeTotalShotsAgst','AwayTotalShotsAgst','HomeShotsTargetAgst','AwayShotsTargetAgst', 'HomeTotalShotsVsTeam',	'AwayTotalShotsVsTeam',	'HomeShotsTargetVsTeam',	'AwayShotsTargetVsTeam','HomePossession','AwayPossession', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints',	'AwayWeightedPoints',	'ChanceCreationHome'	,'ChanceCreationAway',	'ShotsAccuracyHome',	'ShotsAccuracyAway',	'ScoringRateHome',	'ScoringRateAway',	'KeeperStrengthHome',	'KeeperStrengthAway',  'HomeGoalsExpected',	'AwayGoalsExpected', 'HomeGoalsExpectedConc',	'AwayGoalsExpectedConc',	'HomeGoalsExpectedVsTeam',	'AwayGoalsExpectedVsTeam', 'IsHomeFavorite']
+all_features = ['HomeValue','AwayValue', 'HomePtsSeas','AwayPtsSeas','HomePtsLast','AwayPtsLast','HomePtsHome','AwayPtsAway','HomeGoalsSeas','AwayGoalsSeas','HomeGoalsLast','AwayGoalsLast','HomeGoalsHome','AwayGoalsAway','HomeGoalsConcSeas','AwayGoalsConcSeas','HomeGoalsConcLast','AwayGoalsConcLast','HomeGoalsConcHome','AwayGoalsConcAway','HomeTotalShots','AwayTotalShots','HomeShotsTarget','AwayShotsTarget','HomeTotalShotsAgst','AwayTotalShotsAgst','HomeShotsTargetAgst','AwayShotsTargetAgst', 'HomeTotalShotsVsTeam',	'AwayTotalShotsVsTeam',	'HomeShotsTargetVsTeam',	'AwayShotsTargetVsTeam','HomePossession','AwayPossession', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints',	'AwayWeightedPoints',	'ChanceCreationHome'	,'ChanceCreationAway',	'ShotsAccuracyHome',	'ShotsAccuracyAway',	'ScoringRateHome',	'ScoringRateAway',	'KeeperStrengthHome',	'KeeperStrengthAway',  'HomeGoalsExpected',	'AwayGoalsExpected', 'HomeGoalsExpectedConc',	'AwayGoalsExpectedConc',	'HomeGoalsExpectedVsTeam',	'AwayGoalsExpectedVsTeam']
 goals_all_features = ['AwayTeamOdds', 'DrawOdds', 'HomeTeamOdds', 'HomeValue','AwayValue', 'HomePtsSeas','AwayPtsSeas','HomePtsLast','AwayPtsLast','HomePtsHome','AwayPtsAway','HomeGoalsSeas','AwayGoalsSeas','HomeGoalsLast','AwayGoalsLast','HomeGoalsHome','AwayGoalsAway','HomeGoalsConcSeas','AwayGoalsConcSeas','HomeGoalsConcLast','AwayGoalsConcLast','HomeGoalsConcHome','AwayGoalsConcAway','HomeTotalShots','AwayTotalShots','HomeShotsTarget','AwayShotsTarget','HomeTotalShotsAgst','AwayTotalShotsAgst','HomeShotsTargetAgst','AwayShotsTargetAgst', 'HomeTotalShotsVsTeam',	'AwayTotalShotsVsTeam',	'HomeShotsTargetVsTeam',	'AwayShotsTargetVsTeam','HomePossession','AwayPossession', 'HomeTrend', 'AwayTrend', 'HomeWeightedPoints',	'AwayWeightedPoints',	'ChanceCreationHome'	,'ChanceCreationAway',	'ShotsAccuracyHome',	'ShotsAccuracyAway',	'ScoringRateHome',	'ScoringRateAway',	'KeeperStrengthHome',	'KeeperStrengthAway',  'HomeGoalsExpected',	'AwayGoalsExpected', 'HomeGoalsExpectedConc',	'AwayGoalsExpectedConc',	'HomeGoalsExpectedVsTeam',	'AwayGoalsExpectedVsTeam', 'IsHomeFavorite']
 feats_1 = ['HomeValue', 'AwayValue', 'HomeGoalsHome', 'AwayGoalsAway', 'HomeGoalsConcHome', 'AwayGoalsConcAway', 'HomeGoalsExpected', 'AwayGoalsExpected', 'HomeGoalsExpectedConc', 'AwayGoalsExpectedConc', 'HomeTotalShotsVsTeam', 'AwayTotalShotsVsTeam', 'HomeShotsTargetVsTeam', 'AwayShotsTargetVsTeam', 'HomePtsSeas', 'AwayPtsSeas', 'HomeGoalsExpectedVsTeam', 'AwayGoalsExpectedVsTeam']
 
@@ -42,7 +42,7 @@ def write_test_results(test_file, y_proba, y_proba2, file_path):
     matches = test_file['Match']
     with open(file_path, 'w', newline='') as csvfile:
         spamwriter =csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_MINIMAL)
-        headers = ["Match", "Winner Odds", "Winner", "Winner Ratio", "Goals Odds", "IsOver", "Over Ratio"]
+        headers = ["Match", "Winner Odds", "Away Odds", "Draw Odds", "Home Odds", "Predicted Winner", "Winner Ratio", "Bookie Ratio", "Diff", "Winner", "Model Correct", "Goals Odds", "IsOver", "Over Ratio"]
         spamwriter.writerow(headers)
         for i in range(len(y_proba)):
             to_write = []
@@ -59,9 +59,10 @@ def write_test_results(test_file, y_proba, y_proba2, file_path):
             if max_index == 2:
                 predicted = "H"
             print(predicted)
+            to_write.extend(y_proba[i])
             to_write.append(predicted)
             to_write.append(100 / (max1 * 100))
-
+            to_write.extend(["", "", "", ""])
             max2 = max(y_proba2[i])
             to_write.append(max2)
             max_index2 = y_proba2[i].tolist().index(max(y_proba2[i]))
@@ -71,7 +72,7 @@ def write_test_results(test_file, y_proba, y_proba2, file_path):
             spamwriter.writerow(to_write)
 
 
-train_file = pd.read_csv("full_data_4.csv")
+train_file = pd.read_csv("train.csv")
 #train_file = train_file.loc[train_file['Round'] > 0.04]
 
 print("Train File:", train_file.shape)
@@ -90,4 +91,4 @@ print(goals_features)
 clf = RandomForestClassifier(max_depth=50, n_estimators=2500, bootstrap=False)
 goals_clf = RandomForestClassifier(max_depth=2, n_estimators=50, bootstrap=False)
 
-run_test(train_file, test_file, features, goals_features=goals_features, clf=clf, goals_clf=goals_clf, file_path= "Round32.csv")
+run_test(train_file, test_file, features, goals_features=goals_features, clf=clf, goals_clf=goals_clf, file_path= "Round9B.csv")

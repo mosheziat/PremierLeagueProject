@@ -177,7 +177,9 @@ namespace DataProjects
 
         public static Dictionary<string, List<Helper.LetterDistribution>> GetCombinedLettersDictionary(int sequenceAmount = 3)
         {
-            var competitionId = 8;
+            var competitionId = 10;
+            var competitionId3 = 9;
+            var competitionId2 = 8;
             var competitionLastYearId = 3;
             var competitionTwoYearsAgo = 2;
             var competitionThreeYearsAgo = 4;
@@ -187,7 +189,7 @@ namespace DataProjects
 
             var competitionIds = new List<int>
             {
-                competitionId, competitionLastYearId,
+                competitionId, competitionId3, competitionId2, competitionLastYearId,
                 competitionTwoYearsAgo, competitionThreeYearsAgo,
                 competitionFourYearsAgo,competitionFiveYearsAgo,
                 competitionSixYearsAgo

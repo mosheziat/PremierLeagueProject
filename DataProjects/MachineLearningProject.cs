@@ -172,7 +172,19 @@ namespace DataProjects
                     Over2_5;
             }
 
-            public static string PrintCsvAttrs()
+            public static string PrintCsvTrainAttrs()
+            {
+                return StatisticLine.PrintAttrs().Replace("@relation PL\n", "")
+                                                 .Replace("@ATTRIBUTE ", "")
+                                                 .Replace(" NUMERIC", "")
+                                                 .Replace(" {H, D, A}", "")
+                                                 .Replace(" {True, False}", "")
+                                                 .Replace("@data", "")
+                                                 .Replace("\n", ",");
+            }
+
+
+            public static string PrintCsvTestAttrs()
             {
                 return "Match," +  StatisticLine.PrintAttrs().Replace("@relation PL\n", "")
                                                  .Replace("@ATTRIBUTE ", "")
@@ -486,9 +498,10 @@ namespace DataProjects
         public static void PrintTrainingFile()
         {
             StatisticLine.initDict();
-            var competitions = new List<int> {2, 3, 4, 8, 9};
+            var competitions = new List<int> {2, 3, 4, 8, 9, 10, 11};
             var linesToWrite = new List<string>();
-            linesToWrite.Add(StatisticLine.PrintAttrs());
+            linesToWrite.Add(StatisticLine.PrintCsvTrainAttrs());
+            int cnt = 0;
             using (var db = new sakilaEntities4())
             {
                 foreach (var competition in competitions)
@@ -497,7 +510,6 @@ namespace DataProjects
                     var matches = db.competitionmatch.Where(x => x.CompetitionID == competition).ToList();
                     foreach (var match in matches)
                     {
-                        Console.WriteLine(match.CompetitionMatchID);
                         var sl = new StatisticLine();
                         sl.init(match.HomeTeamID, match.AwayTeamID, match.MatchDate, match.CompetitionID);
                         sl.BuildTrainingLine();
@@ -505,13 +517,15 @@ namespace DataProjects
                         if (line != null)
                         {
                             linesToWrite.Add(line);
+                            cnt = cnt + 1;
+                            Console.WriteLine(cnt);
                         }
                     }
                 }
             }
 
-            File.WriteAllLines(@"C:\Users\user\Desktop\DataProjects\lines_since_3.arff", linesToWrite);
-            File.WriteAllLines(@"C:\Users\user\Desktop\DataProjects\lines_since_3.csv", linesToWrite);
+            //File.WriteAllLines(@"C:\Users\user\Desktop\DataProjects\training.arff", linesToWrite);
+            File.WriteAllLines(@"C:\Users\user\Desktop\DataProjects\PredictionsModel\train.csv", linesToWrite);
         }
 
         public static void PrintTestFile(int daysToGet, int competitionId)
@@ -519,7 +533,7 @@ namespace DataProjects
             StatisticLine.initDict();
             var matchesToWrite = new List<string>();
             var linesToWrite = new List<string>();
-            linesToWrite.Add(StatisticLine.PrintCsvAttrs());
+            linesToWrite.Add(StatisticLine.PrintCsvTestAttrs());
             var matches = PremierLeagueMainProject.GetNextMatches(daysToGet);
             foreach (var match in matches)
             {
@@ -537,7 +551,7 @@ namespace DataProjects
             }
 
             File.WriteAllLines(@"C:\Users\user\Desktop\DataProjects\PredictionsModel\test.csv", linesToWrite);
-            File.WriteAllLines(@"C:\Users\user\Desktop\DataProjects\testlines.csv", matchesToWrite);
+            //File.WriteAllLines(@"C:\Users\user\Desktop\DataProjects\testlines.csv", matchesToWrite);
 
         }
 
